@@ -1,0 +1,27 @@
+* {
+  font-family: Public Sans;
+}
+
+.box {
+  height: 58.75rem;
+}
+
+.banner {
+  width: 69.625rem;
+  margin-top: 2.5rem;
+  margin-left: 9.063rem;
+}
+
+.box1 {
+  align-items: center;
+  text-align: center;
+}
+
+.box1 h1 {
+  margin-top: 20px;
+}
+
+.btn-home {
+  width: 12.125rem;
+  height: 3.125rem;
+}

@@ -1,0 +1,41 @@
+header {
+  background-color: #f8bbd0;
+  height: 3.75rem;
+  display: flex;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  display: flex;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+h4 {
+  margin-left: 9.063rem;
+}
+
+li a {
+  text-decoration: none;
+  display: flex;
+  padding-right: 10px;
+  margin-top: 1.219rem;
+  color: inherit;
+}
+
+li a:hover {
+  color: rgb(87, 82, 82);
+}
+
+#lupa-header {
+  max-width: 15px;
+  height: 15px;
+  margin-top: 22px;
+  margin-right: 5px;
+}
