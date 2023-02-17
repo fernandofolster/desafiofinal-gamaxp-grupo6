@@ -1,7 +1,8 @@
 header {
   background-color: #f8bbd0;
-  height: 3.75rem;
   display: flex;
+  height: 3.75rem;
+  width: 100%;
 }
 
 ul {

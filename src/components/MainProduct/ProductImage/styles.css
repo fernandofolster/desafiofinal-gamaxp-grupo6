@@ -1,8 +1,7 @@
 .mainImages {
    display: flex;
    background: brown;
-   width: 50%;
-   
+   width: 100%;
    
    
 }
@@ -11,12 +10,11 @@
    display: grid;
    gap: 12px;
    grid-template-columns: 1fr 1fr;
-   
+   margin: 5.5rem 2.37rem 12.5rem auto;
 }
   
 .containerImages img {
    width: 17rem;
-   border-radius: 5px;
    
 }
 

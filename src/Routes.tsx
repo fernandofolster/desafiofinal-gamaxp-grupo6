@@ -10,9 +10,11 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <WrapperRoutes>
-        <Route path="/" element={<Home />} />
-        <Route path="./pages/ProductContent" element={<ProductContent />} />
+        <Route /*path="/" element={<Home />} *//>
+        <Route path="/" element={<ProductContent />} />
       </WrapperRoutes>
+
     </BrowserRouter>
   );
 }
+

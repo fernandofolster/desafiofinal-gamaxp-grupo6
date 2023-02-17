@@ -1,0 +1,34 @@
+.container-product-info {
+    background: aqua;
+    height: 100%;
+    padding: 4.9rem 8.8rem 0.75rem 2.37rem;
+}
+
+.text-title {
+    display: flex;
+    flex-direction: row;
+    color: #000000;
+    align-items: center;
+}
+
+.text-title h2 {
+    font-size: 2.25rem;
+    padding: 0.5rem 0;
+}
+
+
+.psb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.price-and-promo {
+    display: flex;
+    flex-direction: row;
+    width: 32.4rem;
+    height: 1.62rem;
+    margin-top: 0.37rem;
+}
+
+

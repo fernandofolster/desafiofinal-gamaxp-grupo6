@@ -1,0 +1,15 @@
+.promo-component {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: #212121;
+    display: flex;
+    padding-top: 0.2rem;
+   
+}
+
+.promo-component a {
+    text-decoration: none;
+    color: red;
+    margin-left: 0.2rem;
+    
+}
