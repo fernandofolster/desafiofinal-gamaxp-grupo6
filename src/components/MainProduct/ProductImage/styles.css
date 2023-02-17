@@ -1,0 +1,25 @@
+.mainImages {
+   display: flex;
+   background: brown;
+   width: 50%;
+   
+   
+   
+}
+
+.containerImages {
+   display: grid;
+   gap: 12px;
+   grid-template-columns: 1fr 1fr;
+   
+}
+  
+.containerImages img {
+   width: 17rem;
+   border-radius: 5px;
+   
+}
+
+
+
+
