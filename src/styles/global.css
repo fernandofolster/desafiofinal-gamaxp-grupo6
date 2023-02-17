@@ -1,6 +1,25 @@
+
+:root {
+    --pink-light: #F8BBD0;
+    --pink-primary:#E91E63;
+    --gray-dark: #212121;
+    --gray-secondary: #757575;
+    --gray-light: #979797;
+    --gray-primary: #C4C4C4;
+    --white: #FFFFFF;
+    --black: #000000;
+    --salmon: #DF9167;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    box-sizing: border-box;
+}
+
 body {
-  background-color: white;
-  margin: 0;
-  padding: 0;
-  width: 87.5rem;
+  background-color: #FFFFFF;
+  width: 100%;
 }
