@@ -5,6 +5,9 @@ import HeartIcon from '../../FavoriteIcon';
 import ShareIcon from '../../ShareIcon';
 import PriceComponent from '../../../components/Price';
 import PromoComponent from '../../PromoComponent';
+import ProductFeatures from '../../ProductFeature';
+import PinkBtn from '../../PinkButton';
+import QuantityInput from '../../QuantityInput';
 
 function ProductDescription () {
     return (
@@ -33,17 +36,11 @@ function ProductDescription () {
             </div>
             
             <div>
-                <p>Sutiã Triângulo Renda Magic sem bojo e aro. Possui maior cobertura no busto, base alongada e forro em contraste de textura com a renda
-
-                A coleção Magic está de volta ainda mais elegante. As silhuetas na cor preto e o contraste da renda com o forro em microfibra dão um toque elegante e sutil para as lingeries. Ideal para quem procura sofisticação em qualquer ocasião!
-
-                Composição:
-                Renda: 90% Poliamida/ 10% Elastano
-                Tule: 94% Poliamida / 6% Elastano</p>
+                <ProductFeatures/>
             </div>
 
             <div>
-            <h3>Color</h3>
+                <h3 className='title-product-color'>Color</h3>
             </div>
 
             <div>
@@ -51,7 +48,7 @@ function ProductDescription () {
             </div>
 
             <div>
-                <h3>Size</h3>
+                <h3 className='title-product-size'>Size</h3>
             </div>
 
             <div className='psb'>
@@ -62,6 +59,14 @@ function ProductDescription () {
                 <ProductSizeButton/>
                 <ProductSizeButton/>
                 <ProductSizeButton/>
+            </div>
+
+            <div>
+                <h3 className='quantity-title'> Quantity</h3>
+            </div>
+            <div className='btn-quantity'>
+                <PinkBtn/>
+                <QuantityInput/>
             </div>
         </div>
     )

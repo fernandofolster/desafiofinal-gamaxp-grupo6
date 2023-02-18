@@ -3,8 +3,9 @@
     font-weight: 400;
     color: #212121;
     display: flex;
-    padding-top: 0.2rem;
-   
+    padding: 0.18rem 0.62rem 0.18rem 0.75rem;
+    border: 1px solid #000000;
+    
 }
 
 .promo-component a {

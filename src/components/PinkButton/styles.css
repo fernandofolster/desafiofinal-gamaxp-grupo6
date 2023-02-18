@@ -1,0 +1,12 @@
+.buttonCart {
+    background-color: #E91E63;
+    border: 1px solid #E91E63;
+    font-size: 16px;
+    font-weight: 600;
+    align-content: center;
+    width: 350px;
+    height: 50px;
+    color: #FFFFFF;
+    cursor: pointer;
+    
+}

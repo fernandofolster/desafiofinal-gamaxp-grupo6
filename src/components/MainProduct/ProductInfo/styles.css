@@ -1,5 +1,5 @@
 .container-product-info {
-    background: aqua;
+    background: #FFFFFF;;
     height: 100%;
     padding: 4.9rem 8.8rem 0.75rem 2.37rem;
 }
@@ -16,19 +16,49 @@
     padding: 0.5rem 0;
 }
 
-
-.psb {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 .price-and-promo {
     display: flex;
     flex-direction: row;
     width: 32.4rem;
     height: 1.62rem;
     margin-top: 0.37rem;
+    
 }
 
+.psb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.title-product-color {
+    font-size: 1.125rem;
+    margin-top: 0.44rem;
+    font-weight: 400;
+    opacity: 0.5;
+    color:#000000;
+}
+
+
+.title-product-size {
+    font-size: 1.125rem;
+    margin-top: 0.44rem;
+    font-weight: 400;
+    opacity: 0.5;
+    color:#000000;
+}
+
+.quantity-title{
+    font-size: 1.125rem;
+    font-weight: 400;
+    opacity: 0.5;
+    color:#000000;
+    margin: 2rem auto 0.5rem 23rem;
+    
+}
+.btn-quantity{
+    display: flex;
+    
+}
 
