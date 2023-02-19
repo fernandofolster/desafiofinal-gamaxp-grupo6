@@ -1,0 +1,28 @@
+.category-description {
+    background-color: #212121;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.category-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #F8BBD0;
+    padding-top: 3rem;
+    margin-left: 9rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.category-text-descrip {
+    font-size: 1.125rem;
+    font-weight: 400;
+    width: 29rem;
+    color: #FFFFFF;
+    padding-bottom: 2.9rem;
+    margin-left: 9rem;
+    letter-spacing: 0.02rem;
+}

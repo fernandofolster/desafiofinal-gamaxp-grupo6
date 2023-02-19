@@ -1,0 +1,27 @@
+
+.category-main {
+    width: 100%;
+    height: auto;
+    
+  
+}
+
+.category-btn-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2.5rem;
+    justify-content: center;
+    
+}
+
+
+.prod-card-wrapper {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+
+
+
