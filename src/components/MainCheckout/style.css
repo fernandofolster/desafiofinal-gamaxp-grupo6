@@ -1,0 +1,100 @@
+.main-checkout {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    height: auto;
+    width: 100%;
+}
+
+.checkout-1 {
+    background-color: #e5e5e5;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.checkout-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #000000;
+    width: 32.5rem;
+    height: auto;
+    /*margin-left: 9rem;*/
+    margin-top: 3.18rem;
+    margin-bottom: 0.69rem;
+}
+
+
+.step-checkout {
+    display: flex;
+    justify-content: space-between;
+    width: 25.37rem;
+    align-items: center;
+    font-size: 1.06rem;
+    font-weight: 400;
+    color: #000000;
+    background-color: cadetblue;
+}
+
+
+.shipping-step {
+    font-weight: 900;
+    color: #000000;
+}
+
+
+
+
+
+.hr-divisao {
+    width: 4.25rem;
+    height: 0rem;
+    align-items: center;
+    border: 1px solid #212121;
+}
+
+
+.checkout-envio {
+    display: flex;
+    flex-direction: column;
+    background-color: darkmagenta;
+    /*width: 24.75rem;*/
+    margin-top: 2.31rem;
+    height: auto;
+    
+}
+.checkout-opcao-1 {
+    background-color:coral;
+    width: 24.75rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #212121;
+    padding-top: 1.43rem;
+    padding-bottom: 1.06rem;
+    padding-left: 1.18rem;
+
+
+}
+
+.radio-btn {
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+
+
+
+/*.checkout-envio-2 {
+    background-color:aqua;
+    width: 24.75rem;
+    display: flex;
+    flex-direction: column;
+}*/
+
+.checkout-2 {
+    background-color: darkseagreen;
+    display: flex;
+}

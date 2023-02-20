@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import ProductCategory from "./pages/ProductCategory";
 import ProductContent from "./pages/ProductContent";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 
 export default function Routes() {
@@ -17,6 +18,7 @@ export default function Routes() {
         <Route path="/" element={<ProductCategory/>}/>
         <Route path="/" element={<ProductContent />} />
         <Route path="/" element={<Cart />} />
+        <Route path="/" element={<Checkout />} />
         
       </WrapperRoutes>
 

@@ -9,12 +9,10 @@ function Footer() {
   return (
     <footer>
       <nav className="nav-input">
-        <div>
+        <div className="container-footer-1">
           <h2 className="h2-footer">Assine nossa newsletter</h2>
           <p className="p-footer">Cadastre seu e-mail e fique sempre por dentro das novidades e pomoções! 
           Prometemos só enviar conteúdo bacana 😉</p>
-        </div>
-        <div>
           <input
           type="email"
           className="input-news"
@@ -22,25 +20,43 @@ function Footer() {
           <button type="submit" className="btn-news">Enviar</button>
         </div>
       </nav>
-      <nav>
-        <div className="footer-menu">
+
+      <main className="container-nav">
+      <div className="footer-wrapper">
+        <div>
           <h4 className="h4-footer">Loja</h4>
+        </div>
+        <div className="footer-menu">
           <Link texto="Sutiãs" redirect="/sutias"/>
           <Link texto="Calcinhas" redirect="/calcinhas"/>
           <Link texto="Pijamas" redirect="/pijamas"/>
         </div>
+      </div>
+
+      <div className="footer-wrapper">
+        <div>
+          <h4 className="h4-footer">Ajuda</h4>
+        </div>
         <div className="footer-menu">
-        <h4 className="h4-footer">Ajuda</h4>
           <Link texto="Rastrear pedido" redirect="/404"/>
           <Link texto="Suporte" redirect="/404"/>
         </div>
-        <div className="footer-menu">
-        <h4 className="h4-footer">Sobre nós</h4>
-        <Link texto="Nossas redes" redirect="/redes"/>
-        <Link texto="Contato" redirect="/contato"/>
-        <Link texto="Nossas lojas" redirect="/lojas"/>
+      </div>
+      
+
+      <div className="footer-wrapper">
+        <div>
+          <h4 className="h4-footer">Sobre nós</h4>
         </div>
-      </nav>
+        <div className="footer-menu">
+          <Link texto="Nossas redes" redirect="/redes"/>
+          <Link texto="Contato" redirect="/contato"/>
+          <Link texto="Nossas lojas" redirect="/lojas"/>
+        </div>
+      </div>
+      </main>
+      
+      
     </footer>
   );
 }

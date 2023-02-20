@@ -10,7 +10,8 @@
 .banner {
   width: 69.625rem;
   margin-top: 2.5rem;
-  margin-left: 9.063rem;
+  display: flex;
+  justify-content: center;
 }
 
 .box1 {
