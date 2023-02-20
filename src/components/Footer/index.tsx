@@ -25,26 +25,20 @@ function Footer() {
       <nav>
         <div className="footer-menu">
           <h4 className="h4-footer">Loja</h4>
-          <div>
-            <Link texto="Sutiãs" redirect="/sutias"/>
-            <Link texto="Calcinhas" redirect="/calcinhas"/>
-            <Link texto="Pijamas" redirect="/pijamas"/>
-          </div>
+          <Link texto="Sutiãs" redirect="/sutias"/>
+          <Link texto="Calcinhas" redirect="/calcinhas"/>
+          <Link texto="Pijamas" redirect="/pijamas"/>
         </div>
         <div className="footer-menu">
         <h4 className="h4-footer">Ajuda</h4>
-          <div>
-            <Link texto="Rastrear pedido" redirect="/404"/>
-            <Link texto="Suporte" redirect="/404"/>
-          </div>
+          <Link texto="Rastrear pedido" redirect="/404"/>
+          <Link texto="Suporte" redirect="/404"/>
         </div>
         <div className="footer-menu">
         <h4 className="h4-footer">Sobre nós</h4>
-        <div>
-          <Link texto="Nossas redes" redirect="/redes"/>
-          <Link texto="Contato" redirect="/contato"/>
-          <Link texto="Nossas lojas" redirect="/lojas"/>
-        </div>
+        <Link texto="Nossas redes" redirect="/redes"/>
+        <Link texto="Contato" redirect="/contato"/>
+        <Link texto="Nossas lojas" redirect="/lojas"/>
         </div>
       </nav>
     </footer>

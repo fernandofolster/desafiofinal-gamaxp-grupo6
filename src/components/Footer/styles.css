@@ -4,7 +4,7 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 5% 15% 5% 15%;
+  padding: 0 15% 0 15%;
 }
 
 .footer-menu {
@@ -15,7 +15,11 @@ footer {
 .footer-menu > div {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  justify-content: flex-start;
+}
+
+a:hover {
+  color: #212121;
 }
 
 .h2-footer {
@@ -27,7 +31,6 @@ footer {
 .h4-footer {
   font-size: 14px;
   font-weight: 600;
-  text-align: left;
 }
 
 .p-footer {
@@ -39,7 +42,7 @@ footer {
 .nav-input {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  justify-content: flex-start;
 }
 
 .btn-news {
