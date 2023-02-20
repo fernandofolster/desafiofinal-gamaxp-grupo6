@@ -4,7 +4,7 @@
 
 .box {
   height: 58.75rem;
-  
+  width: 100%;
 }
 
 .banner {
@@ -25,4 +25,10 @@
 .btn-home {
   width: 12.125rem;
   height: 3.125rem;
+}
+
+.box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

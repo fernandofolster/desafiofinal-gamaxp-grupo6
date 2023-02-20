@@ -6,6 +6,8 @@ import {
 import Home from "./pages/Home";
 import ProductCategory from "./pages/ProductCategory";
 import ProductContent from "./pages/ProductContent";
+import Cart from "./pages/Cart";
+
 
 export default function Routes() {
   return (
@@ -14,6 +16,7 @@ export default function Routes() {
         <Route path="/" element={<Home />}/>
         <Route path="/" element={<ProductCategory/>}/>
         <Route path="/" element={<ProductContent />} />
+        <Route path="/" element={<Cart />} />
         
       </WrapperRoutes>
 
