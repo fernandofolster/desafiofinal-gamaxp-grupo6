@@ -8,19 +8,22 @@ function Footer() {
 
   return (
     <footer>
-      <nav>
+      <nav className="nav-input">
         <div>
           <h2 className="h2-footer">Assine nossa newsletter</h2>
           <p className="p-footer">Cadastre seu e-mail e fique sempre por dentro das novidades e pomoções! 
           Prometemos só enviar conteúdo bacana 😉</p>
         </div>
-        <input
-        type="email"
-        placeholder="Digite seu e-mail aqui :)" />
-        <button type="submit">Enviar</button>
+        <div>
+          <input
+          type="email"
+          className="input-news"
+          placeholder="Digite seu e-mail aqui :)" />
+          <button type="submit" className="btn-news">Enviar</button>
+        </div>
       </nav>
       <nav>
-        <div>
+        <div className="footer-menu">
           <h4 className="h4-footer">Loja</h4>
           <div>
             <Link texto="Sutiãs" redirect="/sutias"/>
@@ -28,14 +31,14 @@ function Footer() {
             <Link texto="Pijamas" redirect="/pijamas"/>
           </div>
         </div>
-        <div>
+        <div className="footer-menu">
         <h4 className="h4-footer">Ajuda</h4>
           <div>
             <Link texto="Rastrear pedido" redirect="/404"/>
             <Link texto="Suporte" redirect="/404"/>
           </div>
         </div>
-        <div>
+        <div className="footer-menu">
         <h4 className="h4-footer">Sobre nós</h4>
         <div>
           <Link texto="Nossas redes" redirect="/redes"/>
