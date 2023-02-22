@@ -1,3 +1,4 @@
+
 header {
   background-color: #f8bbd0;
   display: flex;
@@ -5,24 +6,32 @@ header {
   width: 100%;
 }
 
-ul {
+.ul-header {
   display: flex;
 }
 
-li {
+.ul-header > li {
   display: flex;
+  margin-left: 10px;
 }
 
-nav {
+.nav-header {
   display: flex;
   align-items: center;
 }
 
-h4 {
+.h4-header {
   margin-left: 9.063rem;
+  font-family: 'Gloock', serif;
 }
 
-li a {
+.nav-login {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.a-header {
   text-decoration: none;
   display: flex;
   padding-right: 10px;
@@ -30,9 +39,19 @@ li a {
   color: inherit;
 }
 
+.a-login {
+  text-decoration: none;
+  color: inherit;
+}
+
 li a:hover {
   color: rgb(87, 82, 82);
 }
+
+.a-login:hover {
+  color: rgb(87, 82, 82);
+}
+
 
 #lupa-header {
   max-width: 15px;
