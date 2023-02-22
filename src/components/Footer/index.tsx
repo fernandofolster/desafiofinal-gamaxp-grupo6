@@ -1,10 +1,23 @@
 
-import Link from "../Link"
+import { useState } from 'react';
+import Link from "../Link";
 import "./styles.css";
 
 
 function Footer() {
 
+  const [email, setEmail] = useState('');
+
+  function sendEmail(event){
+    event.preventDefault();
+
+    if(email === ''){
+      alert('Campo de e-mail não pode estar vazio!')
+      return;
+    }
+    
+    alert("E-mail cadastrado com sucesso :)")
+  }
 
   return (
     <footer>
@@ -13,11 +26,17 @@ function Footer() {
           <h2 className="h2-footer">Assine nossa newsletter</h2>
           <p className="p-footer">Cadastre seu e-mail e fique sempre por dentro das novidades e pomoções! 
           Prometemos só enviar conteúdo bacana 😉</p>
-          <input
-          type="email"
-          className="input-news"
-          placeholder="Digite seu e-mail aqui :)" />
-          <button type="submit" className="btn-news">Enviar</button>
+          <form onSubmit={sendEmail}>
+            <input
+              type="text"
+              className="input-news"
+              placeholder="Digite seu e-mail aqui :)"
+              onChange={(event => setEmail(event.target.value))}
+              value={email}
+            />
+            <button type="submit" className="btn-news">Enviar</button>
+          </form>
+
         </div>
       </nav>
 
@@ -60,5 +79,6 @@ function Footer() {
     </footer>
   );
 }
+
 
 export default Footer;
