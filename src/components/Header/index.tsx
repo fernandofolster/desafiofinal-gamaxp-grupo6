@@ -1,29 +1,32 @@
-
 import "./styles.css";
 import lupa from "../../assets/images/lupa-header.png";
 
 function Header() {
   return (
     <>
-      <header>
-        <nav className="nav-header">
-            <h4 className="h4-header">My Valentine Store</h4>
-            <ul className="ul-header">
-              <li>
-                <a className="a-header" href="produtos.tsx">Produtos</a>
-              </li>
-              <li>
-                <a className="a-header" href="sobre.tsx">Sobre</a>
-              </li>
-              <li>
+      <header className="menu-header">
+        <nav>
+          <h4 className="store-logo">My Valentine Store</h4>
+          <ul>
+            <li>
+              <a href="produtos.tsx">Produtos</a>
+            </li>
+            <li>
+              <a href="sobre.tsx">Sobre</a>
+            </li>
+            <li>
+              <div className="pesquisa-header">
                 <img src={lupa} alt="lupa-header" id="lupa-header" />
-                <a className="a-header" href="pesquisa.tsx">Pesquisa</a>
-              </li>
-            </ul>
+                <a href="pesquisa.tsx">Pesquisa</a>
+              </div>
+            </li>
+          </ul>
         </nav>
-        <nav className="nav-login">
-          <a className="a-login" href="modal.tsx" id="login">Login</a>
-        </nav>
+        <div className="modal-login">
+              <a href="modal.tsx" id="login">
+                Login
+              </a>
+        </div>
       </header>
     </>
   );
