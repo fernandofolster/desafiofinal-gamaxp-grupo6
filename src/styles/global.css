@@ -1,28 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,700&family=Gloock&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,700&family=Gloock&display=swap");
 :root {
-    --pink-light: #F8BBD0;
-    --pink-primary:#E91E63;
-    --gray-dark: #212121;
-    --gray-secondary: #757575;
-    --gray-light: #979797;
-    --gray-primary: #C4C4C4;
-    --white: #FFFFFF;
-    --black: #000000;
-    --salmon: #DF9167;
-
+  --pink-light: #f8bbd0;
+  --pink-primary: #e91e63;
+  --gray-dark: #212121;
+  --gray-secondary: #757575;
+  --gray-light: #979797;
+  --gray-primary: #c4c4c4;
+  --white: #ffffff;
+  --black: #000000;
+  --salmon: #df9167;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Public Sans', sans-serif;
-    box-sizing: border-box;
-    
+  margin: 0;
+  padding: 0;
+  font-family: "Public Sans", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   width: 100%;
 }
-

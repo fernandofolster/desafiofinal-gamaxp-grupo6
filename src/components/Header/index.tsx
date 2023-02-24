@@ -1,34 +1,39 @@
-import "./styles.css";
+import "../../styles/global.css";
+import "./styled.js";
+import { HeaderArea } from "./styled";
+import { Link } from "react-router-dom";
 import lupa from "../../assets/images/lupa-header.png";
 
 function Header() {
   return (
-    <>
-      <header className="menu-header">
+    <HeaderArea>
+      <div className="container">
+        <div className="logo">
+          <Link to="/" className="logonome">
+            My Valentine Store
+          </Link>
+        </div>
         <nav>
-          <h4 className="store-logo">My Valentine Store</h4>
           <ul>
             <li>
-              <a href="produtos.tsx">Produtos</a>
+              <Link to="/produtos">Produtos</Link>
             </li>
             <li>
-              <a href="sobre.tsx">Sobre</a>
+              <Link to="/sobre">Sobre</Link>
             </li>
             <li>
-              <div className="pesquisa-header">
-                <img src={lupa} alt="lupa-header" id="lupa-header" />
-                <a href="pesquisa.tsx">Pesquisa</a>
-              </div>
+              <img src={lupa} alt="lupa-header" id="lupa-header" />
+              <label>Pesquisa</label>
             </li>
           </ul>
         </nav>
         <div className="modal-login">
-              <a href="modal.tsx" id="login">
-                Login
-              </a>
+          <Link to="/login" id="login">
+            Login
+          </Link>
         </div>
-      </header>
-    </>
+      </div>
+    </HeaderArea>
   );
 }
 

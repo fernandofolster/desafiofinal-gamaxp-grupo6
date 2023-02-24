@@ -1,14 +1,15 @@
-import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.css";
+import Carousel from "react-bootstrap/Carousel";
 import Banner1 from "../../assets/images/banner1.png";
 import Banner2 from "../../assets/images/banner2.png";
 import Banner3 from "../../assets/images/banner3.png";
 import Banner4 from "../../assets/images/banner4.png";
-import "./styles.css";
+import "./styled.js";
+import { BannerRotativo } from "./styled.js";
 
 function bannerRotativo() {
   return (
-    <>
+    <BannerRotativo>
       <div className="box">
         <div className="box1">
           <h1>
@@ -23,22 +24,38 @@ function bannerRotativo() {
         <div className="box2">
           <Carousel className="banner" variant="dark">
             <Carousel.Item>
-              <img className="d-block w-100" src={Banner1} alt="First slide" />
+              <img
+                className="d-flex align-items-center w-100"
+                src={Banner1}
+                alt="First slide"
+              />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={Banner2} alt="Second slide" />
+              <img
+                className="d-flex align-items-center w-100"
+                src={Banner2}
+                alt="Second slide"
+              />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={Banner3} alt="Third slide" />
+              <img
+                className="d-flex align-items-center w-100"
+                src={Banner3}
+                alt="Third slide"
+              />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={Banner4} alt="Four slide" />
+              <img
+                className="d-flex align-items-center w-100"
+                src={Banner4}
+                alt="Four slide"
+              />
             </Carousel.Item>
           </Carousel>
         </div>
         <div className="box-marcas"></div>
       </div>
-    </>
+    </BannerRotativo>
   );
 }
 
