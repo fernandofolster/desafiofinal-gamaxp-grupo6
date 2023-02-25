@@ -1,12 +1,30 @@
-
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    box-sizing: border-box;
+}
 .cart-main {
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column;
-    
-    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
 }
+
+.cart-container {
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: auto;
+}
+
+
+
 
 .page-cart-title {
     font-size: 2.25rem;
@@ -14,9 +32,6 @@
     color: #000000;
     width: 32.5rem;
     height: auto;
-    margin-left: 9rem;
-    margin-top: 3.18rem;
-    margin-bottom: 0.69rem;
 }
 
 .continue-shop {
@@ -25,8 +40,20 @@
     color: #000000;
     width: 22.5rem;
     height: auto;
-    margin-left: 9rem;
+    
     text-decoration: none;
+}
+.aaa {
+    display: flex;
+    flex-direction: column;
+    
+}
+.text-product-cart {
+    display: flex;
+    height: auto;
+    margin-top: 1.31rem;
+    width: 50%;
+    
 }
 
 .img-product-cart {
@@ -35,22 +62,14 @@
    
 }
 
-.text-product-cart {
-    display: flex;
-    width: 35rem;
-    height: auto;
-    margin-left: 9rem;
-    margin-top: 1.31rem;
-}
-
 .product-title-cart {
     margin-left: 0.75rem;
     margin-top: 0.375rem;
     font-size: 1.37rem;
     font-weight: 600;
     color: #000000;
-    order: 0;
-    flex: none;
+
+    
 
 }
 
@@ -61,7 +80,7 @@
     font-size: 0.87rem;
     font-weight: 400;
     color: #000000;
-    order: 1;
+
 }
 
 
@@ -71,7 +90,7 @@
     font-size: 0.87rem;
     font-weight: 400;
     color: #000000;
-    order: 2;
+
 }
 
 
@@ -81,73 +100,81 @@
     font-size: 1.37rem;
     font-weight: 600;
     color: #000000;
-    order: 3;
+  
 }
 
 .product-remove-btn {
     background-color: transparent;
     border: none;
     color:#000000;
-    margin-left: 23rem;
+    margin-left: 13.125rem;
     font-size: 0.87rem;
     font-weight: 400;
     text-decoration-line: underline;
-    order: 2;
     display: flex;
     align-items: flex-end;
 }
 
-hr {
-    width: 35rem;
+.hr-cart {
+    width: 70%;
     border: 1px solid #909090;
-    margin: 1rem 0 1.25rem 9rem;
+    margin: 1rem 0 1.25rem 0rem;
+}
+
+
+.hr {
+    width: 33.33vw;
+    border: 1px solid #909090;
+    margin: 1rem 0 1.25rem 0rem;
 }
 
 .container-order-info {
     display: flex;
     flex-direction: column;
+    width: 100%;
+
 }
+
 
 .title-order-info {
     font-size: 1.37rem;
     font-weight: 600;
     color: #000000;
-    margin-left: 9rem;
-    margin-top: 7.25rem;
-    
+
 }
 
 .politica-devolucao {
     font-size: 1rem;
     font-weight: 600;
     color: #909090;
-    margin-left: 9rem;
+    
 }
 
 .politica-devolucao p{
-    width: 35.5rem;
+    width: 33.33vw;
     font-size: 1rem;
     font-weight: 400;
-    order:1;
+    
 }
+
 
 .opcoes-envio {
     font-size: 1rem;
     font-weight: 600;
     color: #909090;
-    margin-left: 9rem;
+    
 
 }
 
 .container-valor-total {
     background-color: dodgerblue;
-    width: 24.8rem;
-    height: auto;
-    margin-left: 9rem;
+    width: 32.5rem;
+    height: 397px;
     display:flex;
     flex-direction: column;
-    
-
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content:space-around;
     
 }
 
@@ -155,14 +182,13 @@ hr {
     font-size: 1.37rem;
     font-weight: 600;
     color: #000000;
-    /*margin-top: 6.62rem;*/
-    margin-left: 0;
+    
+    
 }
 
 .input-cupom {
     width: 24.8rem;
     height: 2.5rem;
-    margin-top: 1.81rem;
     font-size: 0.87rem;
     font-weight: 400;
     color: #A9ABBD;
@@ -173,7 +199,6 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1.69rem;
     font-size: 0.87rem;
     font-weight: 400;
     color: #212121;
@@ -189,7 +214,6 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
     font-size: 0.87rem;
     font-weight: 400;
     color: #212121;
@@ -205,7 +229,6 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
     font-size: 0.87rem;
     font-weight: 400;
     color: #212121;
@@ -220,3 +243,102 @@ hr {
     margin-left: 0;
     width: 25.12rem;
 }
+
+.go-checkout-btn {
+    background-color: #E91E63;
+    border: 1px solid #E91E63;
+    font-size: 16px;
+    font-weight: 600;
+    align-content: center;
+    width: 350px;
+    height: 50px;
+    color: #FFFFFF;
+    
+}
+
+
+/*-----------Media Query*-----------------*/
+
+@media only screen and (max-device-width: 769px) {
+    body { width:767px; 
+            margin: 0 4px 0 4px;
+            background-color: chartreuse;
+            
+           
+    };
+    
+}
+
+@media only screen and (max-device-width: 768px) {
+    .politica-devolucao p { width:80%; 
+        display: flex;
+    };
+    
+}
+
+@media only screen and (max-device-width: 768px) {
+    .container-order-info {  
+        margin-left: 50px;
+        display: flex;
+    };
+}
+
+@media only screen and (max-device-width: 768px) {
+    .hr {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-device-width: 768px) {
+    .text-product-cart {
+        margin-left: 50px;
+        
+    }
+
+}
+
+@media only screen and (max-device-width: 768px) {
+    .cart-main {
+        display: flex;
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .hr-cart {
+        width: 68%;
+        margin-left: 50px;
+    }
+}
+
+
+@media only screen and (max-device-width: 768px) {
+    .page-cart-title {
+        width: 80%;
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .continue-shop {
+        width: 80%;
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .cart-container {
+        width: 100%;
+        
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .container-valor-total {
+        width: 100%;
+       
+    }
+}
+
+
+

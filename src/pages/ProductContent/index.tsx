@@ -1,22 +1,19 @@
 
 import Header from '../../components/Header'
-import ProductImageGrid from '../../components/MainProduct/ProductImage'
-import ProductDescription from '../../components/MainProduct/ProductInfo'
+
 import Footer from '../../components/Footer'
-import  './styles.css';
+
+import MainProduct from '../../components/MainProduct';
 
 function ProductContent (){
     return (
         <div>
             <Header />
-            <main className='product-grid'>
-                <div>
-                    <ProductImageGrid/>
-                </div>
-                <div>
-                    <ProductDescription />
-                </div>
-            </main>
+            
+               
+            <MainProduct/>
+               
+            
             <Footer/>
         </div>
     )

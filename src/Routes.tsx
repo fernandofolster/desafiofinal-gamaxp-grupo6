@@ -16,11 +16,11 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <WrapperRoutes>
-        <Route path="/" element={<Home />} />
-        <Route path="/productcategory" element={<ProductCategory />} />
-        <Route path="/productcontent" element={<ProductContent />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route /*path="/" element={<Home />} *//>
+        <Route /*path="/productcategory" element={<ProductCategory />} *//>
+        <Route path="/"/*path="/productcontent" */element={<ProductContent />} />
+        <Route /*path="/cart" element={<Cart />} *//>
+        <Route /*path="/checkout" element={<Checkout />} *//>
         <Route path="/paineladm" element={<PainelAdm />} />
         <Route path="/paineladmcadastro" element={<PainelAdmCadastro />} />
         <Route path="/paineladmdetalhe" element={<PainelAdmDetalhe />} />

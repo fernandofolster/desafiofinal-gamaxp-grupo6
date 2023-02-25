@@ -2,8 +2,12 @@ import styled from "styled-components";
 
 export const HeaderArea = styled.div`
   background-color: #f8bbd0;
-  height: 3.75rem;
+  height: auto;
   box-sizing: border-box;
+
+  
+  
+  
 
   a {
     text-decoration: none;
@@ -15,6 +19,12 @@ export const HeaderArea = styled.div`
     margin: auto;
     max-width: 85rem;
     display: flex;
+    flex-direction: row;
+    
+    @media (max-width: 768px) {
+    flex-direction: column;
+    
+  }
   }
 
   .logo {
@@ -72,4 +82,6 @@ export const HeaderArea = styled.div`
   .modal-login a:hover {
     color: #e91e63;
   }
+
+
 `;
