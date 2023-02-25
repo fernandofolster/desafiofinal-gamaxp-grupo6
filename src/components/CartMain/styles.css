@@ -259,12 +259,10 @@ body {
 
 /*-----------Media Query*-----------------*/
 
-@media only screen and (max-device-width: 769px) {
+@media only screen and (max-device-width: 768px) {
     body { width:767px; 
-            margin: 0 4px 0 4px;
-            background-color: chartreuse;
-            
-           
+    
+
     };
     
 }

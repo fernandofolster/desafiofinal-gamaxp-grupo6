@@ -13,21 +13,75 @@ function CategoryMain(){
             </div>
 
             <div className='category-btn-wrapper'>
-                <button className='category-btn' type="button">Categoria</button>
-            </div>
-            
-            <div className='prod-card-wrapper'>
-            <div className='product-card'>
-                <img className='product-card-img' src={SutiaPreto} alt='#'/>
-                <div className='product-name-size'>
-                    <p className='product-name'>Nome do Produto</p>
-                    <p className='product-size'>M</p>
-                </div>
-                <p className='price-prod'>$99</p>
-            </div>
+                <ul className='ul'>
+                    <li>
+                        <button className='category-btn' type="button">Sutiã</button>
+                    </li>
+
+                    <li>
+                        <button className='category-btn' type="button">Calcinha</button>
+                    </li>
+
+                    <li>
+                        <button className='category-btn' type="button">Pijama</button>
+                    </li>
+
+                </ul>
+                
             </div>
 
+           
             
+            <div className='prod-card-wrapper'>
+                <div className='product-card'>
+                    <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    <div className='product-name-size'>
+                        <p className='product-name'>Nome do Produto</p>
+                        <p className='product-size'>M</p>
+                    </div>
+                    <p className='price-prod'>$99</p>
+                </div>
+
+                <div className='product-card'>
+                    <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    <div className='product-name-size'>
+                        <p className='product-name'>Nome do Produto</p>
+                        <p className='product-size'>M</p>
+                    </div>
+                    <p className='price-prod'>$99</p>
+                </div>
+
+                <div className='product-card'>
+                    <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    <div className='product-name-size'>
+                        <p className='product-name'>Nome do Produto</p>
+                        <p className='product-size'>M</p>
+                    </div>
+                    <p className='price-prod'>$99</p>
+                </div>
+
+                <div className='product-card'>
+                    <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    <div className='product-name-size'>
+                        <p className='product-name'>Nome do Produto</p>
+                        <p className='product-size'>M</p>
+                    </div>
+                    <p className='price-prod'>$99</p>
+                </div>
+
+                <div className='product-card'>
+                    <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    <div className='product-name-size'>
+                        <p className='product-name'>Nome do Produto</p>
+                        <p className='product-size'>M</p>
+                    </div>
+                    <p className='price-prod'>$99</p>
+                </div>
+            </div>
+
+            <div className='more-prod'>
+                <button className='more-product'>Carregar mais</button>
+            </div>
             
         </main>
     )
