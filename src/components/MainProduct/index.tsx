@@ -14,16 +14,16 @@ function MainProduct (){
             
             <div className="containerImages">
                         
-                <img src={SutiaPreto} alt="/" />
+                <img className='img-produto' src={SutiaPreto} alt="/" />
                         
                     
-                <img src={SutiaPreto} alt="/" />                        
+                <img className='img-produto' src={SutiaPreto} alt="/" />                        
                         
                     
-                <img src={SutiaPreto} alt="/" />                        
+                <img className='img-produto' src={SutiaPreto} alt="/" />                        
 
                     
-                <img src={SutiaPreto} alt="/" />                    
+                <img className='img-produto' src={SutiaPreto} alt="/" />                    
             </div>
           
 
