@@ -74,7 +74,10 @@
     background-color: transparent;
     
 }
-
+.input {
+    display: none;
+    
+}
 .title-product-color {
     font-size: 1.125rem;
     margin-top: 0.44rem;

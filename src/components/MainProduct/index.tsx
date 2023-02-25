@@ -79,11 +79,20 @@ function MainProduct (){
                     <h3 className='title-product-size'>Size</h3>
                 </div>
 
-                <div className='psb'>
-            
-                    <button className='btn-choose-size' type='button'>X</button>
-            
-                </div>
+                <div className="psb" data-produto="tamanho-attribute">
+        <input type="radio" name="tamanho" value="P" id="tamanho-attribute-1-" className="input"/>
+         <label  className="btn-choose-size" data-text="P" data-attribute-value="P" data-attribute-name="tamanho" data-available="true">
+            <span className="text">P</span>
+            </label>
+        <input type="radio" name="tamanho" value="M" id="tamanho-attribute-2-" className="input"/>
+            <label  className="btn-choose-size" data-text="M" data-attribute-value="M" data-attribute-name="tamanho" data-available="true">
+                <span className="text">M</span>
+            </label>
+        <input type="radio" name="tamanho" value="G" id="tamanho-attribute-3-" className="input"/>
+            <label  className="btn-choose-size" data-text="G" data-attribute-value="G" data-attribute-name="tamanho" data-available="true">
+                <span className="text">G</span>
+            </label>
+    </div>
 
                 <div>
                     <h3 className='quantity-title'> Quantity</h3>
@@ -94,6 +103,8 @@ function MainProduct (){
                 </div>
                 
             </div>
+
+            
         </main>
     )
 }

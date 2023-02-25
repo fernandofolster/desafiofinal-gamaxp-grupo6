@@ -17,8 +17,8 @@ export default function Routes() {
     <BrowserRouter>
       <WrapperRoutes>
         <Route /*path="/" element={<Home />} *//>
-        <Route path="/"/*path="/productcategory" */element={<ProductCategory />} />
-        <Route /*path="/productcontent" element={<ProductContent />} *//>
+        <Route /*path="/productcategory" element={<ProductCategory />}*/ />
+        <Route path="/"/*path="/productcontent"*/ element={<ProductContent />} />
         <Route /*path="/cart" element={<Cart />} *//>
         <Route /*path="/checkout" element={<Checkout />} *//>
         <Route path="/paineladm" element={<PainelAdm />} />
