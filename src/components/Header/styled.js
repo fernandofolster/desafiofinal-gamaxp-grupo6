@@ -6,7 +6,7 @@ export const HeaderArea = styled.div`
   box-sizing: border-box;
 
   
-  
+ 
   
 
   a {
@@ -24,7 +24,7 @@ export const HeaderArea = styled.div`
     @media (max-width: 768px) {
     flex-direction: column;
     
-  }
+    }
   }
 
   .logo {

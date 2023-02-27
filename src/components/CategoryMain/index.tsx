@@ -13,69 +13,94 @@ function CategoryMain(){
             </div>
 
             <div className='category-btn-wrapper'>
-                <ul className='ul'>
-                    <li>
-                        <button className='category-btn' type="button">Sutiã</button>
-                    </li>
+                <div className='category-filter'>
+                    <div>
+                        <button className='category-btn' type="button">
+                            <div>Sutiã</div>
+                        </button>
+                    </div>
 
-                    <li>
-                        <button className='category-btn' type="button">Calcinha</button>
-                    </li>
+                    <div>
+                        <button className='category-btn' type="button">
+                            <div>Calcinha</div>
+                        </button>
+                    </div>
 
-                    <li>
-                        <button className='category-btn' type="button">Pijama</button>
-                    </li>
+                    <div>
+                        <button className='category-btn' type="button">
+                            <div>Pijama</div>
+                        </button>
+                    </div>
 
-                </ul>
-                
+                </div>
             </div>
 
            
             
             <div className='prod-card-wrapper'>
                 <div className='product-card'>
-                    <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    <a className='link-to-description' href="/"> 
+                        <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    </a>
+                
                     <div className='product-name-size'>
+                    <a className='link-to-description' href="/produto/sutia-preto">
                         <p className='product-name'>Nome do Produto</p>
-                        <p className='product-size'>M</p>
+                        <p className='price-prod'>$99</p>
+                    </a>
                     </div>
-                    <p className='price-prod'>$99</p>
                 </div>
 
                 <div className='product-card'>
-                    <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    <a className='link-to-description' href="/"> 
+                        <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    </a>
+                
                     <div className='product-name-size'>
+                    <a className='link-to-description' href="/produto/sutia-preto">
                         <p className='product-name'>Nome do Produto</p>
-                        <p className='product-size'>M</p>
+                        <p className='price-prod'>$99</p>
+                    </a>
                     </div>
-                    <p className='price-prod'>$99</p>
                 </div>
 
                 <div className='product-card'>
-                    <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    <a className='link-to-description' href="/"> 
+                        <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    </a>
+                
                     <div className='product-name-size'>
+                    <a className='link-to-description' href="/produto/sutia-preto">
                         <p className='product-name'>Nome do Produto</p>
-                        <p className='product-size'>M</p>
+                        <p className='price-prod'>$99</p>
+                    </a>
                     </div>
-                    <p className='price-prod'>$99</p>
                 </div>
 
                 <div className='product-card'>
-                    <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    <a className='link-to-description' href="/"> 
+                        <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    </a>
+                
                     <div className='product-name-size'>
+                    <a className='link-to-description' href="/produto/sutia-preto">
                         <p className='product-name'>Nome do Produto</p>
-                        <p className='product-size'>M</p>
+                        <p className='price-prod'>$99</p>
+                    </a>
                     </div>
-                    <p className='price-prod'>$99</p>
                 </div>
 
                 <div className='product-card'>
-                    <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    <a className='link-to-description' href="/"> 
+                        <img className='product-card-img' src={SutiaPreto} alt='#'/>
+                    </a>
+                
                     <div className='product-name-size'>
+                    <a className='link-to-description' href="/produto/sutia-preto">
                         <p className='product-name'>Nome do Produto</p>
-                        <p className='product-size'>M</p>
+                        <p className='price-prod'>$99</p>
+                    </a>
                     </div>
-                    <p className='price-prod'>$99</p>
                 </div>
             </div>
 

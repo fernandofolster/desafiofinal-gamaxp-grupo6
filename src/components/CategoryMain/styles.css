@@ -29,6 +29,10 @@ body {
     
 }
 
+.link-to-description {
+    text-decoration: none;
+}
+
 .category-description {
     background-color: #212121;
     width: 100%;
@@ -65,8 +69,8 @@ body {
     
 }
 
-.ul {
-    list-style-type: none;
+.category-filter {
+   
     display: flex;
     margin-left: 9rem;
     
@@ -82,7 +86,8 @@ body {
     font-weight: 400;
     color: #000000;
     margin-right: 0.56rem;
-
+    cursor :pointer;
+    
 }
 
 
