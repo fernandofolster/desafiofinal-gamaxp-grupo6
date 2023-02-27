@@ -5,10 +5,6 @@ export const HeaderArea = styled.div`
   height: auto;
   box-sizing: border-box;
 
-  
- 
-  
-
   a {
     text-decoration: none;
     color: inherit;
@@ -20,10 +16,9 @@ export const HeaderArea = styled.div`
     max-width: 85rem;
     display: flex;
     flex-direction: row;
-    
+
     @media (max-width: 768px) {
-    flex-direction: column;
-    
+      flex-direction: column;
     }
   }
 
@@ -77,11 +72,28 @@ export const HeaderArea = styled.div`
     display: flex;
     justify-content: right;
     align-items: center;
+    padding-right: 5rem;
+
+    a:hover {
+      color: #e91e63;
+    }
   }
 
-  .modal-login a:hover {
-    color: #e91e63;
+  #login {
+    margin-left: 1rem;
   }
 
+  input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
 
+  #pesquisar {
+    border: 0;
+    background: none;
+
+    ::placeholder {
+      color: #000;
+    }
+  }
 `;

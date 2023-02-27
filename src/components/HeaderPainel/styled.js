@@ -5,29 +5,16 @@ export const HeaderPainel = styled.div`
   height: 3.75rem;
   box-sizing: border-box;
 
-  a {
+  a,
+  button {
     text-decoration: none;
+    border: 0;
+    background: none;
     color: inherit;
+    outline: 0;
 
     &:hover {
       color: #e91e63;
-    }
-
-    &.button {
-      background-color: #e91e63;
-      color: #fff;
-      border-radius: 0.125rem;
-      padding: 0.5rem 1.5rem;
-      margin-right: 2rem;
-    }
-
-    &.button:hover {
-      background-color: #f8bbd0;
-      color: #000;
-    }
-
-    &.button-add:hover {
-      color: #000;
     }
   }
 
@@ -71,23 +58,5 @@ export const HeaderPainel = styled.div`
       margin-left: 1.25rem;
       margin-right: 1.25rem;
     }
-  }
-
-  .painel,
-  .button-area {
-    margin-top: 2rem;
-    margin-left: 12.5rem;
-  }
-
-  .btnAdd {
-    margin-top: 2rem;
-    margin-left: 12.5rem;
-  }
-
-  .button-add {
-    background-color: #f8bbd0;
-    color: #000;
-    border-radius: 0.125rem;
-    padding: 0.5rem 1.5rem;
   }
 `;
