@@ -1,9 +1,10 @@
-import './styles.css'
+import './styled.js'
 import SutiaImg from '../../assets/images/lingerie-preta.jpg'
-
+import { CartArea } from './styled';
 
 function CartMain () {
     return (
+        <CartArea>
         <div className='cart-main'>
             <div className='cart-container'>
                 <div className='aaa'>
@@ -100,10 +101,8 @@ function CartMain () {
                 </div>
             </div>
 
-            
-            
-
         </div>
+        </CartArea>
     )
 
 }

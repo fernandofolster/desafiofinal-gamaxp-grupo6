@@ -1,11 +1,12 @@
 
-import './styles.css'
-
+import './styled.js'
+import { CategoryArea } from "./styled";
 
 import SutiaPreto from '../../assets/images/lingerie-preta.jpg'
 
 function CategoryMain(){
     return (
+        <CategoryArea>
         <main className='category-main'>
             <div className="category-description">
                 <h3 className='category-title'>Categoria</h3>
@@ -109,6 +110,7 @@ function CategoryMain(){
             </div>
             
         </main>
+        </CategoryArea>
     )
 }
 

@@ -1,15 +1,15 @@
 
-import './styles.css'
+import './styled.js'
 import HeartIcon from '../../assets/images/favoritesIcon.png';
 import ShareIcon from '../../assets/images/share-Icon.png';
 import rendaSalmao from '../../assets/images/renda-salmao.jpg';
 import rendaPreta from '../../assets/images/renda-preta.jpg';
 import SutiaPreto from '../../assets/images/lingerie-preta.jpg';
-
+import { ProductArea } from './styled';
 
 function MainProduct (){
     return (
-
+        <ProductArea>
         <main className='main-product-container'>
             
             <div className="containerImages">
@@ -103,11 +103,11 @@ function MainProduct (){
                 </div>
                 
             </div>
-
-            
         </main>
+        </ProductArea>
     )
 }
+
 
 
 export default MainProduct

@@ -1,3 +1,7 @@
+import styled from "styled-components";
+
+export const CategoryArea = styled.div `
+
 body {
     height: auto;
     box-sizing: border-box;
@@ -173,3 +177,4 @@ body {
     };
     
 }
+`;
