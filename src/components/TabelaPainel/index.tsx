@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/global.css";
+import "../../styles/global.js";
 import { Link } from "react-router-dom";
 import { PainelTabela } from "./styled";
 

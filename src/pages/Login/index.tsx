@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { PageTitle, ErrorMessage } from "../../components/HeaderPainel";
-import "../../styles/global.css";
+import "../../styles/global.js";
 import { Login } from "./styled";
 import useAPI from "../../helpers/testeAPI";
 import { doLogin } from "../../helpers/authHandler";
