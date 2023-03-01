@@ -1,7 +1,9 @@
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
-import { CardProductArea } from "./styled";
+import { CardProductStyled } from "./styled";
+import { useEffect, useState } from "react";
 
-export function CardProduct() {
+
+export function CardProductArea() {
   const products = [
     {
       nome: "Produto 1",
@@ -38,26 +40,114 @@ export function CardProduct() {
       categoria: "id",
       preco: 5,
     },
+
+    {
+      nome: "Produto 6",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: "id",
+      preco: 5,
+    },
+    {
+      nome: "Produto 7",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: "id",
+      preco: 5,
+    },
+    {
+      nome: "Produto 8",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: "id",
+      preco: 5,
+    },
+    {
+      nome: "Produto 9",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: "id",
+      preco: 5,
+    },
+    {
+      nome: "Produto 10",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: "id",
+      preco: 5,
+    },
+
+    {
+      nome: "Produto 11",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: "id",
+      preco: 5,
+    },
+    {
+      nome: "Produto 12",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: "id",
+      preco: 5,
+    },
+    {
+      nome: "Produto 13",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: "id",
+      preco: 5,
+    },
+    {
+      nome: "Produto 14",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: "id",
+      preco: 5,
+    },
+    {
+      nome: "Produto 15",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: "id",
+      preco: 5,
+    },
   ];
 
-  return (
-    <CardProductArea>
-      <main className="prod-card-wrapper">
-        {products.map((product) => (
-          <div className="product-card" key={product.categoria}>
-            <a className="link-to-description" href="/ProductContent">
-              <img className="product-card-img" src={product.foto} alt="#" />
-            </a>
+  const [product, setProduct] = useState(10);
+  const slice = products.slice(0, product);
+  const loadMore = () => {
+    setProduct(product + product);
+  };
 
-            <div className="product-name-size">
+  return (
+    <CardProductStyled>
+      <main className="prod-card-wrapper">
+        {slice.map((product, index) => {
+          return (
+            <div className="product-card" key={product.categoria}>
               <a className="link-to-description" href="/ProductContent">
-                <p className="product-name">{product.nome}</p>
-                <p className="price-prod">R$ {product.preco}</p>
+                <img className="product-card-img" src={product.foto} alt="#" />
               </a>
+
+              <div className="product-name-size">
+                <a className="link-to-description" href="/ProductContent">
+                  <h4 className="product-name">{product.nome}</h4>
+                  <h5 className="price-prod">R$ {product.preco}</h5>
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
+
+
+          <section className="more-prod">
+            <button className="more-product" onClick={() => loadMore()}>
+              Mostrar mais
+            </button>
+          </section>
+
       </main>
-    </CardProductArea>
+    </CardProductStyled>
   );
 }

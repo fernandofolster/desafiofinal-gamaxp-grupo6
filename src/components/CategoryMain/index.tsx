@@ -1,10 +1,10 @@
 
 import './styled.js'
 
-import { CardProduct } from '../Card-produtos/index';
+import { CardProductArea } from '../Card-produtos/index';
 import { CategoryArea } from './styled.js';
 import { FilterCategoryArea } from '../Filter/index';
-import { CarregarMaisBtnArea } from '../BotaoCarregarMais/index';
+
 
 function CategoryMain(){
     return (
@@ -17,11 +17,10 @@ function CategoryMain(){
             
             <div className='product-container'>
                 <FilterCategoryArea/>
-                <CardProduct/>
+                <CardProductArea/>
+                
             </div>
-            <div>
-                <CarregarMaisBtnArea/>
-            </div>
+            
             
         </main>
         </CategoryArea>
