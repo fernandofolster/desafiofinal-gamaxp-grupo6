@@ -170,7 +170,7 @@ export const CartArea = styled.div`
     }
 
     .container-valor-total {
-        background-color: dodgerblue;
+        background-color: #e5e5e5;
         width: 32.5rem;
         height: 397px;
         display:flex;
@@ -259,6 +259,81 @@ export const CartArea = styled.div`
         
     }
 
+
+    /*-----------Media Query*-----------------*/
+
+  
+
+    @media only screen and (max-device-width: 768px) {
+        .politica-devolucao p { width:80%; 
+            display: flex;
+        };
+        
+    }
+
+    @media only screen and (max-device-width: 768px) {
+        .container-order-info {  
+            margin-left: 50px;
+            display: flex;
+        };
+    }
+
+    @media only screen and (max-device-width: 768px) {
+        .hr {
+            width: 80%;
+        }
+
+    }
+
+    @media only screen and (max-device-width: 768px) {
+        .text-product-cart {
+            margin-left: 50px;
+            
+        }
+
+    }
+
+    @media only screen and (max-device-width: 768px) {
+        .cart-main {
+            display: flex;
+        }
+    }
+
+    @media only screen and (max-device-width: 768px) {
+        .hr-cart {
+            width: 68%;
+            margin-left: 50px;
+        }
+    }
+
+
+    @media only screen and (max-device-width: 768px) {
+        .page-cart-title {
+            width: 80%;
+            margin-left: 50px;
+        }
+    }
+
+    @media only screen and (max-device-width: 768px) {
+        .continue-shop {
+            width: 80%;
+            margin-left: 50px;
+        }
+    }
+
+    @media only screen and (max-device-width: 768px) {
+        .cart-container {
+            width: 100%;
+            
+        }
+    }
+
+    @media only screen and (max-device-width: 768px) {
+        .container-valor-total {
+            width: 100%;
+            padding-bottom:2rem;
+        }
+    }
 `;
 
 

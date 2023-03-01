@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap");
@@ -30,14 +30,29 @@ body {
   background-color: #e5e5e5;
   width: 100%;
 
+  @media only screen and (max-device-width: 769px) {
+    .category-filter-wrapper { 
+        padding-left:9rem;  
+    };
+    
 }
 
-  @media only screen and (max-device-width: 768px) {
-    body { 
-      width:767px; 
-    };
-  }
+}
 
+
+  
+@media only screen and (max-device-width: 769px) {
+    body { width:767px;  
+    };
+    
+}
+ 
+@media only screen and (max-device-width: 769px) {
+    header {
+    width:100%;
+}
+    
+}
 
   @media only screen and (max-device-width: 768px) {
         .category-main { 
@@ -50,19 +65,17 @@ body {
         .prod-card-wrapper{
             width: 100%;
             display: flex;
-            justify-content: center;
+            
             
         };
         
     }
 
     @media only screen and (max-device-width: 768px) {
-        body { width:767px; 
-        
-
-        };
-        
+    .product-container {
+        padding-left:0;
     }
+  }
 
     @media only screen and (max-device-width: 768px) {
         .politica-devolucao p { width:80%; 
@@ -96,6 +109,7 @@ body {
     @media only screen and (max-device-width: 768px) {
         .cart-main {
             display: flex;
+            width:100%;
         }
     }
 
@@ -135,12 +149,7 @@ body {
         }
     }
 
-    @media only screen and (max-device-width: 769px) {
-    body { width:767px;  
-    };
-    
-}
- 
+   
 
  @media only screen and (max-device-width: 769px) {
     .containerImages { width:767px; 
@@ -177,4 +186,12 @@ body {
     };
     
 }
+
+@media only screen and (max-device-width: 700px) {
+        .main-checkout {
+            width: 100%;
+        }
+        
+    }
+
 `;

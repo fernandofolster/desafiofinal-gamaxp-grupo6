@@ -61,6 +61,47 @@ export const ProductArea = styled.div`
     padding: 0.5rem 0;
 }
 
+.btn-icons {
+    stroke-width: 1px;
+    display: inline-flex;
+}
+
+.heart-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    ;
+    
+}
+
+.btn-curtir {
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+   
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.share-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+}
+
+.btn-share {
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    
+    padding-top: 8px;
+    padding-bottom: 8px;;
+}
+
+
+
 .price-and-promo {
     display: flex;
     flex-direction: row;
@@ -83,7 +124,7 @@ export const ProductArea = styled.div`
 }
 .title-product-color {
     font-size: 1.125rem;
-    margin-top: 0.44rem;
+    margin-top: 1rem;
     font-weight: 400;
     opacity: 0.5;
     color:#000000;

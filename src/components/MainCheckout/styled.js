@@ -2,14 +2,7 @@ import styled from "styled-components"
 
 export const CheckoutArea = styled.div`
 
-    body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: auto;
-        box-sizing: border-box;
-    }
-
+  
     .main-checkout {
         display: flex;
         flex-direction: row;
@@ -203,9 +196,9 @@ export const CheckoutArea = styled.div`
 
     /* max-width  */
     @media only screen and (max-device-width: 700px) {
-        body { width:600px; 
-            margin-left: 50px;
-        };
+        .main-checkout {
+            width: 100%;
+        }
         
     }
 `;
