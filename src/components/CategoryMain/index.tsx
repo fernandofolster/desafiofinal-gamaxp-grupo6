@@ -15,8 +15,11 @@ function CategoryMain(){
                 <p className='category-text-descrip'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ducimus ratione sunt deserunt amet doloribus ipsum excepturi eligendi, dolorum cumque, dolore vitae dolor fuga eveniet.</p>
             </div>
             
+           <FilterCategoryArea/>
+
             <div className='product-container'>
-                <FilterCategoryArea/>
+                
+                
                 <CardProductArea/>
                 
             </div>

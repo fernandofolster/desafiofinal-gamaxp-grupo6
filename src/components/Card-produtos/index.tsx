@@ -9,35 +9,35 @@ export function CardProductArea() {
       nome: "Produto 1",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 1,
       preco: 5,
     },
     {
       nome: "Produto 2",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 2,
       preco: 5,
     },
     {
       nome: "Produto 3",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 3,
       preco: 5,
     },
     {
       nome: "Produto 4",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 1,
       preco: 5,
     },
     {
       nome: "Produto 5",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 2,
       preco: 5,
     },
 
@@ -45,35 +45,35 @@ export function CardProductArea() {
       nome: "Produto 6",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 3,
       preco: 5,
     },
     {
       nome: "Produto 7",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 1,
       preco: 5,
     },
     {
       nome: "Produto 8",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 2,
       preco: 5,
     },
     {
       nome: "Produto 9",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 3,
       preco: 5,
     },
     {
       nome: "Produto 10",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 1,
       preco: 5,
     },
 
@@ -81,35 +81,35 @@ export function CardProductArea() {
       nome: "Produto 11",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 2,
       preco: 5,
     },
     {
       nome: "Produto 12",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 3,
       preco: 5,
     },
     {
       nome: "Produto 13",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 1,
       preco: 5,
     },
     {
       nome: "Produto 14",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 2,
       preco: 5,
     },
     {
       nome: "Produto 15",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
-      categoria: "id",
+      categoria: 3,
       preco: 5,
     },
   ];
@@ -123,7 +123,7 @@ export function CardProductArea() {
   return (
     <CardProductStyled>
       <main className="prod-card-wrapper">
-        {slice.map((product, index) => {
+        {slice.map((product) => {
           return (
             <div className="product-card" key={product.categoria}>
               <a className="link-to-description" href="/ProductContent">

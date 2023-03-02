@@ -21,4 +21,7 @@ export const FilterCategoryBtn = styled.div`
     cursor: pointer;
   }
 
+
+ 
+
 `;
