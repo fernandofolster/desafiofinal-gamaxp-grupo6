@@ -15,11 +15,17 @@ export const CardProductStyled = styled.div`
     width: 16.5rem;
     height: auto;
     background-color: #e5e5e5;
+    overflow: hidden;
   }
 
   .product-card-img {
     width: 16.5rem;
     height: 16.5rem;
+    transition: all .3s ease-in-out;
+  }
+
+  .product-card-img:hover {
+    transform: scale(1.1);
   }
 
   .product-name {

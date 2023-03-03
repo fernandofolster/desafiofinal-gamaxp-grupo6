@@ -3,7 +3,7 @@ import './styled.js'
 
 import { CardProductArea } from '../Card-produtos/index';
 import { CategoryArea } from './styled.js';
-// import { FilterCategoryArea } from '../Filter/index';
+
 
 
 function CategoryMain(){
@@ -16,7 +16,7 @@ function CategoryMain(){
             </div>
             
           
-           { /*<FilterCategoryArea/>*/}
+           
 
             <div className='product-container'>
                 

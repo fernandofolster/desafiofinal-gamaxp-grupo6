@@ -2,7 +2,6 @@ import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { CardProductStyled } from "./styled";
 import { useEffect, useState } from "react";
 
-
 export function CardProductArea() {
   const products = [
     {
@@ -114,17 +113,17 @@ export function CardProductArea() {
     },
   ];
 
-  const [categories, setCategories] = useState([
-    {
-      categoria: 1,
-    },
-    {
-      categoria: 2,
-    },
-    {
-      categoria: 3,
-    },
-  ]);
+  // const [categories, setCategories] = useState([
+  //   {
+  //     categoria: 1,
+  //   },
+  //   {
+  //     categoria: 2,
+  //   },
+  //   {
+  //     categoria: 3,
+  //   },
+  // ]);
 
   const [product, setProduct] = useState(products);
   const [pagination, setPagination] = useState(10);
@@ -133,9 +132,9 @@ export function CardProductArea() {
     setPagination(pagination + pagination);
   };
 
-  const filterResult = (catItem) => {
-    const result = products.filter((curProduct) => {
-      return curProduct.categoria === catItem;
+  const filterResult = (event) => {
+    const result = products.filter((product) => {
+      return product.categoria === event;
     });
 
     setProduct(result);
@@ -147,10 +146,25 @@ export function CardProductArea() {
         <div className="category-filter-wrapper">
           <button
             className="category-filter-btn"
-            onClick={() => filterResult(categories)}
+            onClick={() => filterResult(1)}
           >
-            {}
+           {1}
           </button>
+
+          <button
+            className="category-filter-btn"
+            onClick={() => filterResult(2)}
+          >
+            {2}
+          </button>
+
+          <button
+            className="category-filter-btn"
+            onClick={() => filterResult(3)}
+          >
+            {3}
+          </button>
+
 
           <button
             className="category-filter-btn"
@@ -162,10 +176,10 @@ export function CardProductArea() {
 
         <section className="prod-card-wrapper">
           {product.slice(0, pagination).map((values) => {
-            const { nome, foto, categoria, preco } = values;
+            const { nome, foto, preco } = values;
             return (
               <>
-                <div className="product-card" key={categoria}>
+                <div className="product-card" key={nome}>
                   {/* trocar nome por ID -- pedir p/ back acrescentar ID em product */}
                   <a className="link-to-description" href="/ProductContent">
                     <img className="product-card-img" src={foto} alt="#" />
