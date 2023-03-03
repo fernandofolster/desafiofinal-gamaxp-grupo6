@@ -1,10 +1,17 @@
 import Routes from "./Routes";
 import "./styles/global.js";
+import { Toaster } from 'react-hot-toast';
+import { StateContext } from "./context/StateContext";
+
 
 export default function App() {
   return (
-    <div className="App">
-      <Routes />
-    </div>
+    <StateContext>
+      <div className="App">
+        <Toaster />
+        <Routes />
+      </div>
+    </StateContext>
+
   );
 }

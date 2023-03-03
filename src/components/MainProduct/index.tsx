@@ -5,7 +5,15 @@ import rendaPreta from "../../assets/images/renda-preta.jpg";
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { ProductArea } from "./styled";
 
+// Conteúdo de carrinho + Checkout
+import { useStateContext } from "../../context/StateContext";
+
 function MainProduct() {
+
+  // Conteúdo de carrinho + Checkout
+  const { aumentarQty, diminuirQty, qty, onAdd } = useStateContext();
+  // Fim conteúdo carrinho + Checkout
+
   return (
     <ProductArea>
       <main className="main-product-container">
@@ -146,7 +154,7 @@ function MainProduct() {
             <h3 className="quantity-title"> Quantity</h3>
           </div>
           <div className="btn-quantity">
-            <button className="buttonCart">Add to Cart</button>
+            <button className="buttonCart" onClick={() => onAdd(produto, qty)}>Add to Cart</button>
             <input
               className="quantity-input"
               type="number"
