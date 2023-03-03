@@ -1,13 +1,14 @@
+import { useContext } from "react";
 import "../../styles/global.js";
 import { HeaderPainel } from "./styled";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { doLogout } from "../../helpers/authHandler";
+import { AuthContext } from "../../contexts/auth";
 
 function HeaderPainelAdm() {
+  const { logout } = useContext(AuthContext);
   const handleLogout = () => {
-    doLogout();
-    window.location.href = "/";
+    logout();
   };
 
   return (

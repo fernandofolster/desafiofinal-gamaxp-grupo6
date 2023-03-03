@@ -53,6 +53,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/js-cookie": "^3.0.3",
     "file-loader": "^6.2.0"
   }
 }

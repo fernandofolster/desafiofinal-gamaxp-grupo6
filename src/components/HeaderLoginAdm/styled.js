@@ -74,7 +74,7 @@ export const HeaderArea = styled.div`
     color: #e91e63;
   }
 
-  .modal-login {
+  .logout {
     flex: 2;
     display: flex;
     justify-content: right;
@@ -84,9 +84,13 @@ export const HeaderArea = styled.div`
     a:hover {
       color: #e91e63;
     }
+    li {
+      list-style-type: none;
+      margin-right: 1rem;
+    }
   }
 
-  #login {
+  #logout {
     margin-left: 1rem;
   }
 
@@ -102,10 +106,5 @@ export const HeaderArea = styled.div`
     ::placeholder {
       color: #000;
     }
-  }
-
-  span {
-    margin-right: 1rem;
-    font-style: oblique;
   }
 `;

@@ -1,13 +1,13 @@
-import Header from "../../components/Header";
 import BannerHome from "../../components/BannerHome";
 import Footer from "../../components/Footer";
 
 import "../../styles/global";
+import HeaderLoginAdm from "../../components/HeaderLoginAdm";
 
-function Home() {
+function HomeAdmLogin() {
   return (
     <div className="App">
-      <Header />
+      <HeaderLoginAdm />
       <main>
         <div>
           <BannerHome />
@@ -18,4 +18,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeAdmLogin;

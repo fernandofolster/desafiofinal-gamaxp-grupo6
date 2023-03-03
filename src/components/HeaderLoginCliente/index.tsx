@@ -1,12 +1,19 @@
-import "../../styles/global.js";
+import { AuthContext } from "../../contexts/auth";
+import "../../styles/global";
 import "./styled.js";
+import { useContext } from "react";
 import { HeaderArea } from "./styled";
 import { Link } from "react-router-dom";
 import lupa from "../../assets/images/lupa-header.png";
 import "react-modal-login/dist/react-modal-login.css";
 import { BsHandbag } from "react-icons/bs";
 
-export default function Header() {
+export default function HeaderLoginCliente() {
+  const { logout } = useContext(AuthContext);
+  const handleLogout = () => {
+    logout();
+  };
+
   return (
     <HeaderArea>
       <div className="container">
@@ -31,11 +38,18 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <div className="modal-login">
+        <div className="menu-right">
+          <li>
+            <Link id="minhaconta" to="/minhaconta">
+              Minha Conta
+            </Link>
+          </li>
           <BsHandbag />
-          <Link to="/login" id="login">
-            Login
-          </Link>
+          <li>
+            <button id="logout" onClick={handleLogout}>
+              Logout
+            </button>
+          </li>
         </div>
       </div>
     </HeaderArea>

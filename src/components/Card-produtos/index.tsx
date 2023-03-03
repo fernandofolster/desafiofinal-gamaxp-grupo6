@@ -2,6 +2,7 @@ import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { CardProductStyled } from "./styled";
 import { useEffect, useState } from "react";
 
+
 export function CardProductArea() {
   const products = [
     {
