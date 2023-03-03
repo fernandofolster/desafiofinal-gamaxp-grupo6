@@ -170,7 +170,7 @@ export const CartArea = styled.div`
     }
 
     .container-valor-total {
-        background-color: dodgerblue;
+        background-color: #e5e5e5;
         width: 32.5rem;
         height: 397px;
         display:flex;
@@ -262,13 +262,7 @@ export const CartArea = styled.div`
 
     /*-----------Media Query*-----------------*/
 
-    @media only screen and (max-device-width: 768px) {
-        body { width:767px; 
-        
-
-        };
-        
-    }
+  
 
     @media only screen and (max-device-width: 768px) {
         .politica-devolucao p { width:80%; 
@@ -337,7 +331,7 @@ export const CartArea = styled.div`
     @media only screen and (max-device-width: 768px) {
         .container-valor-total {
             width: 100%;
-        
+            padding-bottom:2rem;
         }
     }
 `;

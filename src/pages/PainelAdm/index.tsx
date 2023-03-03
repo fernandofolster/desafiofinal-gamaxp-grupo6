@@ -1,5 +1,10 @@
 import HeaderPainel from "../../components/HeaderPainel";
+<<<<<<< HEAD
 import "../../styles/global.css";
+=======
+import "../../styles/global.js";
+import { PainelGeral } from "./styled";
+>>>>>>> f4f95ba46a6e676cfb35a3ad102a71f91dc257c9
 import { Link } from "react-router-dom";
 import { PainelGeral } from "./styled";
 import { PageTitle } from "../../components/HeaderPainel";

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import "../../styles/global.css";
+import "../../styles/global.js";
 import { HeaderPainel } from "./styled";
 import { Link } from "react-router-dom";
 import styled from "styled-components";

@@ -3,6 +3,7 @@ import {
   Route,
   BrowserRouter,
 } from "react-router-dom";
+import GlobalStyle from "./styles/global";
 import Home from "./pages/Home";
 import ProductCategory from "./pages/ProductCategory";
 import ProductContent from "./pages/ProductContent";
@@ -38,6 +39,7 @@ export default function Routes() {
           <Route path="/minhaconta" element={<MinhaConta />} />
         </WrapperRoutes>
       </AuthProvider>
+      <GlobalStyle />
     </BrowserRouter>
   );
 }

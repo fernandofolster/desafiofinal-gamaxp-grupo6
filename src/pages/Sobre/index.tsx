@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { PageTitle } from "../../components/HeaderPainel";
-import "../../styles/global.css";
+import "../../styles/global.js";
 import { PageSobre } from "./styled";
 
 function Sobre() {
@@ -9,9 +9,12 @@ function Sobre() {
     <div className="App">
       <Header />
       <main>
+        <div className="sobre">
         <PageSobre>
+          <div className="sobre-title">
           <PageTitle>Sobre</PageTitle>
-          <div>
+          </div>
+          <div className="sobre-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
             commodi quibusdam, eius sapiente necessitatibus nam nostrum
             assumenda architecto nobis, libero in nemo quam nulla, consectetur
@@ -57,6 +60,7 @@ function Sobre() {
             fugit iusto tempore.
           </div>
         </PageSobre>
+        </div>
       </main>
       <Footer />
     </div>
