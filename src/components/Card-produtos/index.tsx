@@ -1,7 +1,6 @@
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { CardProductStyled } from "./styled";
-import { useEffect, useState } from "react";
-
+import { useState } from "react";
 
 export function CardProductArea() {
   const products = [
@@ -140,13 +139,11 @@ export function CardProductArea() {
           );
         })}
 
-
-          <section className="more-prod">
-            <button className="more-product" onClick={() => loadMore()}>
-              Mostrar mais
-            </button>
-          </section>
-
+        <section className="more-prod">
+          <button className="more-product" onClick={() => loadMore()}>
+            Mostrar mais
+          </button>
+        </section>
       </main>
     </CardProductStyled>
   );

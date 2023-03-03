@@ -1,5 +1,5 @@
 import { AuthContext } from "../../contexts/auth";
-import "../../styles/global.css";
+import "../../styles/global";
 import "./styled.js";
 import { useContext } from "react";
 import { HeaderArea } from "./styled";

@@ -1,7 +1,7 @@
 import Footer from "../../components/Footer";
 import HeaderLoginCliente from "../../components/HeaderLoginCliente";
 
-import "../../styles/global.css";
+import "../../styles/global";
 
 function ClienteMinhaConta() {
   return (

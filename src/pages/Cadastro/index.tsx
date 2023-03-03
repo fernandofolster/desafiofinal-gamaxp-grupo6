@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import Header from "../../components/Header";
 import { PageTitle } from "../../components/HeaderPainel";
-import "../../styles/global.css";
+import "../../styles/global";
 import { Cadastro } from "./styled";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/auth";

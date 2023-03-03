@@ -2,7 +2,7 @@ import BannerHome from "../../components/BannerHome";
 import Footer from "../../components/Footer";
 import HeaderLoginCliente from "../../components/HeaderLoginCliente";
 
-import "../../styles/global.css";
+import "../../styles/global";
 
 function HomeClienteLogin() {
   return (

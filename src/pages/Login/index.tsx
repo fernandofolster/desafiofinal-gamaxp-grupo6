@@ -1,19 +1,11 @@
 import { useState, useContext } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-<<<<<<< HEAD
-import { PageTitle } from "../../components/HeaderPainel";
-import "../../styles/global.css";
 import { PageLogin } from "./styled";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/auth";
-=======
-import { PageTitle, ErrorMessage } from "../../components/HeaderPainel";
+import { PageTitle } from "../../components/HeaderPainel";
 import "../../styles/global.js";
-import { Login } from "./styled";
-import useAPI from "../../helpers/testeAPI";
-import { doLogin } from "../../helpers/authHandler";
->>>>>>> f4f95ba46a6e676cfb35a3ad102a71f91dc257c9
 
 export default function Login() {
   const { login } = useContext(AuthContext);

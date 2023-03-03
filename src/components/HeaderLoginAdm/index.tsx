@@ -1,4 +1,3 @@
-import "../../styles/global.css";
 import "./styled.js";
 import { HeaderArea } from "./styled";
 import { Link } from "react-router-dom";
