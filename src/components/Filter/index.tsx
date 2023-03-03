@@ -1,9 +1,9 @@
-import { FilterCategoryBtn } from "./styled";
+// import { FilterCategoryBtn } from "./styled";
 import React, { useState, useEffect } from "react";
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 
 export function FilterCategoryArea() {
-  const products = [
+  /*const [products, setProducts] = useState([
     {
       nome: "Produto 1",
       foto: SutiaPreto,
@@ -12,54 +12,109 @@ export function FilterCategoryArea() {
       preco: 5,
     },
     {
-      nome: "Produto 1",
+      nome: "Produto 2",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
       categoria: 2,
       preco: 5,
     },
     {
-      nome: "Produto 1",
+      nome: "Produto 3",
       foto: SutiaPreto,
       descricao: "lorem ipsum",
       categoria: 3,
       preco: 5,
     },
-  ];
+    {
+      nome: "Produto 4",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 1,
+      preco: 5,
+    },
+    {
+      nome: "Produto 5",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 2,
+      preco: 5,
+    },
 
- const [data, setData] = useState(products);
-  const filterResult = (catItem) => {
-    const result = products.filter((curData) => {
-      return curData.categoria === catItem;
-    });
-    setData(result);
-  };
+    {
+      nome: "Produto 6",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 3,
+      preco: 5,
+    },
+    {
+      nome: "Produto 7",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 1,
+      preco: 5,
+    },
+    {
+      nome: "Produto 8",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 2,
+      preco: 5,
+    },
+    {
+      nome: "Produto 9",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 3,
+      preco: 5,
+    },
+    {
+      nome: "Produto 10",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 1,
+      preco: 5,
+    },
 
-  return (
-    <FilterCategoryBtn>
-      <div className="category-filter-wrapper">
-        {data.map((value) => {
-          const {categoria} = value;
-          return (
-            <div key={categoria}>
-              <button className="category-filter-btn" onClick={() => filterResult(categoria)}>
-                1
-              </button>
-              <button className="category-filter-btn" onClick={() => filterResult(categoria)}>
-                2
-              </button>
-              <button className="category-filter-btn" onClick={() => filterResult(categoria)}>
-                3
-              </button>
-              <button className="category-filter-btn" onClick={() => setData(products)}>
-                All
-              </button>
-           
-            </div>
-          );
-        })}
-      </div>
-    </FilterCategoryBtn>
-  );
+    {
+      nome: "Produto 11",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 2,
+      preco: 5,
+    },
+    {
+      nome: "Produto 12",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 3,
+      preco: 5,
+    },
+    {
+      nome: "Produto 13",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 1,
+      preco: 5,
+    },
+    {
+      nome: "Produto 14",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 2,
+      preco: 5,
+    },
+    {
+      nome: "Produto 15",
+      foto: SutiaPreto,
+      descricao: "lorem ipsum",
+      categoria: 3,
+      preco: 5,
+    },
+  ]);*/
 
+  
+  
+
+  
 }

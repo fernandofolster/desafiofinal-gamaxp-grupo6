@@ -1,4 +1,4 @@
-import styled from "styled-components";
+/*import styled from "styled-components";
 
 export const FilterCategoryBtn = styled.div`
   .category-filter-wrapper {
@@ -24,4 +24,4 @@ export const FilterCategoryBtn = styled.div`
 
  
 
-`;
+`;*/
