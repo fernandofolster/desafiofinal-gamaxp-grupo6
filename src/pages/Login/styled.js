@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export const Login = styled.div`
+export const PageLogin = styled.div`
   .container {
-    height: 30rem;
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    display: flex;
     align-items: center;
-    justify-items: center;
     justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    height: 65vh;
   }
 
   .area--input {
@@ -18,16 +18,18 @@ export const Login = styled.div`
   }
 
   button {
-    margin-top: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     width: 20rem;
     background-color: #e91e63;
     border: none;
     color: #fff;
+    border-radius: 0.25rem;
+    max-width: 22rem;
+    width: 100%;
+    outline: none;
   }
 
   form {
-    background-color: #fff;
     border-radius: 30px;
     padding: 1rem;
   }
@@ -87,5 +89,13 @@ export const Login = styled.div`
 
   .switch-text {
     padding-right: 0.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
   }
 `;

@@ -1,32 +1,46 @@
 import { useState, useContext } from "react";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import { PageTitle } from "../../components/HeaderPainel";
 import "../../styles/global.css";
-import { PageLogin } from "./styled";
+import { Cadastro } from "./styled";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/auth";
+import Footer from "../../components/Footer";
 
-export default function Login() {
-  const { login } = useContext(AuthContext);
-
+export default function PageCadastro() {
+  const { cadastrarUsuario } = useContext(AuthContext);
+  const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberPassword, setRememberPassword] = useState(false);
+  const [senha, setSenha] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(email, password);
+    console.log("Criando usuário", { nome, email, senha });
+    cadastrarUsuario(nome, email, senha);
   };
 
   return (
-    <div className="login">
+    <div className="App">
       <Header />
       <main>
-        <PageLogin>
+        <Cadastro>
           <div className="container">
             <form onSubmit={handleSubmit}>
-              <PageTitle>Faça seu Login</PageTitle>
+              <PageTitle>Faça seu Cadastro</PageTitle>
+              <label className="area-name">
+                <div>
+                  <input
+                    className="area--input"
+                    required
+                    type="text"
+                    name="name"
+                    placeholder="Digite seu nome"
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)}
+                  />
+                </div>
+              </label>
+              <br />
               <label className="area-email">
                 <div>
                   <input
@@ -49,35 +63,25 @@ export default function Login() {
                     type="password"
                     name="senha"
                     placeholder="Digite sua senha"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
                   />
                 </div>
               </label>
               <br />
-              <label className="switch">
-                <span className="switch-text">Lembrar senha</span>
-                <div className="switch-wrapper">
-                  <input
-                    type="checkbox"
-                    checked={rememberPassword}
-                    onChange={(e) => setRememberPassword(!rememberPassword)}
-                  />
-                  <span className="switch-button"></span>
-                </div>
-              </label>
               <label className="area">
                 <div className="area--input">
-                  <button>Fazer login</button>
+                  <button>Fazer cadastro</button>
                 </div>
               </label>
               <br />
               <label>
-                <Link to="/signup">ou Crie sua conta</Link>
+                <Link to="/login">Já possui cadastro? Faça seu login</Link>
               </label>
+              <br />
             </form>
           </div>
-        </PageLogin>
+        </Cadastro>
       </main>
       <Footer />
     </div>

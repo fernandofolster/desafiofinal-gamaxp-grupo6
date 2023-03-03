@@ -4,9 +4,15 @@ import { HeaderArea } from "./styled";
 import { Link } from "react-router-dom";
 import lupa from "../../assets/images/lupa-header.png";
 import "react-modal-login/dist/react-modal-login.css";
-import { BsHandbag } from "react-icons/bs";
+import { AuthContext } from "../../contexts/auth";
+import { useContext } from "react";
 
-export default function Header() {
+export default function HeaderLoginAdm() {
+  const { logout } = useContext(AuthContext);
+  const handleLogout = () => {
+    logout();
+  };
+
   return (
     <HeaderArea>
       <div className="container">
@@ -31,11 +37,13 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <div className="modal-login">
-          <BsHandbag />
-          <Link to="/login" id="login">
-            Login
-          </Link>
+        <div className="logout">
+          <li>
+            <Link to="/paineladm">Painel Administrativo</Link>
+          </li>
+          <li>
+            <button onClick={handleLogout}>Logout</button>
+          </li>
         </div>
       </div>
     </HeaderArea>

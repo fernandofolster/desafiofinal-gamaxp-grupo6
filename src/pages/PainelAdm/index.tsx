@@ -1,7 +1,7 @@
 import HeaderPainel from "../../components/HeaderPainel";
 import "../../styles/global.css";
-import { PainelGeral } from "./styled";
 import { Link } from "react-router-dom";
+import { PainelGeral } from "./styled";
 import { PageTitle } from "../../components/HeaderPainel";
 import TabelaPainel from "../../components/TabelaPainel";
 
@@ -18,15 +18,9 @@ function PainelAdm() {
             <p>Bem vindo, admin!</p>
           </div>
           <div className="button-area">
-            <Link to="" className="button">
-              Produtos
-            </Link>
-            <Link to="" className="button">
-              Usuarios
-            </Link>
-            <Link to="" className="button">
-              Pedidos
-            </Link>
+            <button>Produtos</button>
+            <button>Usuarios</button>
+            <button>Pedidos</button>
           </div>
           <div className="btnAdd">
             <Link to="/paineladmcadastro" className="button-add">
