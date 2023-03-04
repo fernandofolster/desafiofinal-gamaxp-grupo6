@@ -1,7 +1,9 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, createAdmin, createSession, createUser } from "../services/api";
+import { api, createAdmin, createCategories, createSession, createUser } from "../services/api";
 import { toast } from 'react-hot-toast';
+
+
 
 export const AuthContext = createContext();
 
@@ -149,3 +151,43 @@ export const StateContext = ({ children }) => {
 )}
 
 export const useStateContext = () => useContext (CartContext);
+
+
+// -------- Context -----------//
+
+// const cadastrarCategoria = async (nome) => {
+//   const response = await createCategories(nome);
+//   console.log("Cadastrando Categoria", response.data);
+
+//   const signinCategory = response.data.user;
+//   const token = response.data.token;
+//   api.defaults.headers.authorization = `Bearer ${token}`;
+//   setUser(signinCategory);
+//   navigate("/categorias");
+// };
+
+// const editarCategoria = async (nome, id) => {
+//   const response = await editCategories(nome, id);
+//   console.log("Editando Categoria", response.data);
+
+//   const signinCategory = response.data.user;
+//   const token = response.data.token;
+//   api.defaults.headers.authorization = `Bearer ${token}`;
+//   setUser(signinCategory);
+//   navigate("/categorias/:id");
+// };
+
+
+
+
+
+// return (
+//   <AuthContext.Provider
+//     value={{
+//       cadastrarCategoria,
+//       editarCategoria,
+//     }}
+//   >
+//     {children}
+//   </AuthContext.Provider>
+// );

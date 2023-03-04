@@ -35,15 +35,15 @@ export const listProducts =  async () => {
 }
 
 export const createProducts =  async (nome, foto, descricao, categoria, preco) => {
-  return api.post("/produtos", { nome, foto, descricao, categoria, preco});
+  return api.post("/produtos", { nome, foto, descricao, categoria, preco, admin: true});
 }
 
 export const editProducts =  async (nome, foto, descricao, categoria, preco, id) => {
-  return api.put("/produtos/:id", { nome, foto, descricao, categoria, preco, id});
+  return api.put("/produtos/:id", { nome, foto, descricao, categoria, preco, id, admin: true});
 }
 
 export const removeProducts =  async (id) => {
-  return api.delete("/produtos/:id", {id});
+  return api.delete("/produtos/:id", {id, admin: true});
 }
 
 
@@ -60,18 +60,18 @@ export const listCategoriesById =  async (id) => {
 }
 
 export const createCategories =  async (nome) => {
-  return api.post("/categorias", { nome });
+  return api.post("/categorias", { nome, admin: true });
 }
 
 export const editCategories =  async (nome, id) => {
-  return api.put("/categorias/:id", { nome, id });
+  return api.put("/categorias/:id", { nome, id, admin: true });
 }
 
 export const removeCategories =  async (id) => {
-  return api.delete("/categorias/:id", { id });
+  return api.delete("/categorias/:id", { id, admin: true });
 }
 
-// Vendas //
+// Vendas //  Perguntar se essa lista será para uso do cliente ou adm e se terá crud para vendas.
 
 export const listVendas =  async () => { 
   return api.get("/vendas");
