@@ -140,6 +140,8 @@ export function CardProductArea() {
     setProduct(result);
   };
 
+// >>>>>>>>>>>  ------  Transformar esses filtros em props
+
   return (
     < div className="category-container">
       <CardProductStyled>
@@ -148,7 +150,7 @@ export function CardProductArea() {
             className="category-filter-btn"
             onClick={() => filterResult(1)}
           >
-           {1}
+            {1}
           </button>
 
           <button

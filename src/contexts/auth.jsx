@@ -1,6 +1,7 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, createAdmin, createSession, createUser } from "../services/api";
+import { toast } from 'react-hot-toast';
 
 export const AuthContext = createContext();
 
@@ -83,3 +84,68 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+
+// ---------->>>>> CONTEXT CARRINHO <<<<<----------
+const CartContext = createContext();
+
+export const StateContext = ({ children }) => {
+    const [mostrarCarrinho, setMostrarCarrinho] = useState(false);
+    const [itensCarrinho, setItensCarrinho] = useState([]);
+    const [precoTotal, setPrecoTotal] = useState();
+    const [qtyTotal, setQtyTotal] = useState();
+    const [qty, setQty] = useState(1);
+
+    const onAdd = (produto, quantidade) => {
+        const checarProdutoSacola = itensCarrinho.find((item) => item._id === produto._id);
+
+        setPrecoTotal((prevPrecoTotal) => prevPrecoTotal + produto.preco + quantidade);
+        setQuantidadeTotal((prevQuantidadeTotal) => prevQuantidadeTotal + quantidade);
+
+        if(checarProdutoSacola) {
+
+            const carrinhoAtualizado = itensCarrinho.map((produtoCarrinho) => {
+                if(produtoCarrinho._id === produto._id) return {
+                    ...produtoCarrinho,
+                    quantidade: produtoCarrinho.quantidade + quantidade
+                }
+            })
+
+            setItensCarrinho(carrinhoAtualizado);
+        } else {
+            produto.quantidade = quantidade;
+
+            setItensCarrinho([...itensCarrinho, { ...produto }]);
+        }
+        toast.success(`${qty} ${produto.name} adicionado ao carrinho.`);
+    }
+
+    const aumentarQty = () => {
+        setQty((qtyAnterior) => qtyAnterior + 1);
+    }
+
+    const diminuirQty = () => {
+        setQty((qtyAnterior) => {
+            if(qtyAnterior - 1 < 1) return 1;
+            return qtyAnterior - 1
+        });
+    }
+
+    return (
+        <CartContext.Provider
+            value={{
+                mostrarCarrinho,
+                itensCarrinho,
+                precoTotal,
+                qtyTotal,
+                qty,
+                aumentarQty,
+                diminuirQty,
+                onAdd
+            }}
+        >
+            {children}
+        </CartContext.Provider>
+)}
+
+export const useStateContext = () => useContext (CartContext);
