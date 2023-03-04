@@ -56,14 +56,14 @@ export const CardProductStyled = styled.div`
 
   .more-product {
     width: 100%;
-    background-color: #e5e5e5;
-    border: 1px solid #212121;
+    background-color: #e91e63;
+    border: 1px solid #e91e63;
     font-size: 16px;
     font-weight: 600;
     align-content: center;
     width: 350px;
     height: 50px;
-    color: #212121;
+    color: #FFFFFF;
     margin-top: 3.625rem;
     margin-bottom: 3.625rem;
   }

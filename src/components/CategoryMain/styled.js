@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CategoryArea = styled.div`
   .category-main {
-    background-color: salmon; // trocar a cor de teste
+    background-color: #e5e5e5;
     width: 100%;
     height: auto;
     display: flex;

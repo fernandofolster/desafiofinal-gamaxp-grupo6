@@ -113,17 +113,17 @@ export function CardProductArea() {
     },
   ];
 
-  // const [categories, setCategories] = useState([
-  //   {
-  //     categoria: 1,
-  //   },
-  //   {
-  //     categoria: 2,
-  //   },
-  //   {
-  //     categoria: 3,
-  //   },
-  // ]);
+  const [categories, setCategories] = useState([
+    {
+      categoria: 1,
+    },
+    {
+      categoria: 2,
+    },
+    {
+      categoria: 3,
+    },
+  ]);
 
   const [product, setProduct] = useState(products);
   const [pagination, setPagination] = useState(10);
@@ -139,6 +139,7 @@ export function CardProductArea() {
 
     setProduct(result);
   };
+
 
   return (
     < div className="category-container">
@@ -176,7 +177,7 @@ export function CardProductArea() {
 
         <section className="prod-card-wrapper">
           {product.slice(0, pagination).map((values) => {
-            const { nome, foto, preco } = values;
+            const { nome, foto, categoria, preco } = values;
             return (
               <>
                 <div className="product-card" key={nome}>

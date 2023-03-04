@@ -152,6 +152,7 @@ function MainProduct() {
               type="number"
               value="1"
               min="1"
+              max="100"
             ></input>
           </div>
         </div>
