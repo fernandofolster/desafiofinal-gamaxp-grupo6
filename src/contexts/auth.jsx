@@ -100,7 +100,7 @@ export const StateContext = ({ children }) => {
         const checarProdutoSacola = itensCarrinho.find((item) => item._id === produto._id);
 
         setPrecoTotal((prevPrecoTotal) => prevPrecoTotal + produto.preco + quantidade);
-        setQuantidadeTotal((prevQuantidadeTotal) => prevQuantidadeTotal + quantidade);
+        // setQuantidadeTotal((prevQuantidadeTotal) => prevQuantidadeTotal + quantidade);
 
         if(checarProdutoSacola) {
 
