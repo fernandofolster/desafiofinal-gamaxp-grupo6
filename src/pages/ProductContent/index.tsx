@@ -4,20 +4,18 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 
 import {MainProduct} from '../../components/MainProduct';
+import { MainProduct } from '../../components/MainProduct';
 
-function ProductContent (){
+export default function ProductContent (){
     return (
         <div>
             <Header />
             
-               
-            <MainProduct/>
-               
+            <MainProduct nome={''} preco={0} foto={''} categoria={''} descricao={''}/>
             
             <Footer/>
         </div>
     )
 }
 
-export default ProductContent
 

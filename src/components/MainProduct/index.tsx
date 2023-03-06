@@ -3,6 +3,7 @@ import ShareIcon from "../../assets/images/share-Icon.png";
 import rendaSalmao from "../../assets/images/renda-salmao.jpg";
 import rendaPreta from "../../assets/images/renda-preta.jpg";
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
+// import { api, listProducts } from "../services/api";
 import { ProductArea } from "./styled";
 import { useState, useEffect } from "react";
 import Link from "../Link/index";
@@ -204,7 +205,8 @@ export function MainProduct() {
   //   setProduct(result);
   // };
 
-  return (
+  // return api.get (
+    return (
     <ProductArea>
       <main className="main-product-container">
         <div className="containerImages">

@@ -89,7 +89,7 @@ export const AuthProvider = ({ children }) => {
 
 
 // ---------->>>>> CONTEXT CARRINHO <<<<<----------
-const CartContext = createContext();
+export const CartContext = createContext();
 
 export const StateContext = ({ children }) => {
     const [mostrarCarrinho, setMostrarCarrinho] = useState(false);
@@ -148,9 +148,7 @@ export const StateContext = ({ children }) => {
         >
             {children}
         </CartContext.Provider>
-)}
-
-export const useStateContext = () => useContext (CartContext);
+)};
 
 
  // -------- Context Category -----------//
