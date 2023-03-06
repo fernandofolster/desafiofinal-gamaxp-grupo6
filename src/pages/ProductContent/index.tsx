@@ -3,7 +3,7 @@ import Header from '../../components/Header'
 
 import Footer from '../../components/Footer'
 
-import MainProduct from '../../components/MainProduct';
+import {MainProduct} from '../../components/MainProduct';
 
 function ProductContent (){
     return (

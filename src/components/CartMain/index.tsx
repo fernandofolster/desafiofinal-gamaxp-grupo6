@@ -1,7 +1,8 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
 import "./styled.js";
 import SutiaImg from "../../assets/images/lingerie-preta.jpg";
 import { CartArea } from "./styled";
+import Link from "../../components/Link";
 // import  SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 
 // const products = [
@@ -114,20 +115,21 @@ import { CartArea } from "./styled";
 //   },
 // ];
 
-
 function CartMain() {
-
   return (
     <CartArea>
       <div className="cart-main">
-        
         <div className="cart-container">
           <div className="aaa">
             <div>
               <h3 className="page-cart-title">Seu Carrinho</h3>
-              <a className="continue-shop" href="/">
-                Continuar comprando.
-              </a>
+
+              <div className="continue-shop">
+                <Link
+                  redirect="/productcategory"
+                  texto="Continuar comprando"
+                ></Link>
+              </div>
             </div>
 
             <div className="text-product-cart">
@@ -213,7 +215,9 @@ function CartMain() {
           </div>
 
           <div>
-            <button className="go-checkout-btn">Continue to Checkout</button>
+            <button className="go-checkout-btn">
+              <Link redirect="/checkout" texto="Continue to Checkout"></Link>
+            </button>
           </div>
         </div>
       </div>

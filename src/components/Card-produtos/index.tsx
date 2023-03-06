@@ -3,147 +3,223 @@ import { CardProductStyled } from "./styled";
 import { useEffect, useState } from "react";
 
 export function CardProductArea() {
-  const products = [
+  const ecommerce = [
     {
       nome: "Produto 1",
+      produto_id: "Prod_1",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 1,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "sutiã",
+      categoria_id: 1,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 2",
+      produto_id: "Prod_2",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 2,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "calcinha",
+      categoria_id: 2,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 3",
+      produto_id: "Prod_3",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 3,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "pijama",
+      categoria_id: 3,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 4",
+      produto_id: "Prod_4",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 1,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "sutiã",
+      categoria_id: 1,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 5",
+      produto_id: "Prod_5",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 2,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "calcinha",
+      categoria_id: 2,
       preco: 5,
+      quantidade: 100,
     },
 
     {
       nome: "Produto 6",
+      produto_id: "Prod_6",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 3,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "pijama",
+      categoria_id: 3,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 7",
+      produto_id: "Prod_7",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 1,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "sutiã",
+      categoria_id: 1,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 8",
+      produto_id: "Prod_8",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 2,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "calcinha",
+      categoria_id: 2,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 9",
+      produto_id: "Prod_9",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 3,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "pijama",
+      categoria_id: 3,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 10",
-      foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 1,
+      produto_id: "Prod_10",
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "sutiã",
+      categoria_id: 1,
       preco: 5,
+      quantidade: 100,
     },
 
     {
       nome: "Produto 11",
+      produto_id: "Prod_11",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 2,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "calcinha",
+      categoria_id: 2,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 12",
+      produto_id: "Prod_12",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 3,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "pijama",
+      categoria_id: 3,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 13",
+      produto_id: "Prod_13",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 1,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "sutiã",
+      categoria_id: 1,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 14",
+      produto_id: "Prod_14",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 2,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "calcinha",
+      categoria_id: 2,
       preco: 5,
+      quantidade: 100,
     },
     {
       nome: "Produto 15",
+      produto_id: "Prod_15",
       foto: SutiaPreto,
-      descricao: "lorem ipsum",
-      categoria: 3,
+      descricao:
+        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+      categoria: "pijama",
+      categoria_id: 3,
       preco: 5,
+      quantidade: 100,
     },
   ];
 
-  const [categories, setCategories] = useState([
-    {
-      categoria: 1,
-    },
-    {
-      categoria: 2,
-    },
-    {
-      categoria: 3,
-    },
-  ]);
+  // const [categories, setCategories] = useState([
+  //   {
+  //     categoria: 1,
+  //   },
+  //   {
+  //     categoria: 2,
+  //   },
+  //   {
+  //     categoria: 3,
+  //   },
+  // ]);
 
-  const [product, setProduct] = useState(products);
+  // const [produtos, setProdutos] = useState(ecommerce);
+  // useEffect(() => {
+  //   ecommerce.produtos.list()
+  //   .then(res => {
+  //     setProdutos(res.ecommerce)
+  //   })
+  //   .catch(err => console.log(err))
+  // }, [])
+
+
+  // const productList = (event) => {
+  //   const result = ecommerce.produtos.list(() => {
+  //     return produtos.list === event;
+  //   })
+  // }
+
   const [pagination, setPagination] = useState(10);
-
   const loadMore = () => {
     setPagination(pagination + pagination);
   };
 
+  const [product, setProduct] = useState(ecommerce);
   const filterResult = (event) => {
-    const result = products.filter((product) => {
+    const result = ecommerce.filter((product) => {
       return product.categoria === event;
     });
-
     setProduct(result);
   };
 
-// >>>>>>>>>>>  ------  Transformar esses filtros em props
+
+
+
+  // >>>>>>>>>>>  ------  Transformar esses filtros em props
 
   return (
-    < div className="category-container">
+    <div className="category-container">
       <CardProductStyled>
         <div className="category-filter-wrapper">
           <button
@@ -167,10 +243,9 @@ export function CardProductArea() {
             {3}
           </button>
 
-
           <button
             className="category-filter-btn"
-            onClick={() => setProduct(products)}
+            onClick={() => setProduct(ecommerce)}
           >
             All
           </button>
@@ -178,7 +253,7 @@ export function CardProductArea() {
 
         <section className="prod-card-wrapper">
           {product.slice(0, pagination).map((values) => {
-            const { nome, foto, categoria, preco } = values;
+            const { nome, foto, preco } = values;
             return (
               <>
                 <div className="product-card" key={nome}>
