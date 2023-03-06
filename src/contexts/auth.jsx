@@ -1,8 +1,8 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, createAdmin, createCategories, createSession, createUser } from "../services/api";
+import { api, createAdmin,  createSession, createUser } from "../services/api";
 import { toast } from 'react-hot-toast';
-
+import { createCategories, removeCategories, listCategories, listCategoriesById, editCategories } from "../services/api";
 
 
 export const AuthContext = createContext();
@@ -151,41 +151,63 @@ export const StateContext = ({ children }) => {
 )};
 
 
-// -------- Context -----------//
+ // -------- Context Category -----------//
 
-// const cadastrarCategoria = async (nome) => {
-//   const response = await createCategories(nome);
-//   console.log("Cadastrando Categoria", response.data);
+ const CategoryContext = createContext ();
 
-//   const signinCategory = response.data.user;
-//   const token = response.data.token;
-//   api.defaults.headers.authorization = `Bearer ${token}`;
-//   setUser(signinCategory);
-//   navigate("/categorias");
-// };
-
-// const editarCategoria = async (nome, id) => {
-//   const response = await editCategories(nome, id);
-//   console.log("Editando Categoria", response.data);
-
-//   const signinCategory = response.data.user;
-//   const token = response.data.token;
-//   api.defaults.headers.authorization = `Bearer ${token}`;
-//   setUser(signinCategory);
-//   navigate("/categorias/:id");
-// };
+ export const ContextCategory = ({children}) => {
+  
 
 
+  
+
+  const criarCategoria = async (nome) => {
+    const response = await createCategories(nome);
+    console.log("Criando Categoria", response.data);
+
+    
+  };
+
+  const editarCategoria = async (nome, id) => {
+    const response = await editCategories(nome, id);
+    console.log("Editando Categoria", response.data);
+
+    
+  };
+
+  const deletarCategoria = async (id) => {
+    const response = await removeCategories(id);
+    console.log("Removendo Categoria", response.data);
+
+    
+  };
+
+  const listarCategoria = async () => {
+    const response = await listCategories();
+    console.log("Listando Categoria", response.data);
+
+    
+  };
+
+  const listarCategoriaById = async (id) => {
+    const response = await listCategoriesById(id);
+    console.log("Listando Id de Categoria", response.data);
+
+    
+  };
 
 
-
-// return (
-//   <AuthContext.Provider
-//     value={{
-//       cadastrarCategoria,
-//       editarCategoria,
-//     }}
-//   >
-//     {children}
-//   </AuthContext.Provider>
-// );
+  return (
+    <CategoryContext.Provider 
+      value = {{
+        criarCategoria,
+        editarCategoria,
+        deletarCategoria,
+        listarCategoria,
+        listarCategoriaById,
+      }}
+    >
+      {children}
+    </CategoryContext.Provider>
+  );
+ }
