@@ -3,7 +3,7 @@ import Header from '../../components/Header'
 
 import Footer from '../../components/Footer'
 
-import {MainProduct} from '../../components/MainProduct';
+
 import { MainProduct } from '../../components/MainProduct';
 
 export default function ProductContent (){
@@ -11,8 +11,8 @@ export default function ProductContent (){
         <div>
             <Header />
             
-            <MainProduct nome={''} preco={0} foto={''} categoria={''} descricao={''}/>
-            
+            <MainProduct />
+            {/* nome={''} preco={0} foto={''} categoria={''} descricao={''} */}
             <Footer/>
         </div>
     )
