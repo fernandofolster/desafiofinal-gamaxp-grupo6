@@ -3,7 +3,6 @@ import ShareIcon from "../../assets/images/share-Icon.png";
 import rendaSalmao from "../../assets/images/renda-salmao.jpg";
 import rendaPreta from "../../assets/images/renda-preta.jpg";
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
-// import { api, listProducts } from "../services/api";
 import { ProductArea } from "./styled";
 import { useState, useEffect } from "react";
 import Link from "../Link/index";
@@ -21,161 +20,7 @@ export function MainProduct() {
       preco: 5,
       quantidade: 100,
     },
-    {
-      nome: "Produto 2",
-      produto_id: "Prod_2",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "calcinha",
-      categoria_id: 2,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 3",
-      produto_id: "Prod_3",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "pijama",
-      categoria_id: 3,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 4",
-      produto_id: "Prod_4",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "sutiã",
-      categoria_id: 1,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 5",
-      produto_id: "Prod_5",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "calcinha",
-      categoria_id: 2,
-      preco: 5,
-      quantidade: 100,
-    },
-
-    {
-      nome: "Produto 6",
-      produto_id: "Prod_6",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "pijama",
-      categoria_id: 3,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 7",
-      produto_id: "Prod_7",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "sutiã",
-      categoria_id: 1,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 8",
-      produto_id: "Prod_8",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "calcinha",
-      categoria_id: 2,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 9",
-      produto_id: "Prod_9",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "pijama",
-      categoria_id: 3,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 10",
-      produto_id: "Prod_10",
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "sutiã",
-      categoria_id: 1,
-      preco: 5,
-      quantidade: 100,
-    },
-
-    {
-      nome: "Produto 11",
-      produto_id: "Prod_11",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "calcinha",
-      categoria_id: 2,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 12",
-      produto_id: "Prod_12",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "pijama",
-      categoria_id: 3,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 13",
-      produto_id: "Prod_13",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "sutiã",
-      categoria_id: 1,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 14",
-      produto_id: "Prod_14",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "calcinha",
-      categoria_id: 2,
-      preco: 5,
-      quantidade: 100,
-    },
-    {
-      nome: "Produto 15",
-      produto_id: "Prod_15",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "pijama",
-      categoria_id: 3,
-      preco: 5,
-      quantidade: 100,
-    },
+  
   ];
 
   //   const [produtos, setProdutos] = useState([
@@ -197,16 +42,15 @@ export function MainProduct() {
 
 
   const [product, setProduct] = useState(ecommerce);
-  // const [cart, setCart] = useState(ecommerce);
-  // const addTocart = (event) => {
-  //   const result = ecommerce.cart.add((product) => {
-  //     return cart === event;
-  //   });
-  //   setProduct(result);
-  // };
+  const [cart, setCart] = useState(ecommerce);
+  const addTocart = (event) => {
+    const result = ecommerce.cart.add((product) => {
+      return cart === event;
+    });
+    setProduct(result);
+  };
 
-  // return api.get (
-    return (
+  return (
     <ProductArea>
       <main className="main-product-container">
         <div className="containerImages">
@@ -360,8 +204,7 @@ export function MainProduct() {
                   <button className="quan-buttons">plus</button>
                   <div>
                     <button className="buttonCart"
-                    // onClick={() => addTocart(1)}
-                    >
+                    onClick={() => addTocart(1)}>
                       <Link
                         redirect="/cart"
                         texto="Adicionar ao carrinho"
