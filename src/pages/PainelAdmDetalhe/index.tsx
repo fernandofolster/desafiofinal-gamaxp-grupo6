@@ -1,10 +1,26 @@
+// import { useState, useContext } from "react";
 import HeaderPainel from "../../components/HeaderPainel";
 import "../../styles/global.js";
 import { PageTitle } from "../../components/HeaderPainel";
 import { PainelCadastro } from "./styled";
 import { Link } from "react-router-dom";
+// import { CartContext } from "../../contexts/auth";
 
 export default function PainelAdmCadastro() {
+
+  // const { cadastrarProduto } = useContext(CartContext);
+  // const [nomeProduto, setNomeProduto] = useState("");
+  // // const [imgProduto, setImgProduto] = useState("");
+  // const [descProduto, setDescProduto] = useState("");
+  // const [preco, setPreco] = useState("");
+  // const [quantidade, setQuantidade] = useState("");
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("Cadastrando produto", { nomeProduto, descProduto, preco, quantidade });
+  //   cadastrarProduto(nomeProduto, descProduto, preco, quantidade);
+  // };
+
   return (
     <>
       <div className="painelCadastro">

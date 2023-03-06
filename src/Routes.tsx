@@ -17,6 +17,7 @@ import Sobre from "./pages/Sobre";
 import MinhaConta from "./pages/ClienteMinhaConta";
 import PageCadastro from "./pages/Cadastro";
 import PageCadastroAdm from "./pages/CadastroAdm";
+import CadastroProduto from "./pages/CadastroProduto";
 import { AuthProvider } from "./contexts/auth";
 
 export default function Routes() {
@@ -27,11 +28,13 @@ export default function Routes() {
           <Route path="/" element={<Home />} />
           <Route path="/productcategory" element={<ProductCategory />} />
           <Route path="/productcontent" element={<ProductContent />} />
+          {/* <Route path="/productcontent/${id}" element={<ProductContent />} /> */}
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/paineladm" element={<PainelAdm />} />
           <Route path="/paineladmcadastro" element={<PainelAdmCadastro />} />
           <Route path="/paineladmdetalhe" element={<PainelAdmDetalhe />} />
+          <Route path="/cadastroproduto" element={<CadastroProduto />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<PageCadastro />} />
           <Route path="/signupadm" element={<PageCadastroAdm />} />

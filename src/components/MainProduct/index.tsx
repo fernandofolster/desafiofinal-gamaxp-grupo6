@@ -3,18 +3,29 @@ import ShareIcon from "../../assets/images/share-Icon.png";
 import rendaSalmao from "../../assets/images/renda-salmao.jpg";
 import rendaPreta from "../../assets/images/renda-preta.jpg";
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
+// import { api, listProducts } from "../services/api";
 import { ProductArea } from "./styled";
 
 // Conteúdo de carrinho + Checkout
-import { useStateContext } from "../../context/StateContext";
+// import { StateContext } from "../../contexts/auth";
 
-function MainProduct() {
+interface infoProduto {
+  nome: string,
+  preco: number,
+  foto: string,
+  categoria: string,
+  descricao: string
+
+}
+
+export function MainProduct(payload: infoProduto) {
 
   // Conteúdo de carrinho + Checkout
-  const { aumentarQty, diminuirQty, qty, onAdd } = useStateContext();
+  // const { aumentarQty, diminuirQty, qty, onAdd } = StateContext();
   // Fim conteúdo carrinho + Checkout
 
-  return (
+  // return api.get (
+    return (
     <ProductArea>
       <main className="main-product-container">
         <div className="containerImages">
@@ -154,7 +165,9 @@ function MainProduct() {
             <h3 className="quantity-title"> Quantity</h3>
           </div>
           <div className="btn-quantity">
-            <button className="buttonCart" onClick={() => onAdd(produto, qty)}>Add to Cart</button>
+            <button className="buttonCart"
+            // onClick={() => onAdd(produto, qty)}
+            >Add to Cart</button>
             <input
               className="quantity-input"
               type="number"
@@ -169,4 +182,4 @@ function MainProduct() {
   );
 }
 
-export default MainProduct;
+// export default MainProduct();
