@@ -21,7 +21,7 @@ export function CardProductArea() {
       foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "calcinha",
+      categoria: "sutiã",
       categoria_id: 2,
       preco: 5,
       quantidade: 100,
@@ -32,7 +32,7 @@ export function CardProductArea() {
       foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "pijama",
+      categoria: "sutiã",
       categoria_id: 3,
       preco: 5,
       quantidade: 100,
@@ -54,7 +54,7 @@ export function CardProductArea() {
       foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "calcinha",
+      categoria: "sutiã",
       categoria_id: 2,
       preco: 5,
       quantidade: 100,
@@ -66,7 +66,7 @@ export function CardProductArea() {
       foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "pijama",
+      categoria: "sutiã",
       categoria_id: 3,
       preco: 5,
       quantidade: 100,
@@ -88,7 +88,7 @@ export function CardProductArea() {
       foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "calcinha",
+      categoria: "sutiã",
       categoria_id: 2,
       preco: 5,
       quantidade: 100,
@@ -99,7 +99,7 @@ export function CardProductArea() {
       foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "pijama",
+      categoria: "sutiã",
       categoria_id: 3,
       preco: 5,
       quantidade: 100,
@@ -107,6 +107,7 @@ export function CardProductArea() {
     {
       nome: "Produto 10",
       produto_id: "Prod_10",
+      foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
       categoria: "sutiã",
@@ -121,7 +122,7 @@ export function CardProductArea() {
       foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "calcinha",
+      categoria: "sutiã",
       categoria_id: 2,
       preco: 5,
       quantidade: 100,
@@ -132,7 +133,7 @@ export function CardProductArea() {
       foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "pijama",
+      categoria: "sutiã",
       categoria_id: 3,
       preco: 5,
       quantidade: 100,
@@ -154,7 +155,7 @@ export function CardProductArea() {
       foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "calcinha",
+      categoria: "sutiã",
       categoria_id: 2,
       preco: 5,
       quantidade: 100,
@@ -165,40 +166,26 @@ export function CardProductArea() {
       foto: SutiaPreto,
       descricao:
         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "pijama",
+      categoria: "sutiã",
       categoria_id: 3,
       preco: 5,
       quantidade: 100,
     },
   ];
 
-  // const [categories, setCategories] = useState([
-  //   {
-  //     categoria: 1,
-  //   },
-  //   {
-  //     categoria: 2,
-  //   },
-  //   {
-  //     categoria: 3,
-  //   },
-  // ]);
+  const categories = [
+    {
+      categoria: "sutiã",
+    },
+    {
+      categoria: "calcinha",
+    },
+    {
+      categoria: "pijama",
+    },
+  ];
 
-  // const [produtos, setProdutos] = useState(ecommerce);
-  // useEffect(() => {
-  //   ecommerce.produtos.list()
-  //   .then(res => {
-  //     setProdutos(res.ecommerce)
-  //   })
-  //   .catch(err => console.log(err))
-  // }, [])
-
-
-  // const productList = (event) => {
-  //   const result = ecommerce.produtos.list(() => {
-  //     return produtos.list === event;
-  //   })
-  // }
+  const [category, setCategory] = useState(categories)
 
   const [pagination, setPagination] = useState(10);
   const loadMore = () => {
@@ -208,63 +195,46 @@ export function CardProductArea() {
   const [product, setProduct] = useState(ecommerce);
   const filterResult = (event) => {
     const result = ecommerce.filter((product) => {
-      return product.categoria === event;
+      return product.categoria_id === event;
     });
     setProduct(result);
   };
 
-
-
-
-  // >>>>>>>>>>>  ------  Transformar esses filtros em props
-
   return (
     <div className="category-container">
       <CardProductStyled>
-        <div className="category-filter-wrapper">
-          <button
-            className="category-filter-btn"
-            onClick={() => filterResult(1)}
-          >
-            {1}
-          </button>
-
-          <button
-            className="category-filter-btn"
-            onClick={() => filterResult(2)}
-          >
-            {2}
-          </button>
-
-          <button
-            className="category-filter-btn"
-            onClick={() => filterResult(3)}
-          >
-            {3}
-          </button>
-
-          <button
-            className="category-filter-btn"
-            onClick={() => setProduct(ecommerce)}
-          >
-            All
-          </button>
+      <div className="category-filter-wrapper">
+        {category.map((category) => {
+          return (
+            
+              <button
+                className="category-filter-btn"
+                onClick={() => filterResult(category.categoria)}
+              >
+                {category.categoria}
+              </button>
+            
+          );
+        })}
         </div>
 
         <section className="prod-card-wrapper">
-          {product.slice(0, pagination).map((values) => {
-            const { nome, foto, preco } = values;
+          {product.slice(0, pagination).map((product) => {
             return (
               <>
-                <div className="product-card" key={nome}>
+                <div className="product-card" key={product.nome}>
                   {/* trocar nome por ID -- pedir p/ back acrescentar ID em product */}
                   <a className="link-to-description" href="/ProductContent">
-                    <img className="product-card-img" src={foto} alt="#" />
+                    <img
+                      className="product-card-img"
+                      src={product.foto}
+                      alt="#"
+                    />
                   </a>
                   <div className="product-name-size">
                     <a className="link-to-description" href="/ProductContent">
-                      <h4 className="product-name">{nome}</h4>
-                      <h5 className="price-prod">R$ {preco}</h5>
+                      <h4 className="product-name">{product.nome}</h4>
+                      <h5 className="price-prod">R$ {product.preco}</h5>
                     </a>
                   </div>
                 </div>

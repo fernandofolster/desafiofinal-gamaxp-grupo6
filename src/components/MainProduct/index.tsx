@@ -7,79 +7,69 @@ import { ProductArea } from "./styled";
 import { useState, useEffect } from "react";
 import Link from "../Link/index";
 
-export function MainProduct() {
-  const ecommerce = [
-    {
-      nome: "Produto 1",
-      produto_id: "Prod_1",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "sutiã",
-      categoria_id: 1,
-      preco: 5,
-      quantidade: 100,
-    },
-  
-  ];
+interface Ecommerce {
+  nome: string;
+  produto_id: string;
+  foto: string;
+  descricao: string;
+  categoria: string;
+  categoria_id: number;
+  preco: number;
+  quantidade: number;
+}
 
-  //   const [produtos, setProdutos] = useState([
-  //     {
-  //       nome: "Produto 15",
-  //       produto_id: "Prod_15",
-  //       foto: SutiaPreto,
-  //       descricao:
-  //         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-  //       categoria: "pijama",
-  //       categoria_id: 3,
-  //       preco: 5,
-  //       quantidade: 100,
-  //     },
-  // ]);
+interface ShoppingCartItem {
+  produto: Ecommerce;
+  quantidade: number;
+}
 
+const ecommerce: Ecommerce[] = [
+  {
+    nome: "Produto 1",
+    produto_id: "Prod_1",
+    foto: SutiaPreto,
+    descricao:
+      "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
+    categoria: "sutiã",
+    categoria_id: 1,
+    preco: 5,
+    quantidade: 100,
+  },
+];
 
+export const MainProduct = () => {
+  const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
 
-
+  const handleAddToCart = () => {};
 
   const [product, setProduct] = useState(ecommerce);
-  const [cart, setCart] = useState(ecommerce);
-  const addTocart = (event) => {
-    const result = ecommerce.cart.add((product) => {
-      return cart === event;
-    });
-    setProduct(result);
-  };
 
   return (
     <ProductArea>
       <main className="main-product-container">
-        <div className="containerImages">
-          <img className="img-produto" src={SutiaPreto} alt="/" />
+        {product.map((product) => {
+          return (
+            <>
+              <div className="containerImages">
+                <img className="img-produto" src={product.foto} alt="/" />
 
-          <img className="img-produto" src={SutiaPreto} alt="/" />
+                <img className="img-produto" src={product.foto} alt="/" />
 
-          <img className="img-produto" src={SutiaPreto} alt="/" />
+                <img className="img-produto" src={product.foto} alt="/" />
 
-          <img className="img-produto" src={SutiaPreto} alt="/" />
-        </div>
+                <img className="img-produto" src={product.foto} alt="/" />
+              </div>
+              ;
+            </>
+          );
+        })}
 
         <div className="container-product-info">
-          {product.map((values) => {
-            const {
-              nome,
-              produto_id,
-              foto,
-              descricao,
-              categoria,
-              categoria_id,
-              preco,
-              quantidade,
-            } = values;
-
+          {product.map((product) => {
             return (
               <>
                 <div className="text-title">
-                  <h3> {nome} </h3>
+                  <h3> {product.nome} </h3>
                   <section className="btn-icons">
                     <span>
                       <button className="btn-curtir">
@@ -108,7 +98,7 @@ export function MainProduct() {
 
                 <div className="price-and-promo">
                   <div>
-                    <p className="product-price">R${preco}</p>
+                    <p className="product-price">R${product.preco}</p>
                   </div>
                   <div className="promo-component">
                     <p>or 4 interested-free payment of R$25.00.</p>
@@ -117,7 +107,7 @@ export function MainProduct() {
                 </div>
 
                 <div>
-                  <p className="ProductInfomation">{descricao}</p>
+                  <p className="ProductInfomation">{product.descricao}</p>
                 </div>
 
                 <div>
@@ -190,27 +180,38 @@ export function MainProduct() {
                 </div>
 
                 <div>
-                  <h3 className="quantity-title"> Quantity</h3>
-                </div>
-                <div className="btn-quantity">
-                  <button className="quan-buttons">minus</button>
-                  <input
-                    className="quantity-input"
-                    type="number"
-                    value="0"
-                    min="1"
-                    max="100"
-                  ></input>
-                  <button className="quan-buttons">plus</button>
-                  <div>
-                    <button className="buttonCart"
-                    onClick={() => addTocart(1)}>
-                      <Link
-                        redirect="/cart"
-                        texto="Adicionar ao carrinho"
-                      ></Link>
-                    </button>
-                  </div>
+                  {shoppingCart.map((product) => {
+                    return (
+                      <>
+                        <div>
+                          <h3 className="quantity-title"> Quantity</h3>
+                        </div>
+                        <div className="btn-quantity">
+                          <button className="quan-buttons">minus</button>
+                          <input
+                            className="quantity-input"
+                            type="number"
+                            value="0"
+                            min="1"
+                            max="100"
+                            
+                          ></input>
+                          <button className="quan-buttons">plus</button>
+                          <div>
+                            <button
+                              className="buttonCart"
+                              onClick={() => handleAddToCart}
+                            >
+                              <Link
+                                redirect="/cart"
+                                texto="Adicionar ao carrinho"
+                              ></Link>
+                            </button>
+                          </div>
+                        </div>
+                      </>
+                    );
+                  })}
                 </div>
               </>
             );
@@ -219,4 +220,4 @@ export function MainProduct() {
       </main>
     </ProductArea>
   );
-}
+};
