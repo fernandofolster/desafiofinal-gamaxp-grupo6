@@ -21,6 +21,7 @@ interface Ecommerce {
 interface ShoppingCartItem {
   produto: Ecommerce;
   quantidade: number;
+  
 }
 
 const ecommerce: Ecommerce[] = [
@@ -40,17 +41,26 @@ const ecommerce: Ecommerce[] = [
 export const MainProduct = () => {
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
 
-  const handleAddToCart = () => {};
+  const handleAddToCart = (produto_id: string) => {
+    const item = ecommerce.find((item) => item.produto_id === produto_id);
+    const cartItem: ShoppingCartItem  = {
+      produto: item!,
+      quantidade: 1,
+    }
+
+    const newShoppingCart: ShoppingCartItem[] = [...shoppingCart, cartItem];
+    setShoppingCart(newShoppingCart)
+  };
 
   const [product, setProduct] = useState(ecommerce);
 
   return (
     <ProductArea>
       <main className="main-product-container">
+              <div className="containerImages">
         {product.map((product) => {
           return (
             <>
-              <div className="containerImages">
                 <img className="img-produto" src={product.foto} alt="/" />
 
                 <img className="img-produto" src={product.foto} alt="/" />
@@ -58,11 +68,11 @@ export const MainProduct = () => {
                 <img className="img-produto" src={product.foto} alt="/" />
 
                 <img className="img-produto" src={product.foto} alt="/" />
+              </>
+                );
+              })}
               </div>
-              ;
-            </>
-          );
-        })}
+             
 
         <div className="container-product-info">
           {product.map((product) => {
@@ -180,9 +190,9 @@ export const MainProduct = () => {
                 </div>
 
                 <div>
-                  {shoppingCart.map((product) => {
+                  {/* {shoppingCart.map((product) => {
                     return (
-                      <>
+                      <> */}
                         <div>
                           <h3 className="quantity-title"> Quantity</h3>
                         </div>
@@ -200,7 +210,7 @@ export const MainProduct = () => {
                           <div>
                             <button
                               className="buttonCart"
-                              onClick={() => handleAddToCart}
+                              onClick={() => handleAddToCart(product.produto_id)}
                             >
                               <Link
                                 redirect="/cart"
@@ -209,9 +219,9 @@ export const MainProduct = () => {
                             </button>
                           </div>
                         </div>
-                      </>
+                      {/* </>
                     );
-                  })}
+                  })} */}
                 </div>
               </>
             );
