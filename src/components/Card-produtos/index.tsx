@@ -20,6 +20,7 @@ export function CardProductArea() {
       categoria: "all",
     },
   ];
+  
 
   const [category, setCategory] = useState(categories);
 
