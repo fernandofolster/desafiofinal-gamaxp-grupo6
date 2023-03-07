@@ -1,8 +1,9 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, createAdmin,  createSession, createUser } from "../services/api";
-import { toast } from 'react-hot-toast';
+// import { toast } from 'react-hot-toast';
 import { createCategories, removeCategories, listCategories, listCategoriesById, editCategories } from "../services/api";
+import { MainProduct } from "../components/MainProduct";
 
 
 export const AuthContext = createContext();
@@ -89,66 +90,102 @@ export const AuthProvider = ({ children }) => {
 
 
 // ---------->>>>> CONTEXT CARRINHO <<<<<----------
-export const CartContext = createContext();
+export const CartContext = createContext({
+  itens: [],
+  getQuantidadeProduto: () => {},
+  adicionarUmCarrinho: () => {},
+  removerUmCarrinho: () => {},
+  deletarCarrinho: () => {},
+  getValorTotal: () => {}
+});
 
-export const StateContext = ({ children }) => {
-    const [mostrarCarrinho, setMostrarCarrinho] = useState(false);
-    const [itensCarrinho, setItensCarrinho] = useState([]);
-    const [precoTotal, setPrecoTotal] = useState();
-    const [qtyTotal, setQtyTotal] = useState();
-    const [qty, setQty] = useState(1);
+export const carrinhoProvider = ({ children }) => {
 
-    const onAdd = (produto, quantidade) => {
-        const checarProdutoSacola = itensCarrinho.find((item) => item._id === produto._id);
+  const [itensCarrinho, setItensCarrinho] = useState([]);
 
-        setPrecoTotal((prevPrecoTotal) => prevPrecoTotal + produto.preco + quantidade);
-        // setQuantidadeTotal((prevQuantidadeTotal) => prevQuantidadeTotal + quantidade);
+  function getQuantidadeProduto(produto_id) {
+    const quantidade = itensCarrinho.find(MainProduct => MainProduct.produto_id === produto_id)?.quantidade;
 
-        if(checarProdutoSacola) {
+    if (quantidade === undefined) {
+      return 0;
+    }
+    return quantidade;
+  }
 
-            const carrinhoAtualizado = itensCarrinho.map((produtoCarrinho) => {
-                if(produtoCarrinho._id === produto._id) return {
-                    ...produtoCarrinho,
-                    quantidade: produtoCarrinho.quantidade + quantidade
-                }
-            })
+  function adicionarUmCarrinho(produto_id) {
+    const quantidade = getQuantidadeProduto(produto_id);
 
-            setItensCarrinho(carrinhoAtualizado);
-        } else {
-            produto.quantidade = quantidade;
-
-            setItensCarrinho([...itensCarrinho, { ...produto }]);
+    if (quantidade === 0) { // produto não está no carrinho
+      setItensCarrinho ([
+        ...itensCarrinho,
+        {
+          id: produto_id,
+          quantidade: 1
         }
-        toast.success(`${qty} ${produto.name} adicionado ao carrinho.`);
-    }
+      ])
+  } else { // produto está no carrinho
+    setItensCarrinho(
+      itensCarrinho.map(
+        MainProduct =>
+        MainProduct.produto_id === produto_id
+        ? { ...MainProduct, quantidade: MainProduct.quantidade + 1 }
+        : MainProduct
+      )
+    )
+  }
+}
 
-    const aumentarQty = () => {
-        setQty((qtyAnterior) => qtyAnterior + 1);
-    }
+  function removerUmCarrinho(produto_id){
+    const quantidade = getQuantidadeProduto(produto_id);
 
-    const diminuirQty = () => {
-        setQty((qtyAnterior) => {
-            if(qtyAnterior - 1 < 1) return 1;
-            return qtyAnterior - 1
-        });
+    if (quantidade == 1) {
+      deletarCarrinho(produto_id);
+    } else {
+      setItensCarrinho(
+        itensCarrinho.map(
+          MainProduct =>
+          MainProduct.produto_id === produto_id
+          ? { ...MainProduct, quantidade: MainProduct.quantidade - 1 }
+          : MainProduct
+        )
+      )
     }
+  }
+
+  function deletarCarrinho(produto_id) {
+    setItensCarrinho(
+      itensCarrinho =>
+      itensCarrinho.filter(produtoAtual => {
+        produtoAtual.produto_id != produto_id;
+      })
+    )
+  }
+
+  function getValorTotal() {
+    let valorTotal = 0;
+    itensCarrinho.map((itemCarrinho) => {
+      const productData = getProductData(itemCarrinho.produto_id);
+      valorTotal += (productData.preco * itemCarrinho.quantidade);
+    })
+    return valorTotal;
+  }
+
+  const contextValue = {
+    itens: itensCarrinho,
+    getQuantidadeProduto,
+    adicionarUmCarrinho,
+    removerUmCarrinho,
+    deletarCarrinho,
+    getValorTotal
+  }
 
     return (
-        <CartContext.Provider
-            value={{
-                mostrarCarrinho,
-                itensCarrinho,
-                precoTotal,
-                qtyTotal,
-                qty,
-                aumentarQty,
-                diminuirQty,
-                onAdd
-            }}
-        >
+        <CartContext.Provider value={{contextValue}}>
             {children}
         </CartContext.Provider>
 )};
+
+export default carrinhoProvider;
 
 
  // -------- Context Category -----------//

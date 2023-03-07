@@ -112,15 +112,8 @@ export default function CadastrarProduto() {
               <br />
               <button id="btnSalvar" onClick={criarProduto}>Salvar</button>
               <br />
-              <input
-                id="btnExcluir"
-                type="submit"
-                name="excluir"
-                value="Excluir definitivamente"
-              />
             </form>
           </div>
-          <div className="foto">foto do produto</div>
         </div>
       </CadastroProduto>
     </>

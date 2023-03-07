@@ -172,6 +172,22 @@ export function CardProductArea() {
     },
   ];
 
+
+  // ---------->>>>>> COMEÇO FUNÇÃO DOS PRODUTOS - https://www.youtube.com/watch?v=_8M-YVY76O8&t=132s - LOADING PRODUCT DINAMICALLY
+
+//   function getProductData(produto_id) {
+//     let productData = MainProduct.find(produtos => produtos.id === produto_id)
+
+//     if (productData == undefined) {
+//       alert("Informação do produto " + produto_id + " não existe!");
+//       return undefined;
+//     }
+//     return productData;
+// }
+// export getProductData;
+// ---------->>>>>> FIM FUNÇÃO DOS PRODUTOS
+
+
   // const [categories, setCategories] = useState([
   //   {
   //     categoria: 1,

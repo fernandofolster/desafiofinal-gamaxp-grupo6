@@ -5,9 +5,10 @@ import rendaPreta from "../../assets/images/renda-preta.jpg";
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { ProductArea } from "./styled";
 import { useState, useEffect } from "react";
+import carrinhoProvider from "../../contexts/auth.jsx";
 import Link from "../Link/index";
 
-export function MainProduct() {
+export function mainProduct() {
   const ecommerce = [
     {
       nome: "Produto 1",
@@ -22,6 +23,17 @@ export function MainProduct() {
     },
   
   ];
+
+  export default function getProductData(produto_id) {
+    let productData = ecommerce.find(produtos => produtos.produto_id === produto_id)
+
+    if (productData === undefined) {
+      alert("Informação do produto " + produto_id + " não existe!");
+      return undefined;
+    }
+    return productData;
+  }
+}
 
   //   const [produtos, setProdutos] = useState([
   //     {
@@ -51,6 +63,7 @@ export function MainProduct() {
   };
 
   return (
+    <carrinhoProvider>
     <ProductArea>
       <main className="main-product-container">
         <div className="containerImages">
@@ -197,7 +210,7 @@ export function MainProduct() {
                   <input
                     className="quantity-input"
                     type="number"
-                    value="0"
+                    value="1"
                     min="1"
                     max="100"
                   ></input>
@@ -218,5 +231,6 @@ export function MainProduct() {
         </div>
       </main>
     </ProductArea>
+    </carrinhoProvider>
   );
 }
