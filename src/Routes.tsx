@@ -17,8 +17,10 @@ import Sobre from "./pages/Sobre";
 import MinhaConta from "./pages/ClienteMinhaConta";
 import PageCadastro from "./pages/Cadastro";
 import PageCadastroAdm from "./pages/CadastroAdm";
-import CadastroProduto from "./pages/CadastroProduto";
+//import CadastroProduto from "./pages/CadastroProduto";
 import { AuthProvider } from "./contexts/auth";
+import AddCategoria from "./pages/Categoria";
+import ListarCategoria from "./pages/Categoria/List";
 
 export default function Routes() {
   return (
@@ -40,6 +42,8 @@ export default function Routes() {
           <Route path="/signupadm" element={<PageCadastroAdm />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/minhaconta" element={<MinhaConta />} />
+          <Route path="/addcategoria" element={<AddCategoria />} />
+          <Route path="/listarcategoria" element={<ListarCategoria />} />
         </WrapperRoutes>
       </AuthProvider>
       <GlobalStyle />

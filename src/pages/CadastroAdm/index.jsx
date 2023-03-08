@@ -1,22 +1,36 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import Header from "../../components/Header";
 import { PageTitle } from "../../components/HeaderPainel";
 import "../../styles/global";
 import { Cadastro } from "./styled";
-import { AuthContext } from "../../contexts/auth";
 import Footer from "../../components/Footer";
+import { createAdmin } from "../../services/MainApi/admin";
 
 export default function PageCadastroAdm() {
-  const { cadastrarAdmin } = useContext(AuthContext);
+  const cadastro = async (event) => {
+    event.preventDefault();
+
+    const payload = {
+      nome,
+      email,
+      senha,
+      admin: true,
+    };
+
+    try {
+      const response = await createAdmin(payload);
+      if (response.status !== 201) {
+        return alert("Deu algo errado");
+      }
+      alert("Admin cadastrado com sucesso");
+    } catch (error) {
+      alert("Deu algo errado");
+    }
+  };
+
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Criando novo administrador", { nome, email, senha });
-    cadastrarAdmin(nome, email, senha);
-  };
 
   return (
     <div className="App">
@@ -24,7 +38,7 @@ export default function PageCadastroAdm() {
       <main>
         <Cadastro>
           <div className="container">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={cadastro}>
               <PageTitle>Cadastro - Admin</PageTitle>
               <label className="area-name">
                 <div>
@@ -70,7 +84,7 @@ export default function PageCadastroAdm() {
               <br />
               <label className="area">
                 <div className="area--input">
-                  <button>Cadastro</button>
+                  <button type="submit">Cadastro</button>
                 </div>
               </label>
               <br />

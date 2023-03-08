@@ -1,8 +1,7 @@
 import Routes from "./Routes";
 import "./styles/global.js";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 import { StateContext } from "./context/StateContext";
-
 
 export default function App() {
   return (
@@ -12,6 +11,5 @@ export default function App() {
         <Routes />
       </div>
     </StateContext>
-
   );
 }

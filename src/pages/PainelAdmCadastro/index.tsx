@@ -1,10 +1,44 @@
+import { useState, useContext, useEffect } from "react";
 import HeaderPainel from "../../components/HeaderPainel";
 import "../../styles/global.js";
 import { PageTitle } from "../../components/HeaderPainel";
 import { PainelCadastro } from "./styled";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/auth";
+import { getCategory } from "../../services/MainApi/categorias";
 
 export default function PainelAdmCadastro() {
+  const { cadastrarProduto } = useContext(AuthContext);
+  const [nome, setNome] = useState("");
+  const [preco, setPreco] = useState("");
+  const [foto, setFoto] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [descricao, setDescricao] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Criando produto", { nome, preco, foto, categoria, descricao });
+    cadastrarProduto(nome, preco, foto, categoria, descricao);
+  };
+
+  interface Categoria {
+    nome: string;
+  }
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await getCategory();
+        setCategorias(response.data);
+      } catch (error) {
+        alert("Deu algo errado");
+      }
+    };
+
+    getData();
+  }, [setCategorias]);
+
   return (
     <>
       <div className="painelCadastro">
@@ -16,37 +50,68 @@ export default function PainelAdmCadastro() {
           <br />
           <br />
           <PageTitle>Cadastro de Produto</PageTitle>
-          <form>
-            <input
-              required
-              type="text"
-              placeholder="Nome do produto"
-              name="nome"
-            />
+          <form onSubmit={handleSubmit}>
+            <label>
+              <input
+                required
+                type="text"
+                placeholder="Nome do produto"
+                name="nome"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+              />
+            </label>
+
             <br />
-            <input required type="number" placeholder="Preço" name="preco" />
+            <label>
+              <input
+                required
+                type="number"
+                placeholder="Preço"
+                name="preco"
+                value={preco}
+                onChange={(e) => setPreco(e.target.value)}
+              />
+            </label>
+
             <br />
-            <input required type="url" placeholder="Foto" name="foto" />
+            <label id="photos">
+              <span>Selecionar fotos</span>
+              <input
+                required
+                type="file"
+                placeholder="Foto"
+                name="foto[]"
+                multiple
+                value={foto}
+                onChange={(e) => setFoto(e.target.value)}
+              />
+            </label>
+
             <br />
-            <select
-              required
-              id="categoria"
-              name="categoria"
-              placeholder="Categoria"
-            >
-              <option value="" disabled selected>
-                Categoria
-              </option>
-              <option value="sutias">Sutiãs</option>
-              <option value="calcinhas">Calcinhas</option>
-              <option value="pijamas">Pijamas</option>
-            </select>
+            <label>
+              <span>Categorias</span>
+              <select
+                required
+                id="categoria"
+                name="categoria"
+                placeholder="Categoria"
+                onChange={(e) => setCategoria(e.target.value)}
+              >
+                <option></option>
+                {categorias.map((categoria) => (
+                  <option>{categoria.nome}</option>
+                ))}
+              </select>
+            </label>
             <br />
             <textarea
               required
               id="descricao"
               placeholder="Descrição"
               name="descricao"
+              value={descricao}
+              onChange={(e) => setDescricao(e.target.value)}
             ></textarea>
             <br />
             <input id="button" type="submit" name="salvar" value="Salvar" />

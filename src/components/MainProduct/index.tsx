@@ -2,16 +2,17 @@ import "./styled.js";
 import ShareIcon from "../../assets/images/share-Icon.png";
 import rendaSalmao from "../../assets/images/renda-salmao.jpg";
 import rendaPreta from "../../assets/images/renda-preta.jpg";
-import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
+//import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { ProductArea } from "./styled";
-import { useState, useEffect } from "react";
-import carrinhoProvider from "../../contexts/auth.jsx";
-import { data as ecommerce } from "../apiFake/apiFake.jsx"
+import { useState } from "react";
+//import carrinhoProvider from "../../contexts/auth.jsx";
+import { data as ecommerce } from "../apiFake/apiFake.jsx";
 import Link from "../Link/index";
 
-
 export function getProductData(produto_id) {
-  let productData = ecommerce.find(produtos => produtos.produto_id === produto_id)
+  let productData = ecommerce.find(
+    (produtos) => produtos.produto_id === produto_id
+  );
 
   if (productData === undefined) {
     alert("Informação do produto " + produto_id + " não existe!");
@@ -34,7 +35,6 @@ interface Ecommerce {
 interface ShoppingCartItem {
   produto: Ecommerce;
   quantidade: number;
-  
 }
 
 export const MainProduct = () => {
@@ -42,13 +42,13 @@ export const MainProduct = () => {
 
   const handleAddToCart = (produto_id: string) => {
     const item = ecommerce.find((item) => item.produto_id === produto_id);
-    const cartItem: ShoppingCartItem  = {
+    const cartItem: ShoppingCartItem = {
       produto: item!,
       quantidade: 1,
-    }
+    };
 
     const newShoppingCart: ShoppingCartItem[] = [...shoppingCart, cartItem];
-    setShoppingCart(newShoppingCart)
+    setShoppingCart(newShoppingCart);
   };
 
   const [product, setProduct] = useState(ecommerce);
@@ -57,10 +57,10 @@ export const MainProduct = () => {
     // <carrinhoProvider>
     <ProductArea>
       <main className="main-product-container">
-              <div className="containerImages">
-        {product.map((product) => {
-          return (
-            <>
+        <div className="containerImages">
+          {product.map((product) => {
+            return (
+              <>
                 <img className="img-produto" src={product.foto} alt="/" />
 
                 <img className="img-produto" src={product.foto} alt="/" />
@@ -69,10 +69,9 @@ export const MainProduct = () => {
 
                 <img className="img-produto" src={product.foto} alt="/" />
               </>
-                );
-              })}
-              </div>
-             
+            );
+          })}
+        </div>
 
         <div className="container-product-info">
           {product.map((product) => {
@@ -193,33 +192,32 @@ export const MainProduct = () => {
                   {/* {shoppingCart.map((product) => {
                     return (
                       <> */}
-                        <div>
-                          <h3 className="quantity-title"> Quantity</h3>
-                        </div>
-                        <div className="btn-quantity">
-                          <button className="quan-buttons">minus</button>
-                          <input
-                            className="quantity-input"
-                            type="number"
-                            value="0"
-                            min="1"
-                            max="100"
-                            
-                          ></input>
-                          <button className="quan-buttons">plus</button>
-                          <div>
-                            <button
-                              className="buttonCart"
-                              onClick={() => handleAddToCart(product.produto_id)}
-                            >
-                              <Link
-                                redirect="/cart"
-                                texto="Adicionar ao carrinho"
-                              ></Link>
-                            </button>
-                          </div>
-                        </div>
-                      {/* </>
+                  <div>
+                    <h3 className="quantity-title"> Quantity</h3>
+                  </div>
+                  <div className="btn-quantity">
+                    <button className="quan-buttons">minus</button>
+                    <input
+                      className="quantity-input"
+                      type="number"
+                      value="0"
+                      min="1"
+                      max="100"
+                    ></input>
+                    <button className="quan-buttons">plus</button>
+                    <div>
+                      <button
+                        className="buttonCart"
+                        onClick={() => handleAddToCart(product.produto_id)}
+                      >
+                        <Link
+                          redirect="/cart"
+                          texto="Adicionar ao carrinho"
+                        ></Link>
+                      </button>
+                    </div>
+                  </div>
+                  {/* </>
                     );
                   })} */}
                 </div>
