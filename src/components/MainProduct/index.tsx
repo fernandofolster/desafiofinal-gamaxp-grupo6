@@ -5,7 +5,8 @@ import rendaPreta from "../../assets/images/renda-preta.jpg";
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { ProductArea } from "./styled";
 import { useState, useEffect } from "react";
-// import carrinhoProvider from "../../contexts/auth.jsx";
+import carrinhoProvider from "../../contexts/auth.jsx";
+import { data as ecommerce } from "../apiFake/apiFake.jsx"
 import Link from "../Link/index";
 import { data } from "../apiFake/apiFake";
 
@@ -27,20 +28,6 @@ interface ShoppingCartItem {
   quantidade: number;
   
 }
-
-const ecommerce: Ecommerce[] = [
-  {
-    nome: "Produto 1",
-    produto_id: "Prod_1",
-    foto: SutiaPreto,
-    descricao:
-      "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-    categoria: "sutiã",
-    categoria_id: 1,
-    preco: 5,
-    quantidade: 100,
-  },
-];
 
 export const MainProduct = () => {
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
