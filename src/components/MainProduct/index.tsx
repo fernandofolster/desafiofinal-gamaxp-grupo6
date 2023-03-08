@@ -5,49 +5,12 @@ import rendaPreta from "../../assets/images/renda-preta.jpg";
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { ProductArea } from "./styled";
 import { useState, useEffect } from "react";
-import carrinhoProvider from "../../contexts/auth.jsx";
+// import carrinhoProvider from "../../contexts/auth.jsx";
 import Link from "../Link/index";
+import { data } from "../apiFake/apiFake";
 
-export function mainProduct() {
-  const ecommerce = [
-    {
-      nome: "Produto 1",
-      produto_id: "Prod_1",
-      foto: SutiaPreto,
-      descricao:
-        "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-      categoria: "sutiã",
-      categoria_id: 1,
-      preco: 5,
-      quantidade: 100,
-    },
+
   
-  ];
-
-  export default function getProductData(produto_id) {
-    let productData = ecommerce.find(produtos => produtos.produto_id === produto_id)
-
-    if (productData === undefined) {
-      alert("Informação do produto " + produto_id + " não existe!");
-      return undefined;
-    }
-    return productData;
-  }
-}
-
-  //   const [produtos, setProdutos] = useState([
-  //     {
-  //       nome: "Produto 15",
-  //       produto_id: "Prod_15",
-  //       foto: SutiaPreto,
-  //       descricao:
-  //         "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-  //       categoria: "pijama",
-  //       categoria_id: 3,
-  //       preco: 5,
-  //       quantidade: 100,
-  //     },
-  // ]);
 interface Ecommerce {
   nome: string;
   produto_id: string;
@@ -274,3 +237,4 @@ export const MainProduct = () => {
     // </carrinhoProvider>
   );
 };
+
