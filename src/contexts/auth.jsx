@@ -1,10 +1,15 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, createContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, createAdmin,  createSession, createUser } from "../services/api";
-// import { toast } from 'react-hot-toast';
-import { createCategories, removeCategories, listCategories, listCategoriesById, editCategories } from "../services/api";
-import { MainProduct } from "../components/MainProduct";
-
+import { api, createAdmin, createSession, createUser } from "../services/api";
+//import { toast } from "react-hot-toast";
+import {
+  createCategories,
+  removeCategories,
+  listCategories,
+  listCategoriesById,
+  editCategories,
+} from "../services/api";
+//import { MainProduct } from "../components/MainProduct";*/
 
 export const AuthContext = createContext();
 
@@ -13,7 +18,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState("");
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const recoveredUser = localStorage.getItem("user");
     const token = localStorage.getItem("token");
 
@@ -22,12 +27,11 @@ export const AuthProvider = ({ children }) => {
       api.defaults.headers.authorization = `Bearer ${token}`;
     }
     setLoading(false);
-  }, []);
+  }, []);*/
 
   const cadastrarUsuario = async (nome, email, senha) => {
     const response = await createUser(nome, email, senha);
     console.log("Cadastrando Usuario", response.data);
-
     const signinUser = response.data.user;
     const token = response.data.token;
     api.defaults.headers.authorization = `Bearer ${token}`;
@@ -38,7 +42,6 @@ export const AuthProvider = ({ children }) => {
   const cadastrarAdmin = async (nome, email, senha) => {
     const response = await createAdmin(nome, email, senha);
     console.log("Cadastrando Administrador", response.data);
-
     const signinAdm = response.data.user;
     const token = response.data.token;
     api.defaults.headers.authorization = `Bearer ${token}`;
@@ -49,16 +52,9 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, senha) => {
     const response = await createSession(email, senha);
     console.log("login", response.data);
-
-    const loggedUser = response.data.user;
-    const token = response.data.token;
-
-    localStorage.setItem("user", JSON.stringify(loggedUser));
+    const token = response.headers.token;
     localStorage.setItem("token", token);
-
     api.defaults.headers.authorization = `Bearer ${token}`;
-
-    setUser(loggedUser);
     navigate("/paineladm");
   };
 
@@ -88,23 +84,23 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-
 // ---------->>>>> CONTEXT CARRINHO <<<<<----------
-export const CartContext = createContext({
+/*export const CartContext = createContext({
   itens: [],
   getQuantidadeProduto: () => {},
   adicionarUmCarrinho: () => {},
   removerUmCarrinho: () => {},
   deletarCarrinho: () => {},
-  getValorTotal: () => {}
+  getValorTotal: () => {},
 });
 
 export const carrinhoProvider = ({ children }) => {
-
   const [itensCarrinho, setItensCarrinho] = useState([]);
 
   function getQuantidadeProduto(produto_id) {
-    const quantidade = itensCarrinho.find(MainProduct => MainProduct.produto_id === produto_id)?.quantidade;
+    const quantidade = itensCarrinho.find(
+      (MainProduct) => MainProduct.produto_id === produto_id
+    )?.quantidade;
 
     if (quantidade === undefined) {
       return 0;
@@ -115,58 +111,57 @@ export const carrinhoProvider = ({ children }) => {
   function adicionarUmCarrinho(produto_id) {
     const quantidade = getQuantidadeProduto(produto_id);
 
-    if (quantidade === 0) { // produto não está no carrinho
-      setItensCarrinho ([
+    if (quantidade === 0) {
+      // produto não está no carrinho
+      setItensCarrinho([
         ...itensCarrinho,
         {
           id: produto_id,
-          quantidade: 1
-        }
-      ])
-  } else { // produto está no carrinho
-    setItensCarrinho(
-      itensCarrinho.map(
-        MainProduct =>
-        MainProduct.produto_id === produto_id
-        ? { ...MainProduct, quantidade: MainProduct.quantidade + 1 }
-        : MainProduct
-      )
-    )
+          quantidade: 1,
+        },
+      ]);
+    } else {
+      // produto está no carrinho
+      setItensCarrinho(
+        itensCarrinho.map((MainProduct) =>
+          MainProduct.produto_id === produto_id
+            ? { ...MainProduct, quantidade: MainProduct.quantidade + 1 }
+            : MainProduct
+        )
+      );
+    }
   }
-}
 
-  function removerUmCarrinho(produto_id){
+  function removerUmCarrinho(produto_id) {
     const quantidade = getQuantidadeProduto(produto_id);
 
     if (quantidade == 1) {
       deletarCarrinho(produto_id);
     } else {
       setItensCarrinho(
-        itensCarrinho.map(
-          MainProduct =>
+        itensCarrinho.map((MainProduct) =>
           MainProduct.produto_id === produto_id
-          ? { ...MainProduct, quantidade: MainProduct.quantidade - 1 }
-          : MainProduct
+            ? { ...MainProduct, quantidade: MainProduct.quantidade - 1 }
+            : MainProduct
         )
-      )
+      );
     }
   }
 
   function deletarCarrinho(produto_id) {
-    setItensCarrinho(
-      itensCarrinho =>
-      itensCarrinho.filter(produtoAtual => {
+    setItensCarrinho((itensCarrinho) =>
+      itensCarrinho.filter((produtoAtual) => {
         produtoAtual.produto_id != produto_id;
       })
-    )
+    );
   }
 
   function getValorTotal() {
     let valorTotal = 0;
     itensCarrinho.map((itemCarrinho) => {
       const productData = getProductData(itemCarrinho.produto_id);
-      valorTotal += (productData.preco * itemCarrinho.quantidade);
-    })
+      valorTotal += productData.preco * itemCarrinho.quantidade;
+    });
     return valorTotal;
   }
 
@@ -176,67 +171,51 @@ export const carrinhoProvider = ({ children }) => {
     adicionarUmCarrinho,
     removerUmCarrinho,
     deletarCarrinho,
-    getValorTotal
-  }
+    getValorTotal,
+  };
 
-    return (
-        <CartContext.Provider value={{contextValue}}>
-            {children}
-        </CartContext.Provider>
-)};
+  return (
+    <CartContext.Provider value={{ contextValue }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
 
 export default carrinhoProvider;
 
+*/ // -------- Context Category -----------//
 
- // -------- Context Category -----------//
+const CategoryContext = createContext();
 
- const CategoryContext = createContext ();
-
- export const ContextCategory = ({children}) => {
-  
-
-
-  
-
+export const ContextCategory = ({ children }) => {
   const criarCategoria = async (nome) => {
     const response = await createCategories(nome);
     console.log("Criando Categoria", response.data);
-
-    
   };
 
   const editarCategoria = async (nome, id) => {
     const response = await editCategories(nome, id);
     console.log("Editando Categoria", response.data);
-
-    
   };
 
   const deletarCategoria = async (id) => {
     const response = await removeCategories(id);
     console.log("Removendo Categoria", response.data);
-
-    
   };
 
   const listarCategoria = async () => {
     const response = await listCategories();
     console.log("Listando Categoria", response.data);
-
-    
   };
 
   const listarCategoriaById = async (id) => {
     const response = await listCategoriesById(id);
     console.log("Listando Id de Categoria", response.data);
-
-    
   };
 
-
   return (
-    <CategoryContext.Provider 
-      value = {{
+    <CategoryContext.Provider
+      value={{
         criarCategoria,
         editarCategoria,
         deletarCategoria,
@@ -247,4 +226,4 @@ export default carrinhoProvider;
       {children}
     </CategoryContext.Provider>
   );
- }
+};

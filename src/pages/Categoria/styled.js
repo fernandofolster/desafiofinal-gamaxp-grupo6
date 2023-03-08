@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
-export const PainelCadastro = styled.div`
+export const PainelCategoria = styled.div`
   .painel {
     margin-top: 2rem;
     margin-left: 12.5rem;
   }
 
-  label,
   input,
   #button,
   #categoria,

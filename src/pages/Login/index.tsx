@@ -2,14 +2,14 @@ import { useState, useContext } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { PageLogin } from "./styled";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/auth";
 import { PageTitle } from "../../components/HeaderPainel";
 import "../../styles/global.js";
 
 export default function Login() {
+  const navigate = useNavigate();
   const { login } = useContext(AuthContext);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberPassword, setRememberPassword] = useState(false);
@@ -17,6 +17,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     login(email, password);
+    navigate("/");
   };
 
   return (
@@ -68,7 +69,7 @@ export default function Login() {
               </label>
               <label className="area">
                 <div className="area--input">
-                  <button>Fazer login</button>
+                  <button type="submit">Fazer login</button>
                 </div>
               </label>
               <br />

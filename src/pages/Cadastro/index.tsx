@@ -1,23 +1,44 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import Header from "../../components/Header";
 import { PageTitle } from "../../components/HeaderPainel";
 import "../../styles/global";
 import { Cadastro } from "./styled";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../contexts/auth";
+//import { AuthContext } from "../../contexts/auth";
 import Footer from "../../components/Footer";
+import { createUser } from "../../services/MainApi/usuarios";
 
 export default function PageCadastro() {
-  const { cadastrarUsuario } = useContext(AuthContext);
+  const cadastroUser = async (event) => {
+    event.preventDefault();
+
+    const payload = {
+      nome,
+      email,
+      senha,
+    };
+    try {
+      const response = await createUser(payload);
+      if (response.status !== 201) {
+        return alert("Deu algo errado");
+      }
+      alert("Usuário cadastrado com sucesso");
+    } catch (error) {
+      alert("Deu algo errado");
+    }
+  };
+
+  //const { cadastrarUsuario } = useContext(AuthContext);
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleSubmit = (e) => {
+  /*const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Criando usuário", { nome, email, senha });
     cadastrarUsuario(nome, email, senha);
-  };
+    
+  };*/
 
   return (
     <div className="App">
@@ -25,7 +46,7 @@ export default function PageCadastro() {
       <main>
         <Cadastro>
           <div className="container">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={cadastroUser}>
               <PageTitle>Faça seu Cadastro</PageTitle>
               <label className="area-name">
                 <div>
@@ -71,7 +92,7 @@ export default function PageCadastro() {
               <br />
               <label className="area">
                 <div className="area--input">
-                  <button>Fazer cadastro</button>
+                  <button type="submit">Fazer cadastro</button>
                 </div>
               </label>
               <br />
