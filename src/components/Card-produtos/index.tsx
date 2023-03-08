@@ -6,7 +6,7 @@ import { data } from "../apiFake/apiFake";
 export function CardProductArea() {
   const {ecommerce} = data;
   
-  const categories = [
+  const [category, setCategory] = useState([
     {
       categoria: "sutiã",
     },
@@ -19,14 +19,14 @@ export function CardProductArea() {
     {
       categoria: "all",
     },
-  ];
+  ]);
   
 
 
   // ---------->>>>>> COMEÇO FUNÇÃO DOS PRODUTOS - https://www.youtube.com/watch?v=_8M-YVY76O8&t=132s - LOADING PRODUCT DINAMICALLY
 
 //   function getProductData(produto_id) {
-//     let productData = MainProduct.find(produtos => produtos.id === produto_id)
+//     let productData = mainProduct.find(produtos => produtos.id === produto_id)
 
 //     if (productData == undefined) {
 //       alert("Informação do produto " + produto_id + " não existe!");
@@ -36,36 +36,6 @@ export function CardProductArea() {
 // }
 // export getProductData;
 // ---------->>>>>> FIM FUNÇÃO DOS PRODUTOS
-
-
-  // const [categories, setCategories] = useState([
-  //   {
-  //     categoria: 1,
-  //   },
-  //   {
-  //     categoria: 2,
-  //   },
-  //   {
-  //     categoria: 3,
-  //   },
-  // ]);
-
-  // const [produtos, setProdutos] = useState(ecommerce);
-  // useEffect(() => {
-  //   ecommerce.produtos.list()
-  //   .then(res => {
-  //     setProdutos(res.ecommerce)
-  //   })
-  //   .catch(err => console.log(err))
-  // }, [])
-
-
-  // const productList = (event) => {
-  //   const result = ecommerce.produtos.list(() => {
-  //     return produtos.list === event;
-  //   })
-  // }
-  const [category, setCategory] = useState(categories);
 
   const [pagination, setPagination] = useState(10);
   const loadMore = () => {
