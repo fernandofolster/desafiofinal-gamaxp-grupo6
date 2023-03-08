@@ -34,7 +34,7 @@ export default function Routes() {
           <Route path="/paineladm" element={<PainelAdm />} />
           <Route path="/paineladmcadastro" element={<PainelAdmCadastro />} />
           <Route path="/paineladmdetalhe" element={<PainelAdmDetalhe />} />
-          <Route path="/cadastroproduto" element={<CadastroProduto />} />
+          {/* <Route path="/cadastroproduto" element={<CadastroProduto />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<PageCadastro />} />
           <Route path="/signupadm" element={<PageCadastroAdm />} />
