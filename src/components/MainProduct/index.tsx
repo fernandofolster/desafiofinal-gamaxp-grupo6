@@ -5,10 +5,10 @@ import rendaPreta from "../../assets/images/renda-preta.jpg";
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { ProductArea } from "./styled";
 import { useState, useEffect } from "react";
-import carrinhoProvider from "../../contexts/auth.jsx";
+// import carrinhoProvider from "../../contexts/auth.jsx";
 import { data as ecommerce } from "../apiFake/apiFake.jsx"
 import Link from "../Link/index";
-import { data } from "../apiFake/apiFake";
+
 
 
   
