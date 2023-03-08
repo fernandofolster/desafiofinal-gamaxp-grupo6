@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const ProductArea = styled.div`
+export const InfosProdutoStyled = styled.div`
  body {
     display: flex;
     flex-direction: column;

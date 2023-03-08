@@ -1,5 +1,5 @@
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
-import { CardProductStyled } from "./styled";
+import { CardProdutoStyled } from "./styled";
 import { useEffect, useState } from "react";
 import { data } from "../apiFake/apiFake";
 
@@ -44,7 +44,7 @@ export function CardProductArea() {
 
   const [product, setProduct] = useState(ecommerce);
   const filterResult = (event) => {
-    const result = ecommerce.filter((product) => {
+    const result = data.filter((product) => {
       return product.categoria_id === event;
     });
     setProduct(result);
@@ -52,7 +52,7 @@ export function CardProductArea() {
 
   return (
     <div className="category-container">
-      <CardProductStyled>
+      <CardProdutoStyled>
         <div className="category-filter-wrapper">
           {category.map((category) => {
             return (
@@ -96,7 +96,7 @@ export function CardProductArea() {
             </button>
           </div>
         </section>
-      </CardProductStyled>
+      </CardProdutoStyled>
     </div>
   );
 }
