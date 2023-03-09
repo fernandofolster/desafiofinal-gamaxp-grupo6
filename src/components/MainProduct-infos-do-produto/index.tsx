@@ -4,23 +4,12 @@ import rendaSalmao from "../../assets/images/renda-salmao.jpg";
 import rendaPreta from "../../assets/images/renda-preta.jpg";
 //import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { InfosProdutoStyled } from "./styled";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 // import carrinhoProvider from "../../contexts/auth.jsx";
 import Link from "../Link/index";
 import { data } from "../apiFake/apiFake";
-
-
-// export function getProductData(produto_id) {
-//   let productData = ecommerce.find(
-//     (produtos) => produtos.produto_id === produto_id
-//   );
-
-//   if (productData === undefined) {
-//     alert("Informação do produto " + produto_id + " não existe!");
-//     return undefined;
-//   }
-//   return productData;
-// }
 
 interface Ecommerce {
   nome: string;
@@ -38,8 +27,44 @@ interface ShoppingCartItem {
   quantidade: number;
 }
 
-
 export const InfosDoProduto = () => {
+
+//   const params = useParams();
+//   const { produto_id } params;
+
+//   const reducer = (state, action) => { switch (action.type) {
+//     case 'FETCH_REQUEST':
+//       return { ... state, loading: true };
+//     case 'FETCH_SUCCESS':
+//       return { ... state, products: action.payload, loading: false };
+//     case 'FETCH_FAIL':
+//       return { ... state, loading: false, error: action.payload };
+//     default:
+//       return state;
+//   }
+// };
+
+// function HomeScreen() {
+//   const [{ loading, error, product }, dispatch] = useReducer(reducer, {
+//     products: [],
+//     loading: true,
+//     error: ''
+//   })
+// };
+
+// useEffect(() => {
+//   const fetchData = async () => {
+//     dispatch({ type: 'FETCH_REQUEST' });
+//     try {
+//       const result = await axios.get(`/produto/${produto_id}`);
+//       dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+//     } catch (err) {
+//       dispatch({ type: 'FETCH_FAIL', payload: err.message });
+//       }
+//   };
+//   fetchData();
+//   }, [produto_id]);
+
   const {ecommerce} = data;
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
 
@@ -57,6 +82,9 @@ export const InfosDoProduto = () => {
   const [product, setProduct] = useState(ecommerce);
 
   return (
+    // loading ? <div>Loading...</div>
+    // : error? <div>{error}</div>
+    // : 
     // <carrinhoProvider>
     <InfosProdutoStyled>
       <main className="main-product-container">

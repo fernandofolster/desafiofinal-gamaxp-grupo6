@@ -22,21 +22,6 @@ export function CardProductArea() {
   ]);
   
 
-
-  // ---------->>>>>> COMEÇO FUNÇÃO DOS PRODUTOS - https://www.youtube.com/watch?v=_8M-YVY76O8&t=132s - LOADING PRODUCT DINAMICALLY
-
-//   function getProductData(produto_id) {
-//     let productData = mainProduct.find(produtos => produtos.id === produto_id)
-
-//     if (productData == undefined) {
-//       alert("Informação do produto " + produto_id + " não existe!");
-//       return undefined;
-//     }
-//     return productData;
-// }
-// export getProductData;
-// ---------->>>>>> FIM FUNÇÃO DOS PRODUTOS
-
   const [pagination, setPagination] = useState(10);
   const loadMore = () => {
     setPagination(pagination + pagination);
@@ -72,7 +57,8 @@ export function CardProductArea() {
               <>
                 <div className="product-card" key={product.nome}>
                   {/* trocar nome por ID -- pedir p/ back acrescentar ID em product */}
-                  <a className="link-to-description" href="/ProductContent">
+                  {/* <a className="link-to-description" href="/ProductContent"> */}
+                  <a className="link-to-description" href={`/productcontent/${product.produto_id}`}>
                     <img
                       className="product-card-img"
                       src={product.foto}
@@ -80,7 +66,8 @@ export function CardProductArea() {
                     />
                   </a>
                   <div className="product-name-size">
-                    <a className="link-to-description" href="/ProductContent">
+                    {/* <a className="link-to-description" href="/ProductContent"> */}
+                    <a className="link-to-description" href={`/productcontent/${product.produto_id}`}>
                       <h4 className="product-name">{product.nome}</h4>
                       <h5 className="price-prod">R$ {product.preco}</h5>
                     </a>
