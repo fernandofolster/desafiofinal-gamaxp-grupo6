@@ -3,23 +3,14 @@ import ShareIcon from "../../assets/images/share-Icon.png";
 import rendaSalmao from "../../assets/images/renda-salmao.jpg";
 import rendaPreta from "../../assets/images/renda-preta.jpg";
 //import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
-import { ProductArea } from "./styled";
-import { useState } from "react";
-//import carrinhoProvider from "../../contexts/auth.jsx";
-import { data as ecommerce } from "../apiFake/apiFake.jsx";
+import { InfosProdutoStyled } from "./styled";
+import { useState, useEffect, useReducer } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+// import carrinhoProvider from "../../contexts/auth.jsx";
 import Link from "../Link/index";
-
-export function getProductData(produto_id) {
-  let productData = ecommerce.find(
-    (produtos) => produtos.produto_id === produto_id
-  );
-
-  if (productData === undefined) {
-    alert("Informação do produto " + produto_id + " não existe!");
-    return undefined;
-  }
-  return productData;
-}
+import { getProduct } from "../../services/api";
+import { data } from "../apiFake/apiFake.jsx";
 
 interface Ecommerce {
   nome: string;
@@ -37,7 +28,45 @@ interface ShoppingCartItem {
   quantidade: number;
 }
 
-export const MainProduct = () => {
+export const InfosDoProduto = () => {
+
+//   const params = useParams();
+//   const { produto_id } params;
+
+//   const reducer = (state, action) => { switch (action.type) {
+//     case 'FETCH_REQUEST':
+//       return { ... state, loading: true };
+//     case 'FETCH_SUCCESS':
+//       return { ... state, products: action.payload, loading: false };
+//     case 'FETCH_FAIL':
+//       return { ... state, loading: false, error: action.payload };
+//     default:
+//       return state;
+//   }
+// };
+
+// function HomeScreen() {
+//   const [{ loading, error, product }, dispatch] = useReducer(reducer, {
+//     products: [],
+//     loading: true,
+//     error: ''
+//   })
+// };
+
+// useEffect(() => {
+//   const fetchData = async () => {
+//     dispatch({ type: 'FETCH_REQUEST' });
+//     try {
+//       const result = await axios.get(`/produto/${produto_id}`);
+//       dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+//     } catch (err) {
+//       dispatch({ type: 'FETCH_FAIL', payload: err.message });
+//       }
+//   };
+//   fetchData();
+//   }, [produto_id]);
+
+  const {ecommerce} = data;
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
 
   const handleAddToCart = (produto_id: string) => {
@@ -51,11 +80,31 @@ export const MainProduct = () => {
     setShoppingCart(newShoppingCart);
   };
 
-  const [product, setProduct] = useState(ecommerce);
+  // ----->>>>> Testando link com ID buscando produto da apifake
+
+  // const { produto_id } = useParams();
+
+  const [product, setProduct] = useState(ecommerce); // essa linha já estava antes
+  // const [loading, setLoading] = useState(false);
+
+  // useEffect(() => {
+  //   const getProduto = async () => {
+  //     setLoading(true);
+  //     const response = await fetch(`https://gamaxp-desafio4-grupo6.onrender.com"/produtos/${id}`);
+  //     setProduct(await response.json());
+  //     setLoading(false);
+  //   }
+  //   getProduto();
+  // }, [])
+
+    // ----->>>>> fim: Testando link com ID buscando produto da apifake
 
   return (
+    // loading ? <div>Loading...</div>
+    // : error? <div>{error}</div>
+    // : 
     // <carrinhoProvider>
-    <ProductArea>
+    <InfosProdutoStyled>
       <main className="main-product-container">
         <div className="containerImages">
           {product.map((product) => {
@@ -226,7 +275,8 @@ export const MainProduct = () => {
           })}
         </div>
       </main>
-    </ProductArea>
+    </InfosProdutoStyled>
     // </carrinhoProvider>
   );
 };
+

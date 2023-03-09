@@ -172,3 +172,15 @@ export const data = {
       },
     ],
   };
+
+  export function getProductData(produto_id) {
+    let productData = data.find(
+      (produtos) => produtos.produto_id === produto_id
+    );
+  
+    if (productData === undefined) {
+      alert("Informação do produto " + produto_id + " não existe!");
+      return undefined;
+    }
+    return productData;
+  }

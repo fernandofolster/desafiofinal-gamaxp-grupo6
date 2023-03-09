@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import "./styled.js";
 // import SutiaImg from "../../assets/images/lingerie-preta.jpg";
-import { CartArea } from "./styled";
+import { CartAreaStyled } from "./styled";
 import Link from "../../components/Link";
-import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
+// import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
+import { data } from "../apiFake/apiFake";
+import { CardProdutosCarrinho } from "../carrinho_card_produtos/index";
 
 interface Ecommerce {
   nome: string;
@@ -16,31 +18,19 @@ interface Ecommerce {
   quantidade: number;
 }
 
+interface ShoppingCartItem {
+  produto: Ecommerce;
+  quantidade: number;
+  preco: number;
+}
 
+export function CartMain() {
+  const { ecommerce } = data;
 
-const ecommerce: Ecommerce[] = [
-  {
-    nome: "Produto 1",
-    produto_id: "Prod_1",
-    foto: SutiaPreto,
-    descricao:
-      "Descrição do produto: Calcinha Hot Pant Tule Chica Capeto com recortes forrados na parte frontal e posterior em tule estampado pink. ",
-    categoria: "sutiã",
-    categoria_id: 1,
-    preco: 5,
-    quantidade: 100,
-  },
-];
-
-function CartMain() {
- 
-
-  const handleRemoveFromCart = (product_id: string) => {};
-
-  const [product, setProduct] = useState(ecommerce);
+  const [productCart, setProductCart] = useState<ShoppingCartItem[]>([]);;
 
   return (
-    <CartArea>
+    <CartAreaStyled>
       <>
         <div className="cart-main">
           <div className="cart-container">
@@ -55,31 +45,10 @@ function CartMain() {
                   ></Link>
                 </div>
               </div>
-              {product.map((product) => {
-                return (
-                  <div className="text-product-cart">
-                    <img className="img-product-cart" src={product.foto} alt="/" />
-                    <div>
-                      <h4 className="product-title-cart">{product.nome}</h4>
-
-                      <p className="product-size-cart">Tamanho: G</p>
-
-                      <p className="product-quantity-cart">{product.quantidade}</p>
-
-                      <p className="product-price-cart">R$ {product.preco}</p>
-
-                      <button
-                        className="product-remove-btn"
-                        type="submit"
-                        onClick={() => handleRemoveFromCart(product.produto_id)}
-                      >
-                        <u>Remover</u>
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
             </div>
+           
+            {/* card de cada produto colocado no carrinho */}
+            <CardProdutosCarrinho/> 
 
             <hr className="hr-cart"></hr>
 
@@ -116,7 +85,6 @@ function CartMain() {
           </div>
 
           <div className="container-valor-total">
-            
             <div>
               <h4 className="title-resume">Resumo do Pedido</h4>
             </div>
@@ -130,31 +98,31 @@ function CartMain() {
             </div>
 
             <div>
+              {/* {productCart.map((product) => {
+                return ( */}
+                  <>
+                    <div className="subtotal-cart">
+                      <h5>Subtotal</h5>
+                      {/* <p>{product.preco * product.quantidade}</p> */}
+                      <p>R$100</p>
+                    </div>
 
-            {ecommerce.map((product) => {
-              return(
-               <>
-               <div className="subtotal-cart">
-              <h5>Subtotal</h5>
-              <p>{product.preco * product.quantidade}</p>
-            </div>
+                    <div className="envio">
+                      <h5>Envio</h5>
+                      <p>Calculado na próxima etapa</p>
+                    </div>
 
-            <div className="envio">
-              <h5>Envio</h5>
-              <p>Calculado na próxima etapa</p>
-            </div>
+                    <hr className="line-total"></hr>
 
-            <hr className="line-total"></hr>
-
-            <div className="total-cart">
-              <h5>Total</h5>
-              <p>{product.preco * product.quantidade}</p>
+                    <div className="total-cart">
+                      <h5>Total</h5>
+                      {/* <p>{product.preco * product.quantidade}</p> */}
+                      <p>R$100</p>
+                    </div>
+                  </>
+                 {/* );
+              })}  */}
             </div>
-               </> 
-              )
-            })}
-            </div>
-            
 
             <div>
               <button className="go-checkout-btn">
@@ -164,8 +132,6 @@ function CartMain() {
           </div>
         </div>
       </>
-    </CartArea>
+    </CartAreaStyled>
   );
 }
-
-export default CartMain;

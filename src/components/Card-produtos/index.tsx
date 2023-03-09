@@ -1,12 +1,13 @@
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
-import { CardProductStyled } from "./styled";
+import { CardProdutoStyled } from "./styled";
 import { useEffect, useState } from "react";
 import { data } from "../apiFake/apiFake";
+import { getProduct } from "../../services/api";
 
 export function CardProductArea() {
   const {ecommerce} = data;
   
-  const categories = [
+  const [category, setCategory] = useState([
     {
       categoria: "sutiã",
     },
@@ -19,53 +20,8 @@ export function CardProductArea() {
     {
       categoria: "all",
     },
-  ];
+  ]);
   
-
-
-  // ---------->>>>>> COMEÇO FUNÇÃO DOS PRODUTOS - https://www.youtube.com/watch?v=_8M-YVY76O8&t=132s - LOADING PRODUCT DINAMICALLY
-
-//   function getProductData(produto_id) {
-//     let productData = MainProduct.find(produtos => produtos.id === produto_id)
-
-//     if (productData == undefined) {
-//       alert("Informação do produto " + produto_id + " não existe!");
-//       return undefined;
-//     }
-//     return productData;
-// }
-// export getProductData;
-// ---------->>>>>> FIM FUNÇÃO DOS PRODUTOS
-
-
-  // const [categories, setCategories] = useState([
-  //   {
-  //     categoria: 1,
-  //   },
-  //   {
-  //     categoria: 2,
-  //   },
-  //   {
-  //     categoria: 3,
-  //   },
-  // ]);
-
-  // const [produtos, setProdutos] = useState(ecommerce);
-  // useEffect(() => {
-  //   ecommerce.produtos.list()
-  //   .then(res => {
-  //     setProdutos(res.ecommerce)
-  //   })
-  //   .catch(err => console.log(err))
-  // }, [])
-
-
-  // const productList = (event) => {
-  //   const result = ecommerce.produtos.list(() => {
-  //     return produtos.list === event;
-  //   })
-  // }
-  const [category, setCategory] = useState(categories);
 
   const [pagination, setPagination] = useState(10);
   const loadMore = () => {
@@ -74,15 +30,15 @@ export function CardProductArea() {
 
   const [product, setProduct] = useState(ecommerce);
   const filterResult = (event) => {
-    const result = ecommerce.filter((product) => {
-      return product.categoria_id === event;
+    const result = getProduct.filter((product) => {
+      return product.categoria === event;
     });
     setProduct(result);
   };
 
   return (
     <div className="category-container">
-      <CardProductStyled>
+      <CardProdutoStyled>
         <div className="category-filter-wrapper">
           {category.map((category) => {
             return (
@@ -102,7 +58,8 @@ export function CardProductArea() {
               <>
                 <div className="product-card" key={product.nome}>
                   {/* trocar nome por ID -- pedir p/ back acrescentar ID em product */}
-                  <a className="link-to-description" href="/ProductContent">
+                  {/* <a className="link-to-description" href="/ProductContent"> */}
+                  <a className="link-to-description" href={`/productcontent/${product.produto_id}`}>
                     <img
                       className="product-card-img"
                       src={product.foto}
@@ -110,7 +67,8 @@ export function CardProductArea() {
                     />
                   </a>
                   <div className="product-name-size">
-                    <a className="link-to-description" href="/ProductContent">
+                    {/* <a className="link-to-description" href="/ProductContent"> */}
+                    <a className="link-to-description" href={`/productcontent/${product.produto_id}`}>
                       <h4 className="product-name">{product.nome}</h4>
                       <h5 className="price-prod">R$ {product.preco}</h5>
                     </a>
@@ -126,7 +84,7 @@ export function CardProductArea() {
             </button>
           </div>
         </section>
-      </CardProductStyled>
+      </CardProdutoStyled>
     </div>
   );
 }
