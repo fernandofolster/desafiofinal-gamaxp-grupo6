@@ -10,6 +10,7 @@ import axios from "axios";
 // import carrinhoProvider from "../../contexts/auth.jsx";
 import Link from "../Link/index";
 import { getProduct } from "../../services/api";
+import { data } from "../apiFake/apiFake.jsx";
 
 interface Ecommerce {
   nome: string;
@@ -81,20 +82,20 @@ export const InfosDoProduto = () => {
 
   // ----->>>>> Testando link com ID buscando produto da apifake
 
-  const { produto_id } = useParams();
+  // const { produto_id } = useParams();
 
   const [product, setProduct] = useState(ecommerce); // essa linha já estava antes
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const getProduto = async () => {
-      setLoading(true);
-      const response = await fetch(`/productcontent/${produto_id}`);
-      setProduct(await response.json());
-      setLoading(false);
-    }
-    getProduto();
-  }, [])
+  // useEffect(() => {
+  //   const getProduto = async () => {
+  //     setLoading(true);
+  //     const response = await fetch(`https://gamaxp-desafio4-grupo6.onrender.com"/produtos/${id}`);
+  //     setProduct(await response.json());
+  //     setLoading(false);
+  //   }
+  //   getProduto();
+  // }, [])
 
     // ----->>>>> fim: Testando link com ID buscando produto da apifake
 
