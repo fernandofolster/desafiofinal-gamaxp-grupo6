@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 // import carrinhoProvider from "../../contexts/auth.jsx";
 import Link from "../Link/index";
-import { data } from "../apiFake/apiFake";
+import { getProduct } from "../../services/api";
 
 interface Ecommerce {
   nome: string;
@@ -79,7 +79,24 @@ export const InfosDoProduto = () => {
     setShoppingCart(newShoppingCart);
   };
 
-  const [product, setProduct] = useState(ecommerce);
+  // ----->>>>> Testando link com ID buscando produto da apifake
+
+  const { produto_id } = useParams();
+
+  const [product, setProduct] = useState(ecommerce); // essa linha já estava antes
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const getProduto = async () => {
+      setLoading(true);
+      const response = await fetch(`/productcontent/${produto_id}`);
+      setProduct(await response.json());
+      setLoading(false);
+    }
+    getProduto();
+  }, [])
+
+    // ----->>>>> fim: Testando link com ID buscando produto da apifake
 
   return (
     // loading ? <div>Loading...</div>

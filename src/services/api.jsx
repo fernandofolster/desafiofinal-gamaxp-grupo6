@@ -52,6 +52,10 @@ export const createProducts = async (
   });
 };
 
+export const getProduct = async () => {
+  return api.get("/produtos/:id");
+};
+
 export const editProducts = async (
   nome,
   foto,
