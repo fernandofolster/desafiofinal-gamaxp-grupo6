@@ -9,16 +9,14 @@ export default function ListarCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
   useEffect(() => {
-    const getData = async () => {
+    (async () => {
       try {
         const response = await getCategory();
         setCategorias(response.data);
       } catch (error) {
         alert("Deu algo errado");
       }
-    };
-
-    getData();
+    })();
   }, [setCategorias]);
 
   return (

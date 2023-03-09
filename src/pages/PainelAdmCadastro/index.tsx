@@ -1,42 +1,59 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import HeaderPainel from "../../components/HeaderPainel";
 import "../../styles/global.js";
 import { PageTitle } from "../../components/HeaderPainel";
 import { PainelCadastro } from "./styled";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../contexts/auth";
 import { getCategory } from "../../services/MainApi/categorias";
+import { createProduct } from "../../services/MainApi/produtos";
+import { productPayload } from "../../services/MainApi/produtos";
 
 export default function PainelAdmCadastro() {
-  const { cadastrarProduto } = useContext(AuthContext);
   const [nome, setNome] = useState("");
   const [preco, setPreco] = useState("");
   const [foto, setFoto] = useState("");
+  const [quantidade, setQuantidade] = useState("");
   const [categoria, setCategoria] = useState("");
   const [descricao, setDescricao] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Criando produto", { nome, preco, foto, categoria, descricao });
-    cadastrarProduto(nome, preco, foto, categoria, descricao);
+  const cadastroProduto = async (event) => {
+    event.preventDefault();
+
+    const payload: productPayload = {
+      nome,
+      preco,
+      quantidade,
+      foto,
+      categoria,
+      descricao,
+    };
+
+    try {
+      const response = await createProduct(payload);
+      if (response.status !== 201) {
+        return alert("Deu algo errado");
+      }
+      alert("Produto cadastrado com sucesso");
+    } catch (error) {
+      alert("Deu algo errado");
+    }
   };
 
   interface Categoria {
     nome: string;
+    _id: any;
   }
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
   useEffect(() => {
-    const getData = async () => {
+    (async () => {
       try {
         const response = await getCategory();
         setCategorias(response.data);
       } catch (error) {
         alert("Deu algo errado");
       }
-    };
-
-    getData();
+    })();
   }, [setCategorias]);
 
   return (
@@ -50,7 +67,7 @@ export default function PainelAdmCadastro() {
           <br />
           <br />
           <PageTitle>Cadastro de Produto</PageTitle>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={cadastroProduto}>
             <label>
               <input
                 required
@@ -65,12 +82,12 @@ export default function PainelAdmCadastro() {
             <br />
             <label>
               <input
-                required
                 type="number"
-                placeholder="Preço"
                 name="preco"
+                placeholder="R$ "
                 value={preco}
                 onChange={(e) => setPreco(e.target.value)}
+                required
               />
             </label>
 
@@ -87,7 +104,17 @@ export default function PainelAdmCadastro() {
                 onChange={(e) => setFoto(e.target.value)}
               />
             </label>
-
+            <br />
+            <label>
+              <input
+                required
+                type="number"
+                placeholder="Quantidade"
+                name="quantidade"
+                value={quantidade}
+                onChange={(e) => setQuantidade(e.target.value)}
+              />
+            </label>
             <br />
             <label>
               <span>Categorias</span>
@@ -99,8 +126,10 @@ export default function PainelAdmCadastro() {
                 onChange={(e) => setCategoria(e.target.value)}
               >
                 <option></option>
-                {categorias.map((categoria) => (
-                  <option>{categoria.nome}</option>
+                {categorias.map((categoria, _id) => (
+                  <option key={_id} value={categoria._id}>
+                    {categoria.nome}
+                  </option>
                 ))}
               </select>
             </label>
@@ -122,7 +151,18 @@ export default function PainelAdmCadastro() {
   );
 }
 
-/*class Reservation extends React.Component {
+/*
+
+              <input
+                required
+                type="number"
+                placeholder="Preço"
+                name="preco"
+                value={preco}
+                onChange={(e) => setPreco(e.target.value)}
+              />
+
+class Reservation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

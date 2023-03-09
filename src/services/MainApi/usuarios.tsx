@@ -15,7 +15,7 @@ export function editUser() {
 }
 
 export function removeUser() {
-  return baseAPI.delete("/usuarios:id");
+  return baseAPI.delete("/usuarios/:id");
 }
 
 export function getUser() {

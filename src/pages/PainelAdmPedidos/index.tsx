@@ -1,18 +1,18 @@
 import HeaderPainel from "../../components/HeaderPainel";
 import "../../styles/global.js";
 import { Link } from "react-router-dom";
-import { PainelGeral } from "./styled";
+import { PainelGeralPedidos } from "./styled";
 import { PageTitle } from "../../components/HeaderPainel";
-import TabelaPainelProdutos from "../../components/TabelaPainelProdutos";
+import TabelaPainelPedidos from "../../components/TabelaPainelPedidos";
 
-function PainelAdm() {
+function PainelAdmPedidos() {
   return (
     <>
       <div>
         <HeaderPainel />
       </div>
       <div className="container">
-        <PainelGeral>
+        <PainelGeralPedidos>
           <div className="painel">
             <PageTitle className="title">Painel Administrativo</PageTitle>
             <p>Bem vindo, admin!</p>
@@ -30,18 +30,14 @@ function PainelAdm() {
               <button>Pedidos</button>
             </Link>
           </div>
-          <div className="btnAdd">
-            <Link to="/paineladmcadastro" className="button-add">
-              adicionar novo
-            </Link>
-          </div>
+          <br />
           <div className="tabela">
-            <TabelaPainelProdutos />
+            <TabelaPainelPedidos />
           </div>
-        </PainelGeral>
+        </PainelGeralPedidos>
       </div>
     </>
   );
 }
 
-export default PainelAdm;
+export default PainelAdmPedidos;

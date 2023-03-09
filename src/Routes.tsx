@@ -21,6 +21,9 @@ import PageCadastroAdm from "./pages/CadastroAdm";
 import { AuthProvider } from "./contexts/auth";
 import AddCategoria from "./pages/Categoria";
 import ListarCategoria from "./pages/Categoria/List";
+import ListarProdutos from "./pages/PainelAdmCadastro/List";
+import PainelAdmUsuarios from "./pages/PainelAdmUsuarios";
+import PainelAdmPedidos from "./pages/PainelAdmPedidos";
 
 export default function Routes() {
   return (
@@ -34,6 +37,8 @@ export default function Routes() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/paineladm" element={<PainelAdm />} />
+          <Route path="/paineladmpedido" element={<PainelAdmPedidos />} />
+          <Route path="/paineladmuser" element={<PainelAdmUsuarios />} />
           <Route path="/paineladmcadastro" element={<PainelAdmCadastro />} />
           <Route path="/paineladmdetalhe" element={<PainelAdmDetalhe />} />
           {/* <Route path="/cadastroproduto" element={<CadastroProduto />} /> */}
@@ -44,6 +49,7 @@ export default function Routes() {
           <Route path="/minhaconta" element={<MinhaConta />} />
           <Route path="/addcategoria" element={<AddCategoria />} />
           <Route path="/listarcategoria" element={<ListarCategoria />} />
+          <Route path="/listarproduto" element={<ListarProdutos />} />
         </WrapperRoutes>
       </AuthProvider>
       <GlobalStyle />
