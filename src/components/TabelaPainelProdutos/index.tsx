@@ -59,9 +59,9 @@ export default function ListarProdutos() {
             </tr>
           </thead>
           <tbody>
-            {produtos.map((produtos, nome) => (
+            {produtos.map((produtos) => (
               <>
-                <tr key={nome}>
+                <tr key={produtos.nome}>
                   <td>{produtos.nome}</td>
                   <td>{produtos.categoria}</td>
                   <td>{produtos.preco}</td>

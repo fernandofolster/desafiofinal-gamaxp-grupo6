@@ -5,6 +5,7 @@ import Banner2 from "../../assets/images/banner2.png";
 import Banner3 from "../../assets/images/banner3.png";
 import Banner4 from "../../assets/images/banner4.png";
 import "./styled.js";
+import { Link } from "react-router-dom";
 import { BannerRotativo } from "./styled.js";
 
 function bannerRotativo() {
@@ -19,7 +20,9 @@ function bannerRotativo() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. At saepe
             excepturi necessitatibus?
           </p>
-          <button className="btn-home">Shop All</button>
+          <Link to="/productcategory">
+            <button className="btn-home">Shop All</button>
+          </Link>
         </div>
         <div className="box2">
           <Carousel className="banner" variant="dark">

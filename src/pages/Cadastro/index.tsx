@@ -4,7 +4,6 @@ import { PageTitle } from "../../components/HeaderPainel";
 import "../../styles/global";
 import { Cadastro } from "./styled";
 import { Link } from "react-router-dom";
-//import { AuthContext } from "../../contexts/auth";
 import Footer from "../../components/Footer";
 import { createUser } from "../../services/MainApi/usuarios";
 
@@ -32,13 +31,6 @@ export default function PageCadastro() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-
-  /*const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Criando usuário", { nome, email, senha });
-    cadastrarUsuario(nome, email, senha);
-    
-  };*/
 
   return (
     <div className="App">

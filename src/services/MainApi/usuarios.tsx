@@ -11,11 +11,11 @@ export const createUser = async (payload: userPayload) => {
 };
 
 export function editUser() {
-  return baseAPI.put("/usuarios/:id");
+  return baseAPI.put("/usuarios/id");
 }
 
 export function removeUser() {
-  return baseAPI.delete("/usuarios/:id");
+  return baseAPI.delete("/usuarios/id");
 }
 
 export function getUser() {

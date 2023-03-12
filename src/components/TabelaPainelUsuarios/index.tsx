@@ -7,6 +7,7 @@ import { getUser, removeUser } from "../../services/MainApi/usuarios";
 interface Usuario {
   nome: string;
   email: string;
+  senha: string;
   _id: string;
 }
 
@@ -24,17 +25,19 @@ export default function ListarUsuarios() {
     })();
   }, [setUsuarios]);
 
-  async function handleDelete() {
+  const handleDelete = async (_id: string) => {
     if (window.confirm("Deseja realmente excluir este usuário?")) {
-      const response = await removeUser();
-      console.log(response);
-      if (response.status !== 204) {
+      console.log("ID selecionado: ", _id);
+      const filterRemove = usuarios.filter((usuarios) => usuarios._id !== _id);
+      setUsuarios(filterRemove);
+      const res = await removeUser();
+      if (res.status !== 204) {
         return alert("Deu algo errado");
       }
     } else {
       alert("Deu tudo certo");
     }
-  }
+  };
 
   return (
     <PainelTabelaUser>
@@ -49,16 +52,17 @@ export default function ListarUsuarios() {
             </tr>
           </thead>
           <tbody>
-            {usuarios.map((usuario, _id) => (
-              <tr key={_id.toString()}>
-                <td>{usuario.nome}</td>
-                <td>{usuario.email}</td>
-                <td>{usuario._id}</td>
+            {usuarios.map((usuarios, k) => (
+              <tr key={k}>
+                <td>{usuarios.nome}</td>
+                <td>{usuarios.email}</td>
+                <td>{usuarios._id}</td>
                 <td>
                   <button
-                    value={usuario._id}
+                    type="button"
+                    value={usuarios._id}
                     className="btnE"
-                    onClick={(e) => handleDelete()}
+                    onClick={() => handleDelete(usuarios._id)}
                   >
                     excluir
                   </button>

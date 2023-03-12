@@ -2,11 +2,11 @@ import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { CardProdutoStyled } from "./styled";
 import { useEffect, useState } from "react";
 import { data } from "../apiFake/apiFake";
-import { getProduct } from "../../services/api";
+import { listProducts } from "../../services/api";
 
 export function CardProductArea() {
-  const {ecommerce} = data;
-  
+  const { ecommerce } = data;
+
   const [category, setCategory] = useState([
     {
       categoria: "sutiã",
@@ -21,7 +21,6 @@ export function CardProductArea() {
       categoria: "all",
     },
   ]);
-  
 
   const [pagination, setPagination] = useState(10);
   const loadMore = () => {
@@ -29,8 +28,20 @@ export function CardProductArea() {
   };
 
   const [product, setProduct] = useState(ecommerce);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await listProducts();
+        setProduct(response.data);
+      } catch (error) {
+        alert("Deu algo errado");
+      }
+    })();
+  }, [setProduct]);
+
   const filterResult = (event) => {
-    const result = getProduct.filter((product) => {
+    const result = product.filter((product) => {
       return product.categoria === event;
     });
     setProduct(result);
@@ -59,16 +70,23 @@ export function CardProductArea() {
                 <div className="product-card" key={product.nome}>
                   {/* trocar nome por ID -- pedir p/ back acrescentar ID em product */}
                   {/* <a className="link-to-description" href="/ProductContent"> */}
-                  <a className="link-to-description" href={`/productcontent/${product.produto_id}`}>
+                  <a
+                    className="link-to-description"
+                    href={`/productcontent/${product.produto_id}`}
+                  >
                     <img
                       className="product-card-img"
-                      src={product.foto}
+                      //src={product.foto}
+                      src={SutiaPreto}
                       alt="#"
                     />
                   </a>
                   <div className="product-name-size">
                     {/* <a className="link-to-description" href="/ProductContent"> */}
-                    <a className="link-to-description" href={`/productcontent/${product.produto_id}`}>
+                    <a
+                      className="link-to-description"
+                      href={`/productcontent/${product.produto_id}`}
+                    >
                       <h4 className="product-name">{product.nome}</h4>
                       <h5 className="price-prod">R$ {product.preco}</h5>
                     </a>
