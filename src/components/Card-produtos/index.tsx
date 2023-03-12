@@ -3,6 +3,7 @@ import { CardProdutoStyled } from "./styled";
 import { useEffect, useState } from "react";
 import { data } from "../apiFake/apiFake";
 import { listProducts } from "../../services/api";
+import { currencyFormat } from "../../helpers/currencyFormat";
 
 export function CardProductArea() {
   const { ecommerce } = data;
@@ -72,7 +73,7 @@ export function CardProductArea() {
                   {/* <a className="link-to-description" href="/ProductContent"> */}
                   <a
                     className="link-to-description"
-                    href={`/productcontent/${product.produto_id}`}
+                    href={`/productcontent/${product._id}`}
                   >
                     <img
                       className="product-card-img"
@@ -85,10 +86,12 @@ export function CardProductArea() {
                     {/* <a className="link-to-description" href="/ProductContent"> */}
                     <a
                       className="link-to-description"
-                      href={`/productcontent/${product.produto_id}`}
+                      href={`/productcontent/${product._id}`}
                     >
                       <h4 className="product-name">{product.nome}</h4>
-                      <h5 className="price-prod">R$ {product.preco}</h5>
+                      <h5 className="price-prod">
+                        {currencyFormat(product.preco)}
+                      </h5>
                     </a>
                   </div>
                 </div>

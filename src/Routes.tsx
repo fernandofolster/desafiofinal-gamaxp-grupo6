@@ -33,14 +33,14 @@ export default function Routes() {
           <Route path="/" element={<Home />} />
           <Route path="/productcategory" element={<ProductCategory />} />
           <Route path="/productcontent" element={<ProductContent />} />
-          {/* <Route path="/productcontent/${id}" element={<ProductContent />} /> */}
+          <Route path="/productcontent/:id" element={<ProductContent />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/paineladm" element={<PainelAdm />} />
           <Route path="/paineladmpedido" element={<PainelAdmPedidos />} />
           <Route path="/paineladmuser" element={<PainelAdmUsuarios />} />
           <Route path="/paineladmcadastro" element={<PainelAdmCadastro />} />
-          <Route path="/paineladmdetalhe" element={<PainelAdmDetalhe />} />
+          <Route path="/paineladmdetalhe/:id" element={<PainelAdmDetalhe />} />
           {/* <Route path="/cadastroproduto" element={<CadastroProduto />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<PageCadastro />} />

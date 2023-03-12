@@ -2,14 +2,14 @@ import "./styled.js";
 import ShareIcon from "../../assets/images/share-Icon.png";
 import rendaSalmao from "../../assets/images/renda-salmao.jpg";
 import rendaPreta from "../../assets/images/renda-preta.jpg";
-//import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
+import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { InfosProdutoStyled } from "./styled";
 import { useState, useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 // import carrinhoProvider from "../../contexts/auth.jsx";
 import Link from "../Link/index";
-import { getProduct } from "../../services/api";
+import { listProduct } from "../../services/MainApi/produtos";
 import { data } from "../apiFake/apiFake.jsx";
 
 interface Ecommerce {
@@ -21,6 +21,7 @@ interface Ecommerce {
   categoria_id: number;
   preco: number;
   quantidade: number;
+  _id: string;
 }
 
 interface ShoppingCartItem {
@@ -29,44 +30,54 @@ interface ShoppingCartItem {
 }
 
 export const InfosDoProduto = () => {
+  const [ecommerce, setEcommerce] = useState<Ecommerce[]>([]);
 
-//   const params = useParams();
-//   const { produto_id } params;
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await listProduct();
+        setEcommerce(response.data);
+      } catch (error) {
+        alert("Deu algo errado");
+      }
+    })();
+  }, [setEcommerce]);
+  //   const params = useParams();
+  //   const { produto_id } params;
 
-//   const reducer = (state, action) => { switch (action.type) {
-//     case 'FETCH_REQUEST':
-//       return { ... state, loading: true };
-//     case 'FETCH_SUCCESS':
-//       return { ... state, products: action.payload, loading: false };
-//     case 'FETCH_FAIL':
-//       return { ... state, loading: false, error: action.payload };
-//     default:
-//       return state;
-//   }
-// };
+  //   const reducer = (state, action) => { switch (action.type) {
+  //     case 'FETCH_REQUEST':
+  //       return { ... state, loading: true };
+  //     case 'FETCH_SUCCESS':
+  //       return { ... state, products: action.payload, loading: false };
+  //     case 'FETCH_FAIL':
+  //       return { ... state, loading: false, error: action.payload };
+  //     default:
+  //       return state;
+  //   }
+  // };
 
-// function HomeScreen() {
-//   const [{ loading, error, product }, dispatch] = useReducer(reducer, {
-//     products: [],
-//     loading: true,
-//     error: ''
-//   })
-// };
+  // function HomeScreen() {
+  //   const [{ loading, error, product }, dispatch] = useReducer(reducer, {
+  //     products: [],
+  //     loading: true,
+  //     error: ''
+  //   })
+  // };
 
-// useEffect(() => {
-//   const fetchData = async () => {
-//     dispatch({ type: 'FETCH_REQUEST' });
-//     try {
-//       const result = await axios.get(`/produto/${produto_id}`);
-//       dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
-//     } catch (err) {
-//       dispatch({ type: 'FETCH_FAIL', payload: err.message });
-//       }
-//   };
-//   fetchData();
-//   }, [produto_id]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     dispatch({ type: 'FETCH_REQUEST' });
+  //     try {
+  //       const result = await axios.get(`/produto/${produto_id}`);
+  //       dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+  //     } catch (err) {
+  //       dispatch({ type: 'FETCH_FAIL', payload: err.message });
+  //       }
+  //   };
+  //   fetchData();
+  //   }, [produto_id]);
 
-  const {ecommerce} = data;
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
 
   const handleAddToCart = (produto_id: string) => {
@@ -97,37 +108,37 @@ export const InfosDoProduto = () => {
   //   getProduto();
   // }, [])
 
-    // ----->>>>> fim: Testando link com ID buscando produto da apifake
+  // ----->>>>> fim: Testando link com ID buscando produto da apifake
 
   return (
     // loading ? <div>Loading...</div>
     // : error? <div>{error}</div>
-    // : 
+    // :
     // <carrinhoProvider>
     <InfosProdutoStyled>
       <main className="main-product-container">
         <div className="containerImages">
-          {product.map((product) => {
+          {ecommerce.map((ecommerce) => {
             return (
               <>
-                <img className="img-produto" src={product.foto} alt="/" />
+                <img className="img-produto" src={SutiaPreto} alt="/" />
 
-                <img className="img-produto" src={product.foto} alt="/" />
+                <img className="img-produto" src={SutiaPreto} alt="/" />
 
-                <img className="img-produto" src={product.foto} alt="/" />
+                <img className="img-produto" src={SutiaPreto} alt="/" />
 
-                <img className="img-produto" src={product.foto} alt="/" />
+                <img className="img-produto" src={SutiaPreto} alt="/" />
               </>
             );
           })}
         </div>
 
         <div className="container-product-info">
-          {product.map((product) => {
+          {ecommerce.map((ecommerce) => {
             return (
               <>
                 <div className="text-title">
-                  <h3> {product.nome} </h3>
+                  <h3> {ecommerce.nome} </h3>
                   <section className="btn-icons">
                     <span>
                       <button className="btn-curtir">
@@ -156,7 +167,7 @@ export const InfosDoProduto = () => {
 
                 <div className="price-and-promo">
                   <div>
-                    <p className="product-price">R${product.preco}</p>
+                    <p className="product-price">R${ecommerce.preco}</p>
                   </div>
                   <div className="promo-component">
                     <p>or 4 interested-free payment of R$25.00.</p>
@@ -165,7 +176,7 @@ export const InfosDoProduto = () => {
                 </div>
 
                 <div>
-                  <p className="ProductInfomation">{product.descricao}</p>
+                  <p className="ProductInfomation">{ecommerce.descricao}</p>
                 </div>
 
                 <div>
@@ -257,7 +268,7 @@ export const InfosDoProduto = () => {
                     <div>
                       <button
                         className="buttonCart"
-                        onClick={() => handleAddToCart(product.produto_id)}
+                        onClick={() => handleAddToCart(ecommerce._id)}
                       >
                         <Link
                           redirect="/cart"
@@ -279,4 +290,3 @@ export const InfosDoProduto = () => {
     // </carrinhoProvider>
   );
 };
-

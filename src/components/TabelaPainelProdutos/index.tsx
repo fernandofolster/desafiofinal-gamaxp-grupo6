@@ -81,7 +81,9 @@ export default function ListarProdutos() {
                   <td>{produtos.preco}</td>
                   <td>
                     <button className="btnD">
-                      <Link to="/paineladmdetalhe">ver detalhes</Link>
+                      <Link to={`/paineladmdetalhe/${produtos._id}`}>
+                        ver detalhes
+                      </Link>
                     </button>
                     <button
                       value={produtos._id}

@@ -10,8 +10,8 @@ export const createUser = async (payload: userPayload) => {
   return baseAPI.post("/usuarios", payload);
 };
 
-export function editUser() {
-  return baseAPI.put("/usuarios/id");
+export function editUser(_id) {
+  return baseAPI.put(`/usuarios/${_id}`);
 }
 
 export function removeUser(_id) {

@@ -20,7 +20,6 @@ interface ShoppingCartItem {
 }
 
 export function CardProdutosCarrinho() {
-
   const { ecommerce } = data;
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
 
@@ -34,10 +33,9 @@ export function CardProdutosCarrinho() {
 
     const newShoppingCart: ShoppingCartItem[] = [...shoppingCart, cartItem];
     setShoppingCart(newShoppingCart);
-
   };
 
-    const [product, setProduct] = useState(ecommerce);
+  const [product, setProduct] = useState(ecommerce);
 
   return (
     <div>
@@ -60,7 +58,7 @@ export function CardProdutosCarrinho() {
                   <button
                     className="product-remove-btn"
                     type="submit"
-                    onClick={() => handleRemoveFromCart(product.produto_id)}
+                    onClick={() => handleRemoveFromCart(product._id)}
                   >
                     <u>Remover</u>
                   </button>
