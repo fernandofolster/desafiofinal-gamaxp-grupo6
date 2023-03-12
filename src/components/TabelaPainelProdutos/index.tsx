@@ -2,7 +2,7 @@ import "../../styles/global.js";
 import { Link } from "react-router-dom";
 import { PainelTabela } from "./styled";
 import { useEffect, useState } from "react";
-import { listProduct } from "../../services/MainApi/produtos";
+import { listProduct, removeProduct } from "../../services/MainApi/produtos";
 import { getCategory } from "../../services/MainApi/categorias";
 
 interface Produto {
@@ -12,6 +12,7 @@ interface Produto {
   foto: any;
   categoria: any;
   descricao: string;
+  _id: string;
 }
 
 export default function ListarProdutos() {
@@ -27,6 +28,19 @@ export default function ListarProdutos() {
       }
     })();
   }, [setProdutos]);
+
+  async function deleteProduct(_id) {
+    if (window.confirm("Deseja realmente excluir este produto?")) {
+      try {
+        await removeProduct(_id).then(() => {
+          setProdutos(produtos.filter((produtos) => produtos._id !== _id));
+          alert("Produto removido com sucesso");
+        });
+      } catch (error) {
+        alert("Algo deu errado");
+      }
+    }
+  }
 
   interface Categoria {
     nome: string;
@@ -59,7 +73,7 @@ export default function ListarProdutos() {
             </tr>
           </thead>
           <tbody>
-            {produtos.map((produtos) => (
+            {produtos.map((produtos, k) => (
               <>
                 <tr key={produtos.nome}>
                   <td>{produtos.nome}</td>
@@ -69,7 +83,13 @@ export default function ListarProdutos() {
                     <button className="btnD">
                       <Link to="/paineladmdetalhe">ver detalhes</Link>
                     </button>
-                    <button className="btnE">excluir</button>
+                    <button
+                      value={produtos._id}
+                      className="btnE"
+                      onClick={() => deleteProduct(produtos._id)}
+                    >
+                      excluir
+                    </button>
                   </td>
                 </tr>
               </>

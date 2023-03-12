@@ -25,19 +25,18 @@ export default function ListarUsuarios() {
     })();
   }, [setUsuarios]);
 
-  const handleDelete = async (_id: string) => {
+  async function handleDelete(_id) {
     if (window.confirm("Deseja realmente excluir este usuário?")) {
-      console.log("ID selecionado: ", _id);
-      const filterRemove = usuarios.filter((usuarios) => usuarios._id !== _id);
-      setUsuarios(filterRemove);
-      const res = await removeUser();
-      if (res.status !== 204) {
-        return alert("Deu algo errado");
+      try {
+        await removeUser(_id).then(() => {
+          setUsuarios(usuarios.filter((usuarios) => usuarios._id !== _id));
+          alert("Usuário removido com sucesso");
+        });
+      } catch (error) {
+        alert("Algo deu errado");
       }
-    } else {
-      alert("Deu tudo certo");
     }
-  };
+  }
 
   return (
     <PainelTabelaUser>
@@ -53,7 +52,7 @@ export default function ListarUsuarios() {
           </thead>
           <tbody>
             {usuarios.map((usuarios, k) => (
-              <tr key={k}>
+              <tr key={usuarios._id}>
                 <td>{usuarios.nome}</td>
                 <td>{usuarios.email}</td>
                 <td>{usuarios._id}</td>

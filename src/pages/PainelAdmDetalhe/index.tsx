@@ -1,4 +1,4 @@
-// import { useState, useContext } from "react";
+// import { useState } from "react";
 import HeaderPainel from "../../components/HeaderPainel";
 import "../../styles/global.js";
 import { PageTitle } from "../../components/HeaderPainel";
@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 // import { CartContext } from "../../contexts/auth";
 
 export default function PainelAdmCadastro() {
-
   // const { cadastrarProduto } = useContext(CartContext);
   // const [nomeProduto, setNomeProduto] = useState("");
   // // const [imgProduto, setImgProduto] = useState("");

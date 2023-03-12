@@ -13,14 +13,18 @@ export const createProduct = async (payload: productPayload) => {
   return baseAPI.post("/produtos", payload);
 };
 
-export function editProduct() {
-  return baseAPI.put("/produtos/id");
+export function editProduct(_id) {
+  return baseAPI.put(`/produtos/${_id}`);
 }
 
-export function removeProduct() {
-  return baseAPI.delete("/produtos/id");
+export function removeProduct(_id) {
+  return baseAPI.delete(`/produtos/${_id}`);
 }
 
 export function listProduct() {
   return baseAPI.get("/produtos");
+}
+
+export function listProductID(_id) {
+  return baseAPI.get(`/produtos/${_id}`);
 }
