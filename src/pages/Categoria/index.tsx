@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../styles/global.js";
 import { PageTitle } from "../../components/HeaderPainel";
 import { PainelCategoria } from "./styled";
@@ -44,6 +44,13 @@ export default function AddCategoria() {
             </label>
             <br />
             <input id="button" type="submit" name="salvar" value="Salvar" />
+            <input
+              id="buttonExc"
+              type="submit"
+              name="excluir"
+              value="Excluir"
+              onClick={() => {}}
+            />
           </form>
         </div>
       </PainelCategoria>

@@ -25,6 +25,6 @@ export function listProduct() {
   return baseAPI.get("/produtos");
 }
 
-export function listProductID(_id) {
-  return baseAPI.get(`/produtos/${_id}`);
+export function listProductID(id) {
+  return baseAPI.get(`/produtos/${id}`);
 }

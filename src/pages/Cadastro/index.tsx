@@ -3,11 +3,12 @@ import Header from "../../components/Header";
 import { PageTitle } from "../../components/HeaderPainel";
 import "../../styles/global";
 import { Cadastro } from "./styled";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import { createUser } from "../../services/MainApi/usuarios";
 
 export default function PageCadastro() {
+  const navigate = useNavigate();
   const cadastroUser = async (event) => {
     event.preventDefault();
 
@@ -22,6 +23,7 @@ export default function PageCadastro() {
         return alert("Deu algo errado");
       }
       alert("Usuário cadastrado com sucesso");
+      navigate("/login");
     } catch (error) {
       alert("Deu algo errado");
     }

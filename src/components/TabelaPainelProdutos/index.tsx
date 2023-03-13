@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { PainelTabela } from "./styled";
 import { useEffect, useState } from "react";
 import { listProduct, removeProduct } from "../../services/MainApi/produtos";
+import { currencyFormat } from "../../helpers/currencyFormat";
 import { getCategory } from "../../services/MainApi/categorias";
 
 interface Produto {
@@ -47,7 +48,7 @@ export default function ListarProdutos() {
     id: any;
   }
 
-  const [categorias, setCategoria] = useState<Categoria[]>([]);
+  const [categoria, setCategoria] = useState<Categoria[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -75,10 +76,10 @@ export default function ListarProdutos() {
           <tbody>
             {produtos.map((produtos, k) => (
               <>
-                <tr key={produtos.nome}>
+                <tr key={produtos._id}>
                   <td>{produtos.nome}</td>
                   <td>{produtos.categoria}</td>
-                  <td>{produtos.preco}</td>
+                  <td>{currencyFormat(produtos.preco)}</td>
                   <td>
                     <button className="btnD">
                       <Link to={`/paineladmdetalhe/${produtos._id}`}>

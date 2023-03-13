@@ -1,13 +1,22 @@
 import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { CardProdutoStyled } from "./styled";
 import { useEffect, useState } from "react";
-import { data } from "../apiFake/apiFake";
 import { listProducts } from "../../services/api";
 import { currencyFormat } from "../../helpers/currencyFormat";
 
-export function CardProductArea() {
-  const { ecommerce } = data;
+interface ecommerce {
+  nome: string;
+  produto_id: string;
+  foto: string;
+  descricao: string;
+  categoria: string;
+  categoria_id: number;
+  preco: number;
+  quantidade: number;
+  _id: string;
+}
 
+export function CardProductArea() {
   const [category, setCategory] = useState([
     {
       categoria: "sutiã",
@@ -28,7 +37,7 @@ export function CardProductArea() {
     setPagination(pagination + pagination);
   };
 
-  const [product, setProduct] = useState(ecommerce);
+  const [product, setProduct] = useState<ecommerce[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -69,8 +78,6 @@ export function CardProductArea() {
             return (
               <>
                 <div className="product-card" key={product.nome}>
-                  {/* trocar nome por ID -- pedir p/ back acrescentar ID em product */}
-                  {/* <a className="link-to-description" href="/ProductContent"> */}
                   <a
                     className="link-to-description"
                     href={`/productcontent/${product._id}`}
@@ -83,7 +90,6 @@ export function CardProductArea() {
                     />
                   </a>
                   <div className="product-name-size">
-                    {/* <a className="link-to-description" href="/ProductContent"> */}
                     <a
                       className="link-to-description"
                       href={`/productcontent/${product._id}`}

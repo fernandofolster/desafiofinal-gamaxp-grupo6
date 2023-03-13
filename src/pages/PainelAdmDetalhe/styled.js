@@ -13,7 +13,7 @@ export const PainelCadastro = styled.div`
 
   .foto {
     background-color: gray;
-    width: 50%;
+    width: 30%;
     margin-top: 8.5rem;
     text-align: center;
   }

@@ -11,3 +11,7 @@ export function createCategory(payload: categoriaPayload) {
 export function getCategory() {
   return baseAPI.get("/categorias");
 }
+
+export function removeCategory(_id) {
+  return baseAPI.delete(`/categorias/${_id}`);
+}

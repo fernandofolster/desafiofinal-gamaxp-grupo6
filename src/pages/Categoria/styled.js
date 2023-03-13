@@ -49,4 +49,9 @@ export const PainelCategoria = styled.div`
   #photos {
     margin-top: 1rem;
   }
+
+  .categorias {
+    text-align: center;
+    align-items: center;
+  }
 `;

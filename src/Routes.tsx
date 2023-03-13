@@ -17,13 +17,13 @@ import Sobre from "./pages/Sobre";
 import MinhaConta from "./pages/ClienteMinhaConta";
 import PageCadastro from "./pages/Cadastro";
 import PageCadastroAdm from "./pages/CadastroAdm";
-//import CadastroProduto from "./pages/CadastroProduto";
 import { AuthProvider } from "./contexts/auth";
 import AddCategoria from "./pages/Categoria";
 import ListarCategoria from "./pages/Categoria/List";
 import ListarProdutos from "./pages/PainelAdmCadastro/List";
 import PainelAdmUsuarios from "./pages/PainelAdmUsuarios";
 import PainelAdmPedidos from "./pages/PainelAdmPedidos";
+import HomeAdmLogin from "./pages/HomeAdmLogado";
 
 export default function Routes() {
   return (
@@ -41,8 +41,8 @@ export default function Routes() {
           <Route path="/paineladmuser" element={<PainelAdmUsuarios />} />
           <Route path="/paineladmcadastro" element={<PainelAdmCadastro />} />
           <Route path="/paineladmdetalhe/:id" element={<PainelAdmDetalhe />} />
-          {/* <Route path="/cadastroproduto" element={<CadastroProduto />} /> */}
           <Route path="/login" element={<Login />} />
+          <Route path="/homeadmlogin" element={<HomeAdmLogin />} />
           <Route path="/signup" element={<PageCadastro />} />
           <Route path="/signupadm" element={<PageCadastroAdm />} />
           <Route path="/sobre" element={<Sobre />} />
