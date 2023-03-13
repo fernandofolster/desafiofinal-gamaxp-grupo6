@@ -95,7 +95,18 @@ export const InfosDoProduto = () => {
 
   
 
-  const [product, setProduct] = useState([ecommerce]); // essa linha já estava antes
+  const [product, setProduct] = useState([ecommerce]);  // essa linha já estava antes
+  const [quantidade, setQuantidade] = useState(1);
+
+  const handleDecrement = () => {
+    if (quantidade > 1){
+      setQuantidade(prevCount => prevCount - 1)
+    }
+  }
+
+    const handleIncrement = () => {
+      setQuantidade(prevCount => prevCount + 1)
+  }
 
   // const [loading, setLoading] = useState(false);
 
@@ -259,15 +270,10 @@ export const InfosDoProduto = () => {
                     <h3 className="quantity-title"> Quantity</h3>
                   </div>
                   <div className="btn-quantity">
-                    <button className="quan-buttons">minus</button>
-                    <input
-                      className="quantity-input"
-                      type="number"
-                      value="0"
-                      min="1"
-                      max="100"
-                    ></input>
-                    <button className="quan-buttons">plus</button>
+                    <button className="quan-buttons" onClick={handleDecrement}>-</button>
+                    <div
+                      className="quantity-input">{quantidade}</div>
+                    <button className="quan-buttons" onClick={handleIncrement}>+</button>
                     <div>
                       <button
                         className="buttonCart"
