@@ -6,11 +6,10 @@ import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
 import { InfosProdutoStyled } from "./styled";
 import { useState, useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+
 // import carrinhoProvider from "../../contexts/auth.jsx";
 import Link from "../Link/index";
 import { listProduct } from "../../services/MainApi/produtos";
-import { data } from "../apiFake/apiFake.jsx";
 
 interface Ecommerce {
   nome: string;
@@ -42,6 +41,7 @@ export const InfosDoProduto = () => {
       }
     })();
   }, [setEcommerce]);
+  // const { produto_id } = useParams();
   //   const params = useParams();
   //   const { produto_id } params;
 
@@ -91,11 +91,12 @@ export const InfosDoProduto = () => {
     setShoppingCart(newShoppingCart);
   };
 
-  // ----->>>>> Testando link com ID buscando produto da apifake
 
-  // const { produto_id } = useParams();
 
-  const [product, setProduct] = useState(ecommerce); // essa linha já estava antes
+  
+
+  const [product, setProduct] = useState([ecommerce]); // essa linha já estava antes
+
   // const [loading, setLoading] = useState(false);
 
   // useEffect(() => {
@@ -116,7 +117,7 @@ export const InfosDoProduto = () => {
     // :
     // <carrinhoProvider>
     <InfosProdutoStyled>
-      <main className="main-product-container">
+      <main className="main-product-container" >
         <div className="containerImages">
           {ecommerce.map((ecommerce) => {
             return (
@@ -132,13 +133,15 @@ export const InfosDoProduto = () => {
             );
           })}
         </div>
+        
 
         <div className="container-product-info">
-          {ecommerce.map((ecommerce) => {
+          {ecommerce.map((product) => {
             return (
               <>
-                <div className="text-title">
-                  <h3> {ecommerce.nome} </h3>
+
+                <div className="text-title" key={product.produto_id}>
+                  <h3> {product.nome} </h3>
                   <section className="btn-icons">
                     <span>
                       <button className="btn-curtir">
@@ -167,7 +170,7 @@ export const InfosDoProduto = () => {
 
                 <div className="price-and-promo">
                   <div>
-                    <p className="product-price">R${ecommerce.preco}</p>
+                    <p className="product-price">R${product.preco}</p>
                   </div>
                   <div className="promo-component">
                     <p>or 4 interested-free payment of R$25.00.</p>
@@ -176,7 +179,7 @@ export const InfosDoProduto = () => {
                 </div>
 
                 <div>
-                  <p className="ProductInfomation">{ecommerce.descricao}</p>
+                  <p className="ProductInfomation">{product.descricao}</p>
                 </div>
 
                 <div>
@@ -268,7 +271,7 @@ export const InfosDoProduto = () => {
                     <div>
                       <button
                         className="buttonCart"
-                        onClick={() => handleAddToCart(ecommerce._id)}
+                        onClick={() => handleAddToCart(product._id)}
                       >
                         <Link
                           redirect="/cart"

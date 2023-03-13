@@ -15,7 +15,7 @@ export const CartAreaStyled = styled.div`
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        background-color: pink;
+        background-color: #e5e5e5;
 
     }
 

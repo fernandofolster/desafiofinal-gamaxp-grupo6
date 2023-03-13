@@ -4,7 +4,6 @@ import "./styled.js";
 import { CartAreaStyled } from "./styled";
 import Link from "../../components/Link";
 // import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
-import { data } from "../apiFake/apiFake";
 import { CardProdutosCarrinho } from "../carrinho_card_produtos/index";
 
 interface Ecommerce {
@@ -25,7 +24,7 @@ interface ShoppingCartItem {
 }
 
 export function CartMain() {
-  const { ecommerce } = data;
+ 
 
   const [productCart, setProductCart] = useState<ShoppingCartItem[]>([]);;
 

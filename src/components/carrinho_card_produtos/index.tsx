@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { data } from "../apiFake/apiFake";
+import { currencyFormat } from "../../helpers/currencyFormat";
+
 import { CardProdutosCarrinhoStyled } from "./styled";
 
 interface Ecommerce {
@@ -20,7 +21,7 @@ interface ShoppingCartItem {
 }
 
 export function CardProdutosCarrinho() {
-  const { ecommerce } = data;
+
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
 
   const handleRemoveFromCart = (produto_id: string) => {
@@ -35,13 +36,13 @@ export function CardProdutosCarrinho() {
     setShoppingCart(newShoppingCart);
   };
 
-  const [product, setProduct] = useState(ecommerce);
+  const [ecommerce, setEcommerce] = useState<Ecommerce[]>([]);
 
   return (
     <div>
       <CardProdutosCarrinhoStyled>
         <div className="text-product-cart">
-          {product.map((product) => {
+          {ecommerce.map((product) => {
             return (
               <>
                 <img className="img-product-cart" src={product.foto} alt="/" />
@@ -53,12 +54,12 @@ export function CardProdutosCarrinho() {
 
                   <p className="product-quantity-cart">{product.quantidade}</p>
 
-                  <p className="product-price-cart">R$ {product.preco}</p>
+                  <p className="product-price-cart"> { currencyFormat(product.preco) }</p>
 
                   <button
                     className="product-remove-btn"
                     type="submit"
-                    onClick={() => handleRemoveFromCart(product._id)}
+                    onClick={() => handleRemoveFromCart(product.produto_id)}
                   >
                     <u>Remover</u>
                   </button>
