@@ -200,15 +200,10 @@ export const InfosDoProduto = () => {
               <h3 className="quantity-title"> Quantity</h3>
             </div>
             <div className="btn-quantity">
-              <button className="quan-buttons">minus</button>
-              <input
-                className="quantity-input"
-                type="number"
-                value="0"
-                min="1"
-                max="100"
-              ></input>
-              <button className="quan-buttons">plus</button>
+            <button className="quan-buttons" onClick={handleDecrement}>-</button>
+                    <div
+                      className="quantity-input">{quantidade}</div>
+                    <button className="quan-buttons" onClick={handleIncrement}>+</button>
               <div>
                 <button className="buttonCart" onClick={() => handleAddToCart}>
                   <Link redirect="/cart" texto="Adicionar ao carrinho"></Link>

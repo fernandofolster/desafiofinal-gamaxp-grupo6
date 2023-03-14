@@ -23,16 +23,20 @@ function CategoryMain() {
 
   const [category, setCategory] = useState([
     {
-      categoria: "sutiã",
+      id: "6407e861d3f858822644de58", 
+      nome: "Sutiã",
     },
     {
-      categoria: "calcinha",
+        id: "6407e82bd3f858822644de55", 
+        nome: "Calcinha",
     },
     {
-      categoria: "pijama",
+        id: "6407e875d3f858822644de5b", 
+        nome: "Pijama",
     },
     {
-      categoria: "all",
+        id: "", 
+        nome: "All",
     },
   ]);
 
@@ -47,6 +51,7 @@ function CategoryMain() {
     (async () => {
       try {
         const response = await listProducts();
+        console.log(response.data);
         setProduct(response.data);
       } catch (error) {
         alert("Deu algo errado");
@@ -55,7 +60,9 @@ function CategoryMain() {
   }, [setProduct]);
 
   const filterResult = (event) => {
+    console.log(event);
     const result = product.filter((product) => {
+        console.log(product)
       return product.categoria === event;
     });
     setProduct(result);
@@ -80,9 +87,9 @@ function CategoryMain() {
                   return (
                     <button
                       className="category-filter-btn"
-                      onClick={() => filterResult(category.categoria)}
+                      onClick={() => filterResult(category.id)}
                     >
-                      {category.categoria}
+                      {category.nome}
                     </button>
                   );
                 })}
