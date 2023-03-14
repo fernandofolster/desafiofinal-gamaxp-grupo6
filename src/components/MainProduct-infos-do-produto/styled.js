@@ -1,14 +1,7 @@
 import styled from "styled-components";
 
 export const InfosProdutoStyled = styled.div`
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: auto;
-    box-sizing: border-box;
-    background: #e5e5e5;
-  }
+
 
   .descricao {
     font-size: 15px;
@@ -129,16 +122,7 @@ export const InfosProdutoStyled = styled.div`
     color: #000000;
   }
 
-  .quantity-title {
-    font-size: 1.125rem;
-    font-weight: 400;
-    opacity: 0.5;
-    color: #000000;
-    margin: 2rem auto 0.5rem 23rem;
-  }
-  .btn-quantity {
-    display: flex;
-  }
+  
 
   .product-price {
     width: 2.85rem;
@@ -168,17 +152,7 @@ export const InfosProdutoStyled = styled.div`
     margin-top: 0.3rem;
   }
 
-  .buttonCart {
-    background-color: #e91e63;
-    border: 1px solid #e91e63;
-    font-size: 16px;
-    font-weight: 600;
-    align-content: center;
-    width: 350px;
-    height: 50px;
-    color: #ffffff;
-    cursor: pointer;
-  }
+  
 
   .btn-product-color {
     color: #212121;
@@ -198,16 +172,7 @@ export const InfosProdutoStyled = styled.div`
     height: 100px;
   }
 
-  .quantity-input {
-    width: 6.25rem;
-    height: 3.1rem;
-    font-size: 1.12rem;
-    font-weight: 400;
-    margin-left: 1.12rem;
-    padding-left: 2.7rem;
-    background-color: transparent;
-    border: 1px solid #000000;
-  }
+  
 
   .btn-choose-size {
     color: #212121;
@@ -220,6 +185,61 @@ export const InfosProdutoStyled = styled.div`
     align-items: center;
     width: 50px;
     height: 50px;
+  }
+
+  .quantity-title {
+    font-size: 1.125rem;
+    font-weight: 400;
+    opacity: 0.5;
+    color: #000000;
+    margin: 2rem auto 0.5rem 0;
+  }
+  .btn-quantity {
+    display: flex;
+    
+  }
+
+  .quan-buttons {
+    background-color: transparent;
+    width:3.1rem;
+    height: 3.1rem;
+    font-size: 1.87rem;
+    border: 1px solid #212121;
+    color: #212121;
+  }
+
+  .btn-qty-add {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .quantity-input {
+    width: 6.25rem;
+    height: 3.1rem;
+    font-size: 1.12rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content:center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid #212121;
+    color: #212121;
+  }
+
+  .buttonCart {
+    background-color: #e91e63;
+    border: 1px solid #e91e63;
+    font-size: 16px;
+    font-weight: 600;
+    align-content: center;
+    width: 350px;
+    height: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 1.125rem;
   }
 
   /*--------------------------*/

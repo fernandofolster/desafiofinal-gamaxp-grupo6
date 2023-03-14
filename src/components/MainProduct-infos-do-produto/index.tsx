@@ -195,7 +195,7 @@ export const InfosDoProduto = () => {
             </label>
           </div>
 
-          <div>
+          <div className="btn-qty-add">
             <div>
               <h3 className="quantity-title"> Quantity</h3>
             </div>
