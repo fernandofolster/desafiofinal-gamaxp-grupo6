@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+@@ -1,24 +1,26 @@
+<h1 align="center">Desafio Final - Gama Academy - Grupo 6</h1>
+<br>
+<p align="center">Desafio 4 do Gama Experience Edição 46.</p>
+<p align="center">O objetivo é desenvolver uma aplicação Ecommerce do zero utilizando todas as habilidades adquiridas durante a jornada.</p>
+<ul>
+    <li>[TODOS] Analisar e organizar o desenvolvimento de uma aplicação complexa do zero</li>
+    <li>[FRONT-END] Desenvolver aplicações completas com React</li>
+    <li>[BACK-END] Desenvolver aplicações com Node.js e Express utilizando padrões de arquiteturas de acordo com a necessidade do projeto</li>
+</ul>
+<br>
+<h2 align="center">Repositório Back-End</h2>
+<div align="center"> 
+ <a href="https://github.com/DouglasLeal/gamaxp-desafiofinal-back">Clique aqui para acessar o repositório </a>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+<h2 align="center">Instalação</h2>
+1 - Faça a instalação das dependências com o comando:
+<pre>npm start</pre>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2 - Crie uma cópia do arquivo exemplo.env e renomeie como .env
+<br><br>
+3 - Faça as alterações necessárias no arquivo .env
+<br>
+PORT = 3000<br>
+DB_URI = mongodb://localhost:27017/nome-db<br>
+SECRET = SEGREDO<br>
+<br>
+GOOGLE_PROJECT_ID = project_id<br>
+GOOGLE_PRIVATE_KEY_ID = key_id<br>
+GOOGLE_PRIVATE_KEY = key<br>
+GOOGLE_CLIENT_EMAIL = client_email<br>
+GOOGLE_CLIENT_ID = client_id<br>
+GOOGLE_CLIENT_X509_CERT_URL = url<br>
+<br>
+4 - Inicie o servidor com o comando:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm start
+<br>
 
-### `npm test`
+<h2 align="center">Deploy</h2>
+<div>
+    <p>
+        Se preferir pode fazer as requisições direto para o link <a href="https://gamaxp-desafio4-grupo6.onrender.com">https://gamaxp-desafio4-grupo6.onrender.com</a>     </p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Conta admin já cadastrada:
+<pre>
+{
+    "email": "admin@email.com",
+    "senha": "teste123"
+}
+</pre>            
+</div>
 
-### `npm run build`
+<h2 align="center">Documentação da API</h2>
+<div align="center"> 
+  <a href="https://documenter.getpostman.com/view/10195936/2s935uGfnH">Clique aqui para acessar a documentação</a>
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h2 align="center">Imagens</h2>
+<p>Para visualizar as imagens dos produtos basta acessar: <code>https://drive.google.com/uc?export=view&id=produto.foto</code></p>
+<p>Obs.: Produto.foto deve ser substituído pela string gerada ao criar o produto.</p>
