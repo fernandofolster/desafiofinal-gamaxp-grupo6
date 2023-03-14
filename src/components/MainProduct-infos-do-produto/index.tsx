@@ -60,6 +60,18 @@ export const InfosDoProduto = () => {
     setShoppingCart(newShoppingCart);
   };
 
+  const [quantidade, setQuantidade] = useState(1);
+
+  const handleDecrement = () => {
+    if (quantidade > 1) {
+      setQuantidade((prevCount) => prevCount - 1);
+    }
+  };
+
+  const handleIncrement = () => {
+    setQuantidade((prevCount) => prevCount + 1);
+  };
+
   return (
     <InfosProdutoStyled>
       <main className="main-product-container">
@@ -86,7 +98,6 @@ export const InfosDoProduto = () => {
                   </div>
                 </button>
               </span>
-
               <span>
                 <button className="btn-share">
                   <div>
