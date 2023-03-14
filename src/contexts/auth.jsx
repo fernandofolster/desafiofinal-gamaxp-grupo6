@@ -42,14 +42,15 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, senha) => {
     const response = await createSession(email, senha);
-    console.log("login", response.data);
     const token = response.headers.token;
+    const user = response.data;
     localStorage.setItem("token", token);
+    localStorage.setItem("user", user);
     api.defaults.headers.authorization = `Bearer ${token}`;
-    if (response.status === 200) {
-      return navigate("/paineladm");
+    if (response.status !== 200) {
+      alert("Email ou senha inválidos");
     } else {
-      return alert("Email ou senha inválidos");
+      return navigate("/");
     }
   };
 

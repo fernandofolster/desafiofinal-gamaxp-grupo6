@@ -7,14 +7,6 @@ export const api = axios.create({
   },
 });
 
-/*api.interceptors.request.use(async (config) => {
-  const token = localStorage.setToken("token");
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});*/
-
 export const createSession = async (email, senha) => {
   return api.post("/login", { email, senha });
 };

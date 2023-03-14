@@ -74,7 +74,7 @@ export default function ListarProdutos() {
             </tr>
           </thead>
           <tbody>
-            {produtos.map((produtos, k) => (
+            {produtos.map((produtos, _id) => (
               <>
                 <tr key={produtos._id}>
                   <td>{produtos.nome}</td>

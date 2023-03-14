@@ -6,6 +6,7 @@ import { PainelCadastro } from "./styled";
 import { Link, useParams } from "react-router-dom";
 import { currencyFormat } from "../../helpers/currencyFormat";
 import { getCategory } from "../../services/MainApi/categorias";
+import { editProducts } from "../../services/api";
 
 interface Produto {
   nome: string;
@@ -39,10 +40,10 @@ export default function PainelAdmDetalhe() {
       .then((data) => {
         setProdutos(data);
       })
-      .catch((error) => console.log);
+      .catch((error) => error);
   }, [id]);
 
-  const [categorias, setCategoria] = useState<Categoria[]>([]);
+  const [categorias, setCategoria] = useState<Categoria>();
   const [produtos, setProdutos] = useState<Produto>();
 
   useEffect(() => {
@@ -55,6 +56,19 @@ export default function PainelAdmDetalhe() {
       }
     })();
   }, [setCategoria]);
+
+  async function editProduct(_id) {
+    try {
+      await editProducts(_id)
+        .then((resp) => resp.data())
+        .then((data) => {
+          setProdutos(data);
+          alert("Produto atualizado com sucesso");
+        });
+    } catch (error) {
+      alert("Algo deu errado");
+    }
+  }
 
   return (
     <>
@@ -84,7 +98,7 @@ export default function PainelAdmDetalhe() {
                   type="text"
                   placeholder="Preço"
                   name="preco"
-                  value={produtos ? produtos.preco : ""}
+                  value={produtos ? currencyFormat(produtos.preco) : ""}
                 />
                 <br />
                 <input type="text" placeholder="Foto" name="foto" />
@@ -102,10 +116,7 @@ export default function PainelAdmDetalhe() {
                   name="categoria"
                   placeholder="Categoria"
                 >
-                  <option></option>
-                  {categorias.map((categoria) => (
-                    <option>{categoria.nome}</option>
-                  ))}
+                  <option>{produtos ? produtos.categoria : ""}</option>
                 </select>
                 <br />
                 <input
@@ -121,13 +132,7 @@ export default function PainelAdmDetalhe() {
                   type="submit"
                   name="salvar"
                   value="Salvar"
-                />
-                <br />
-                <input
-                  id="btnExcluir"
-                  type="submit"
-                  name="excluir"
-                  value="Excluir definitivamente"
+                  onClick={() => editProduct(id)}
                 />
               </>
             </form>

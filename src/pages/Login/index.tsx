@@ -11,13 +11,16 @@ export default function Login() {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [senha, setSenha] = useState("");
   const [rememberPassword, setRememberPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(email, password);
-    navigate("/");
+    if (login(email, senha)) {
+      return navigate("/");
+    } else {
+      return navigate("/");
+    }
   };
 
   return (
@@ -50,8 +53,8 @@ export default function Login() {
                     type="password"
                     name="senha"
                     placeholder="Digite sua senha"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
                   />
                 </div>
               </label>

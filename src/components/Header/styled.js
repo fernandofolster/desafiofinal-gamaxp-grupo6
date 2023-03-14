@@ -29,6 +29,40 @@ export const HeaderArea = styled.div`
     }
   }
 
+  .container-log {
+    margin: auto;
+    max-width: 85rem;
+    max-height: 60px;
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .navLog {
+    flex: 3;
+  }
+
+  .menu-right {
+    justify-content: space-between;
+    text-decoration: none;
+    list-style: none;
+    outline: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    #minhaconta {
+      margin-right: 10px;
+    }
+
+    #logout {
+      margin-left: 10px;
+    }
+  }
+
   .logo {
     flex: 1;
     display: flex;
