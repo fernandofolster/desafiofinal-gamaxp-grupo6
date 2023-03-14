@@ -1,4 +1,4 @@
-@@ -1,24 +1,26 @@
+
 <h1 align="center">Desafio Final - Gama Academy - Grupo 6</h1>
 <br>
 <p align="center">Desafio 4 do Gama Experience Edição 46.</p>
