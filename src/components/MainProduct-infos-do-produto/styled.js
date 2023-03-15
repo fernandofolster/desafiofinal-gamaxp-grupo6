@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const InfosProdutoStyled = styled.div`
-
-
   .descricao {
     font-size: 15px;
   }
@@ -51,32 +49,23 @@ export const InfosProdutoStyled = styled.div`
     font-size: 2.25rem;
     padding: 0.5rem 0;
   }
-
-  .btn-icons {
-    stroke-width: 1px;
-    display: inline-flex;
-  }
-
-  .heart-icon {
-    width: 24px;
-    height: 24px;
-    margin-left: 10px;
-  }
+.btn-icons {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
 
   .btn-curtir {
     align-items: center;
     background: transparent;
     border: none;
     cursor: pointer;
-
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-
-  .share-icon {
-    width: 24px;
-    height: 24px;
     margin-left: 12px;
+  
+    
   }
 
   .btn-share {
@@ -84,9 +73,8 @@ export const InfosProdutoStyled = styled.div`
     background: transparent;
     border: none;
     cursor: pointer;
-
-    padding-top: 8px;
-    padding-bottom: 8px;
+    margin-left: 12px;
+    
   }
 
   .price-and-promo {
@@ -122,8 +110,6 @@ export const InfosProdutoStyled = styled.div`
     color: #000000;
   }
 
-  
-
   .product-price {
     width: 2.85rem;
     height: 1.62rem;
@@ -152,8 +138,6 @@ export const InfosProdutoStyled = styled.div`
     margin-top: 0.3rem;
   }
 
-  
-
   .btn-product-color {
     color: #212121;
     background: transparent;
@@ -171,8 +155,6 @@ export const InfosProdutoStyled = styled.div`
     width: 100px;
     height: 100px;
   }
-
-  
 
   .btn-choose-size {
     color: #212121;
@@ -196,12 +178,11 @@ export const InfosProdutoStyled = styled.div`
   }
   .btn-quantity {
     display: flex;
-    
   }
 
   .quan-buttons {
     background-color: transparent;
-    width:3.1rem;
+    width: 3.1rem;
     height: 3.1rem;
     font-size: 1.87rem;
     border: 1px solid #212121;
@@ -222,7 +203,7 @@ export const InfosProdutoStyled = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content:center;
+    align-content: center;
     justify-content: center;
     background-color: transparent;
     border: 1px solid #212121;
