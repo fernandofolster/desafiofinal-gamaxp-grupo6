@@ -23,7 +23,6 @@ import ListarCategoria from "./pages/Categoria/List";
 import ListarProdutos from "./pages/PainelAdmCadastro/List";
 import PainelAdmUsuarios from "./pages/PainelAdmUsuarios";
 import PainelAdmPedidos from "./pages/PainelAdmPedidos";
-import HomeAdmLogin from "./pages/HomeAdmLogado";
 
 export default function Routes() {
   return (
@@ -42,11 +41,10 @@ export default function Routes() {
           <Route path="/paineladmcadastro" element={<PainelAdmCadastro />} />
           <Route path="/paineladmdetalhe/:id" element={<PainelAdmDetalhe />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/homeadmlogin" element={<HomeAdmLogin />} />
           <Route path="/signup" element={<PageCadastro />} />
           <Route path="/signupadm" element={<PageCadastroAdm />} />
           <Route path="/sobre" element={<Sobre />} />
-          <Route path="/minhaconta" element={<MinhaConta />} />
+          <Route path="/minhaconta/" element={<MinhaConta />} />
           <Route path="/addcategoria" element={<AddCategoria />} />
           <Route path="/listarcategoria" element={<ListarCategoria />} />
           <Route path="/listarproduto" element={<ListarProdutos />} />

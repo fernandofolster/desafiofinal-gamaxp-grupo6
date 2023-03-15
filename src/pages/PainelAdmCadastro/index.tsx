@@ -127,7 +127,7 @@ export default function PainelAdmCadastro() {
               >
                 <option></option>
                 {categorias.map((categoria, _id) => (
-                  <option key={_id} value={categoria._id}>
+                  <option key={categoria.nome} value={categoria._id}>
                     {categoria.nome}
                   </option>
                 ))}

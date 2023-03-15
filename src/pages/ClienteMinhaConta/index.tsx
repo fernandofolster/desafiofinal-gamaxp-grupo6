@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 import Footer from "../../components/Footer";
-import HeaderLoginCliente from "../../components/HeaderLoginCliente";
+import Header from "../../components/Header";
 import { PageTitle } from "../../components/HeaderPainel";
 import { getUser } from "../../services/MainApi/usuarios";
-//import { Link } from "react-router-dom";
 
 import "../../styles/global";
 
-interface Usuario {
-  nome: string;
-  email: string;
-  senha: string;
-  _id: any;
-}
-
 function ClienteMinhaConta() {
-  const [usuarios, setUsuarios] = useState<Usuario[]>([]);
+  interface Usuario {
+    nome: string;
+    email: string;
+    senha: string;
+    _id: string;
+    admin: true;
+  }
+
+  const [usuarios, setUsuarios] = useState<Usuario>();
 
   useEffect(() => {
     (async () => {
@@ -30,8 +30,8 @@ function ClienteMinhaConta() {
 
   return (
     <div className="App">
-      <HeaderLoginCliente />
-      <PageTitle>Seja bem vindo, {} </PageTitle>
+      <Header />
+      <PageTitle>Seja bem vindo, {usuarios ? usuarios.nome : ""}</PageTitle>
       <form>
         <label className="area-name">
           <div>
