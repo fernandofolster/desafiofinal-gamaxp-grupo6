@@ -1,5 +1,4 @@
 import "../../styles/global.js";
-//import { Link } from "react-router-dom";
 import { PainelTabelaUser } from "./styled";
 import { useEffect, useState } from "react";
 import { getUser, removeUser } from "../../services/MainApi/usuarios";

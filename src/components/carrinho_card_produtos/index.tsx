@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { currencyFormat } from "../../helpers/currencyFormat";
 
 import { CardProdutosCarrinhoStyled } from "./styled";
@@ -21,7 +21,6 @@ interface ShoppingCartItem {
 }
 
 export function CardProdutosCarrinho() {
-
   const [shoppingCart, setShoppingCart] = useState<ShoppingCartItem[]>([]);
 
   const handleRemoveFromCart = (produto_id: string) => {
@@ -54,7 +53,10 @@ export function CardProdutosCarrinho() {
 
                   <p className="product-quantity-cart">{product.quantidade}</p>
 
-                  <p className="product-price-cart"> { currencyFormat(product.preco) }</p>
+                  <p className="product-price-cart">
+                    {" "}
+                    {currencyFormat(product.preco)}
+                  </p>
 
                   <button
                     className="product-remove-btn"

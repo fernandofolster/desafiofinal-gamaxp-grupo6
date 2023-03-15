@@ -29,7 +29,6 @@ export default function PageCadastro() {
     }
   };
 
-  //const { cadastrarUsuario } = useContext(AuthContext);
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");

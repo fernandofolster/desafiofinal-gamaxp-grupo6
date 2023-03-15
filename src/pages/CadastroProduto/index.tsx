@@ -6,10 +6,8 @@ import { PageTitle } from "../../components/HeaderPainel";
 import "../../styles/global";
 import { CadastroProduto } from "./styled";
 import { Link } from "react-router-dom";
-// import { CartContext } from "../../contexts/auth";
 
 export default function CadastrarProduto() {
-
   const [produto, setProduto] = useState([]);
 
   const [nome, setNome] = useState("");
@@ -29,17 +27,17 @@ export default function CadastrarProduto() {
   function criarProduto() {
     axios
       .post(baseURL, {
-        nome, 
+        nome,
         foto,
         descricao,
         categoria,
-        preco
+        preco,
       })
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
         setProduto(response.data);
       });
-  };
+  }
 
   if (!produto) return "Sem produtos cadastrados!";
 
@@ -48,7 +46,7 @@ export default function CadastrarProduto() {
   };
 
   return (
-<>
+    <>
       <div className="painelCadastro">
         <HeaderPainel />
       </div>
@@ -60,28 +58,31 @@ export default function CadastrarProduto() {
             <br />
             <PageTitle>Cadastro de Produto</PageTitle>
             <form onSubmit={handleSubmit}>
-              <input type="text"
-              required
-              placeholder="Nome do produto"
-              name="nome"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
+              <input
+                type="text"
+                required
+                placeholder="Nome do produto"
+                name="nome"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
               />
               <br />
-              <input type="number"
-              required
-              placeholder="Preço"
-              name="preco"
-              value={preco}
-              onChange={(e) => setPreco(e.target.value)}
+              <input
+                type="number"
+                required
+                placeholder="Preço"
+                name="preco"
+                value={preco}
+                onChange={(e) => setPreco(e.target.value)}
               />
               <br />
-              <input type="file"
-              required
-              accept="image/png, image/jpeg"
-              multiple 
-              value={foto}
-              onChange={(e) => setFoto(e.target.value)}
+              <input
+                type="file"
+                required
+                accept="image/png, image/jpeg"
+                multiple
+                value={foto}
+                onChange={(e) => setFoto(e.target.value)}
               />
               <br />
               <select
@@ -110,7 +111,9 @@ export default function CadastrarProduto() {
                 onChange={(e) => setDescricao(e.target.value)}
               />
               <br />
-              <button id="btnSalvar" onClick={criarProduto}>Salvar</button>
+              <button id="btnSalvar" onClick={criarProduto}>
+                Salvar
+              </button>
               <br />
             </form>
           </div>

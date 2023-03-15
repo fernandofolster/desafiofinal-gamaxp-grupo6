@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../../styles/global.js";
 import { PageTitle } from "../../components/HeaderPainel";
 import { PainelCategoria } from "./styled";

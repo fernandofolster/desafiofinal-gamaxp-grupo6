@@ -6,9 +6,8 @@ import lupa from "../../assets/images/lupa-header.png";
 import "react-modal-login/dist/react-modal-login.css";
 import { BsHandbag } from "react-icons/bs";
 import { isLogged } from "../../helpers/authHandler";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../contexts/auth.jsx";
-import { getUser } from "../../services/MainApi/usuarios";
 
 export default function Header() {
   let logged = isLogged();
@@ -17,26 +16,6 @@ export default function Header() {
   const handleLogout = () => {
     logout();
   };
-  interface Usuario {
-    nome: string;
-    email: string;
-    senha: string;
-    _id: string;
-    admin: true;
-  }
-
-  const [usuarios, setUsuarios] = useState<Usuario[]>([]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await getUser();
-        setUsuarios(response.data);
-      } catch (error) {
-        alert("Deu algo errado");
-      }
-    })();
-  }, [setUsuarios]);
 
   return (
     <HeaderArea>
@@ -65,6 +44,9 @@ export default function Header() {
                       placeholder="Pesquisar"
                     />
                   </label>
+                </li>
+                <li>
+                  <Link to="/paineladm">Painel Adminstrativo</Link>
                 </li>
               </ul>
             </nav>

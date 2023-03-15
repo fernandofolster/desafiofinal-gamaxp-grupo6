@@ -1,33 +1,11 @@
-import { useState, useEffect } from "react";
 import "./styled.js";
-// import SutiaImg from "../../assets/images/lingerie-preta.jpg";
+
 import { CartAreaStyled } from "./styled";
 import Link from "../../components/Link";
-// import SutiaPreto from "../../assets/images/lingerie-preta.jpg";
+
 import { CardProdutosCarrinho } from "../carrinho_card_produtos/index";
 
-interface Ecommerce {
-  nome: string;
-  produto_id: string;
-  foto: string;
-  descricao: string;
-  categoria: string;
-  categoria_id: number;
-  preco: number;
-  quantidade: number;
-}
-
-interface ShoppingCartItem {
-  produto: Ecommerce;
-  quantidade: number;
-  preco: number;
-}
-
 export function CartMain() {
- 
-
-  const [productCart, setProductCart] = useState<ShoppingCartItem[]>([]);;
-
   return (
     <CartAreaStyled>
       <>
@@ -45,9 +23,9 @@ export function CartMain() {
                 </div>
               </div>
             </div>
-           
+
             {/* card de cada produto colocado no carrinho */}
-            <CardProdutosCarrinho/> 
+            <CardProdutosCarrinho />
 
             <hr className="hr-cart"></hr>
 
@@ -99,27 +77,27 @@ export function CartMain() {
             <div>
               {/* {productCart.map((product) => {
                 return ( */}
-                  <>
-                    <div className="subtotal-cart">
-                      <h5>Subtotal</h5>
-                      {/* <p>{product.preco * product.quantidade}</p> */}
-                      <p>R$100</p>
-                    </div>
+              <>
+                <div className="subtotal-cart">
+                  <h5>Subtotal</h5>
+                  {/* <p>{product.preco * product.quantidade}</p> */}
+                  <p>R$100</p>
+                </div>
 
-                    <div className="envio">
-                      <h5>Envio</h5>
-                      <p>Calculado na próxima etapa</p>
-                    </div>
+                <div className="envio">
+                  <h5>Envio</h5>
+                  <p>Calculado na próxima etapa</p>
+                </div>
 
-                    <hr className="line-total"></hr>
+                <hr className="line-total"></hr>
 
-                    <div className="total-cart">
-                      <h5>Total</h5>
-                      {/* <p>{product.preco * product.quantidade}</p> */}
-                      <p>R$100</p>
-                    </div>
-                  </>
-                 {/* );
+                <div className="total-cart">
+                  <h5>Total</h5>
+                  {/* <p>{product.preco * product.quantidade}</p> */}
+                  <p>R$100</p>
+                </div>
+              </>
+              {/* );
               })}  */}
             </div>
 

@@ -2,13 +2,12 @@ import { useState, useContext } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { PageLogin } from "./styled";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/auth";
 import { PageTitle } from "../../components/HeaderPainel";
 import "../../styles/global.js";
 
 export default function Login() {
-  const navigate = useNavigate();
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -16,11 +15,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (login(email, senha)) {
-      return navigate("/");
-    } else {
-      return navigate("/");
-    }
+    login(email, senha);
   };
 
   return (
